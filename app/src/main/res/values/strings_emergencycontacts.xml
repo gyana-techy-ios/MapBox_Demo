@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emergencycontacts_title">Emergency contacts</string>
+    <string name="emergencycontacts_empty_title">No emergency contacts</string>
+    <string name="emergencycontacts_empty_body">Add people to reach quickly when you need help.</string>
+</resources>

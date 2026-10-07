@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="explore_search_hint">Search places and addresses</string>
+    <string name="explore_my_location">My location</string>
+    <string name="explore_emergency">Emergency</string>
+    <string name="explore_style_to_satellite">Switch to satellite map</string>
+    <string name="explore_style_to_standard">Switch to standard map</string>
+    <string name="explore_save_parking">Save parking here</string>
+    <string name="explore_save_parking_message">Save this spot so you can find your vehicle later, even offline.</string>
+    <string name="explore_parking_saved">Parking spot saved</string>
+    <string name="explore_parking_default_name">My parking</string>
+    <string name="explore_location_permission_needed">Location permission is needed to show where you are.</string>
+    <string name="explore_location_disabled">Device location is off. Turn it on to see where you are.</string>
+    <string name="explore_results_title">%1$s nearby · %2$d</string>
+    <string name="explore_close_results">Close results</string>
+    <string name="explore_cached_results">Showing saved results (%1$s)</string>
+    <string name="explore_no_results_title">Nothing found nearby</string>
+    <string name="explore_no_results_body">No %1$s found around this part of the map. Move the map or zoom out and try again.</string>
+</resources>

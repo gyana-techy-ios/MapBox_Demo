@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offlineregionpicker_title">Choose area</string>
+    <string name="offlineregionpicker_empty_title">Area picker is getting ready</string>
+    <string name="offlineregionpicker_empty_body">Pick the area of the map you want to download.</string>
+</resources>

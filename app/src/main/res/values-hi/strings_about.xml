@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_title">परिचय</string>
+    <string name="about_empty_title">राही</string>
+    <string name="about_empty_body">आपकी यात्रा, सिग्नल न हो तब भी।</string>
+</resources>

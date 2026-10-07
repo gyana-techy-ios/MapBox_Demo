@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_title">Nearby</string>
+    <string name="nearby_empty_title">Nearby places are loading</string>
+    <string name="nearby_empty_body">Places near you will be listed here.</string>
+</resources>

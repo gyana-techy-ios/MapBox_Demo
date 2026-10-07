@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emergencycontacts_title">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
+    <string name="emergencycontacts_empty_title">କୌଣସି ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ ନାହିଁ</string>
+    <string name="emergencycontacts_empty_body">ସାହାଯ୍ୟ ଦରକାର ହେଲେ ଶୀଘ୍ର ଯୋଗାଯୋଗ ପାଇଁ ଲୋକ ଯୋଗ କରନ୍ତୁ।</string>
+</resources>

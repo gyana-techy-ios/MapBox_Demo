@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_page1_title">Explore and find essentials</string>
+    <string name="onboarding_page1_body">See what is around you: fuel, hospitals, ATMs, food and more, right on the map.</string>
+    <string name="onboarding_page2_title">Plan multi-stop trips</string>
+    <string name="onboarding_page2_body">Build a journey with several stops, compare routes and head out with confidence.</string>
+    <string name="onboarding_page3_title">Offline packs and emergency help</string>
+    <string name="onboarding_page3_body">Download maps before you go. Find the nearest hospital or police station even when the signal drops.</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_page_indicator">Page %1$d of %2$d</string>
+
+    <string name="onboarding_location_title">Allow location access</string>
+    <string name="onboarding_location_body">Raahi uses your location to show nearby places and guide you along your route.</string>
+    <string name="onboarding_location_precise_note">Choose Precise for turn-by-turn accuracy. Approximate is enough for nearby search.</string>
+    <string name="onboarding_location_allow">Allow location</string>
+    <string name="onboarding_location_skip">Continue without location</string>
+    <string name="onboarding_location_precise_granted">Precise location is on. You are all set.</string>
+    <string name="onboarding_location_approximate_granted">Approximate location is on. You can switch to precise any time in Settings.</string>
+    <string name="onboarding_location_denied_title">Location is off</string>
+    <string name="onboarding_location_denied_body">You can still explore the map and search, but nearby results will be limited.</string>
+    <string name="onboarding_location_blocked_body">Location permission is blocked. Open Settings to turn it on, or continue with limited features.</string>
+    <string name="onboarding_location_try_again">Try again</string>
+    <string name="onboarding_open_settings">Open settings</string>
+
+    <string name="onboarding_notifications_title">Stay informed on the road</string>
+    <string name="onboarding_notifications_body">Get download updates and trip alerts. This is optional.</string>
+    <string name="onboarding_notifications_allow">Allow notifications</string>
+    <string name="onboarding_notifications_skip">Not now</string>
+</resources>

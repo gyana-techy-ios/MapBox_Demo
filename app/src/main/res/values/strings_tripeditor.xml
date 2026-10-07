@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tripeditor_title">Plan trip</string>
+    <string name="tripeditor_empty_title">Trip editor is getting ready</string>
+    <string name="tripeditor_empty_body">Add stops, reorder them and choose how you travel.</string>
+</resources>

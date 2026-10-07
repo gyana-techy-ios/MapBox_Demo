@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">Offline maps</string>
+    <string name="offline_empty_title">No offline maps yet</string>
+    <string name="offline_empty_body">Download regions to keep your maps available without signal.</string>
+    <string name="offline_action_pick">Download a region</string>
+</resources>

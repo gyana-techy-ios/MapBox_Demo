@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="placedetail_title">जगह का विवरण</string>
+    <string name="placedetail_empty_title">विवरण लोड हो रहा है</string>
+    <string name="placedetail_empty_body">विवरण, दिशा-निर्देश और सहेजने के विकल्प यहाँ दिखेंगे।</string>
+</resources>

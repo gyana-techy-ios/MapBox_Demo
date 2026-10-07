@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_page1_title">ଖୋଜନ୍ତୁ ଓ ଜରୁରୀ ଜିନିଷ ପାଆନ୍ତୁ</string>
+    <string name="onboarding_page1_body">ଆପଣଙ୍କ ଆଖପାଖରେ ଦେଖନ୍ତୁ: ଇନ୍ଧନ, ଡାକ୍ତରଖାନା, ATM, ଖାଦ୍ୟ ଓ ଆହୁରି ଅନେକ, ସିଧା ମାନଚିତ୍ରରେ।</string>
+    <string name="onboarding_page2_title">ବହୁ ସ୍ଟପ୍ ଯାତ୍ରା ଯୋଜନା କରନ୍ତୁ</string>
+    <string name="onboarding_page2_body">ଅନେକ ସ୍ଟପ୍ ସହ ଯାତ୍ରା ତିଆରି କରନ୍ତୁ, ରାସ୍ତା ତୁଳନା କରନ୍ତୁ ଓ ଭରସାରେ ବାହାରନ୍ତୁ।</string>
+    <string name="onboarding_page3_title">ଅଫଲାଇନ୍ ପ୍ୟାକ୍ ଓ ଜରୁରୀକାଳୀନ ସହାୟତା</string>
+    <string name="onboarding_page3_body">ବାହାରିବା ପୂର୍ବରୁ ମାନଚିତ୍ର ଡାଉନଲୋଡ୍ କରନ୍ତୁ। ସିଗ୍ନାଲ୍ ଚାଲିଗଲେ ମଧ୍ୟ ନିକଟତମ ଡାକ୍ତରଖାନା ବା ଥାନା ଖୋଜନ୍ତୁ।</string>
+    <string name="onboarding_next">ପରବର୍ତ୍ତୀ</string>
+    <string name="onboarding_skip">ଛାଡ଼ନ୍ତୁ</string>
+    <string name="onboarding_get_started">ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="onboarding_continue">ଜାରି ରଖନ୍ତୁ</string>
+    <string name="onboarding_page_indicator">ପୃଷ୍ଠା %1$d / %2$d</string>
+
+    <string name="onboarding_location_title">ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="onboarding_location_body">ରାହୀ ଆପଣଙ୍କ ଲୋକେସନ୍ ବ୍ୟବହାର କରି ନିକଟର ସ୍ଥାନ ଦେଖାଏ ଓ ରାସ୍ତାରେ ମାର୍ଗଦର୍ଶନ କରେ।</string>
+    <string name="onboarding_location_precise_note">ମୋଡ଼-ମୋଡ଼ ସଠିକତା ପାଇଁ \"ସଠିକ୍\" ବାଛନ୍ତୁ। ନିକଟର ସନ୍ଧାନ ପାଇଁ \"ଆନୁମାନିକ\" ଯଥେଷ୍ଟ।</string>
+    <string name="onboarding_location_allow">ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="onboarding_location_skip">ଲୋକେସନ୍ ବିନା ଆଗକୁ ବଢ଼ନ୍ତୁ</string>
+    <string name="onboarding_location_precise_granted">ସଠିକ୍ ଲୋକେସନ୍ ଚାଲୁ ଅଛି। ସବୁ ପ୍ରସ୍ତୁତ।</string>
+    <string name="onboarding_location_approximate_granted">ଆନୁମାନିକ ଲୋକେସନ୍ ଚାଲୁ ଅଛି। ଆପଣ ଯେକୌଣସି ସମୟରେ ସେଟିଂସ୍‌ରେ ସଠିକ୍ କରିପାରିବେ।</string>
+    <string name="onboarding_location_denied_title">ଲୋକେସନ୍ ବନ୍ଦ ଅଛି</string>
+    <string name="onboarding_location_denied_body">ଆପଣ ମାନଚିତ୍ର ଦେଖିପାରିବେ ଓ ଖୋଜିପାରିବେ, କିନ୍ତୁ ନିକଟର ଫଳାଫଳ ସୀମିତ ରହିବ।</string>
+    <string name="onboarding_location_blocked_body">ଲୋକେସନ୍ ଅନୁମତି ଅବରୋଧିତ। ଏହାକୁ ଚାଲୁ କରିବାକୁ ସେଟିଂସ୍ ଖୋଲନ୍ତୁ, ବା ସୀମିତ ସୁବିଧା ସହ ଆଗକୁ ବଢ଼ନ୍ତୁ।</string>
+    <string name="onboarding_location_try_again">ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ</string>
+    <string name="onboarding_open_settings">ସେଟିଂସ୍ ଖୋଲନ୍ତୁ</string>
+
+    <string name="onboarding_notifications_title">ରାସ୍ତାରେ ଖବର ପାଉଥାନ୍ତୁ</string>
+    <string name="onboarding_notifications_body">ଡାଉନଲୋଡ୍ ଅପଡେଟ୍ ଓ ଯାତ୍ରା ସତର୍କତା ପାଆନ୍ତୁ। ଏହା ଇଚ୍ଛାଧୀନ।</string>
+    <string name="onboarding_notifications_allow">ବିଜ୍ଞପ୍ତିର ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="onboarding_notifications_skip">ଏବେ ନୁହେଁ</string>
+</resources>

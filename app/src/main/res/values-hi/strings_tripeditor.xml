@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tripeditor_title">यात्रा बनाएँ</string>
+    <string name="tripeditor_empty_title">यात्रा संपादक तैयार हो रहा है</string>
+    <string name="tripeditor_empty_body">पड़ाव जोड़ें, क्रम बदलें और यात्रा का तरीका चुनें।</string>
+</resources>

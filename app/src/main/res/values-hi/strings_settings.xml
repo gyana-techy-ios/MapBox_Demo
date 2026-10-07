@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">सेटिंग</string>
+    <string name="settings_empty_title">सेटिंग तैयार हो रही हैं</string>
+    <string name="settings_empty_body">थीम, नक्शे की शैली, रूट डिफ़ॉल्ट और डाउनलोड।</string>
+</resources>

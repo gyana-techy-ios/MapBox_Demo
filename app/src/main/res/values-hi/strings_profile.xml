@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_title">प्रोफ़ाइल</string>
+    <string name="profile_empty_title">आपकी प्रोफ़ाइल</string>
+    <string name="profile_empty_body">सेटिंग, भाषा और ऐप की जानकारी यहाँ मिलेगी।</string>
+    <string name="profile_action_settings">सेटिंग</string>
+    <string name="profile_action_language">भाषा</string>
+    <string name="profile_action_contacts">आपातकालीन संपर्क</string>
+    <string name="profile_action_about">राही के बारे में</string>
+</resources>

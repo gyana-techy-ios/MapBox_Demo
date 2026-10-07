@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="raahi_window_background">#FFF5FAFB</color>
+    <color name="raahi_marker_base">#FFFFFFFF</color>
+    <color name="ic_launcher_background">#FF0E5A6B</color>
+    <color name="ic_launcher_foreground">#FFFFFFFF</color>
+    <color name="ic_launcher_accent">#FFE8820C</color>
+</resources>

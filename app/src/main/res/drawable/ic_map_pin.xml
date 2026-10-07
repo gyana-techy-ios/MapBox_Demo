@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/raahi_marker_base"
+        android:fillType="evenOdd"
+        android:pathData="M24,3C15.7,3 9,9.7 9,18c0,10.5 15,27 15,27s15,-16.5 15,-27C39,9.7 32.3,3 24,3zM24,24.5c-3.6,0 -6.5,-2.9 -6.5,-6.5s2.9,-6.5 6.5,-6.5 6.5,2.9 6.5,6.5 -2.9,6.5 -6.5,6.5z" />
+</vector>

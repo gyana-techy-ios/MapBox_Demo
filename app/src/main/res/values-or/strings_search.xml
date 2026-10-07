@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_title">ସନ୍ଧାନ</string>
+    <string name="search_empty_title">ସ୍ଥାନ ସନ୍ଧାନ କରନ୍ତୁ</string>
+    <string name="search_empty_body">ଆପଣଙ୍କ ରାସ୍ତାରେ ସ୍ଥାନ, ଠିକଣା ଓ ସେବା ଖୋଜନ୍ତୁ।</string>
+</resources>

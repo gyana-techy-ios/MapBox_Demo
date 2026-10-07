@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="placedetail_title">ସ୍ଥାନ ବିବରଣୀ</string>
+    <string name="placedetail_empty_title">ବିବରଣୀ ଲୋଡ୍ ହେଉଛି</string>
+    <string name="placedetail_empty_body">ବିବରଣୀ, ଦିଗ ଓ ସେଭ୍ ବିକଳ୍ପ ଏଠାରେ ଦେଖାଯିବ।</string>
+</resources>

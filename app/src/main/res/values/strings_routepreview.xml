@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="routepreview_title">Route preview</string>
+    <string name="routepreview_empty_title">Routes are loading</string>
+    <string name="routepreview_empty_body">Compare route options before you start.</string>
+    <string name="routepreview_action_start">Start guidance</string>
+</resources>

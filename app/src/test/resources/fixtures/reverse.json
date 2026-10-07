@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209,
+          28.6139
+        ]
+      },
+      "properties": {
+        "name": "Connaught Place",
+        "mapbox_id": "addr.1",
+        "feature_type": "address",
+        "full_address": "Connaught Place, New Delhi, India"
+      }
+    }
+  ]
+}

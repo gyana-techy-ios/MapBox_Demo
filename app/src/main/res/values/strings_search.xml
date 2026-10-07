@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_title">Search</string>
+    <string name="search_empty_title">Search places</string>
+    <string name="search_empty_body">Find places, addresses and services on your route.</string>
+</resources>

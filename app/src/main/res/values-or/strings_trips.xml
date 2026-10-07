@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trips_title">ଯାତ୍ରା</string>
+    <string name="trips_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଯାତ୍ରା ନାହିଁ</string>
+    <string name="trips_empty_body">ବହୁ ସ୍ଟପ୍ ଯାତ୍ରା ଯୋଜନା କରନ୍ତୁ, ଏଠାରେ ଦେଖାଯିବ।</string>
+    <string name="trips_action_new">ନୂଆ ଯାତ୍ରା</string>
+</resources>

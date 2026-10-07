@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.21,
+          28.615
+        ]
+      },
+      "properties": {
+        "name": "Indian Oil Petrol Pump",
+        "mapbox_id": "dXJuOm1ieHBvaToxMjM",
+        "feature_type": "poi",
+        "full_address": "12 Ring Road, New Delhi",
+        "coordinates": {
+          "latitude": 28.615,
+          "longitude": 77.21
+        },
+        "poi_category_ids": [
+          "gas_station"
+        ]
+      }
+    }
+  ]
+}

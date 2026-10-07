@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emergency_title">ଜରୁରୀକାଳୀନ</string>
+    <string name="emergency_empty_title">ଜରୁରୀକାଳୀନ ସହାୟତା ପ୍ରସ୍ତୁତ ହେଉଛି</string>
+    <string name="emergency_empty_body">ନିକଟତମ ଡାକ୍ତରଖାନା, ପୋଲିସ ଓ ଔଷଧ ଦୋକାନ ଏଠାରେ ଦେଖାଯିବ, ପୂର୍ବ ତଥ୍ୟରୁ ମଧ୍ୟ।</string>
+    <string name="emergency_action_contacts">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
+</resources>

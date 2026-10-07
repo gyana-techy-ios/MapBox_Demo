@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="saved_title">Saved</string>
+    <string name="saved_empty_title">Nothing saved yet</string>
+    <string name="saved_empty_body">Home, work, parking spots and favourites will appear here.</string>
+    <string name="saved_action_contacts">Emergency contacts</string>
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_tagline">ଆପଣଙ୍କ ଯାତ୍ରା, ସିଗ୍ନାଲ୍ ନଥିଲେ ମଧ୍ୟ।</string>
+
+    <string name="tab_explore">ଖୋଜନ୍ତୁ</string>
+    <string name="tab_trips">ଯାତ୍ରା</string>
+    <string name="tab_offline">ଅଫଲାଇନ୍</string>
+    <string name="tab_saved">ସେଭ୍</string>
+    <string name="tab_profile">ପ୍ରୋଫାଇଲ୍</string>
+
+    <string name="action_back">ପଛକୁ</string>
+    <string name="action_clear">ସଫା କରନ୍ତୁ</string>
+    <string name="action_retry">ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ</string>
+    <string name="action_cancel">ବାତିଲ୍</string>
+    <string name="action_save">ସେଭ୍ କରନ୍ତୁ</string>
+    <string name="action_settings">ସେଟିଂସ୍</string>
+    <string name="action_more_options">ଅଧିକ ବିକଳ୍ପ</string>
+    <string name="loading">ଲୋଡ୍ ହେଉଛି</string>
+
+    <string name="error_title">କିଛି ଠିକ୍ ନାହିଁ</string>
+    <string name="error_no_internet">ଇଣ୍ଟରନେଟ୍ ସଂଯୋଗ ନାହିଁ। ଆପଣଙ୍କ ଡାଉନଲୋଡ୍ ହୋଇଥିବା ମାନଚିତ୍ର ଉପଲବ୍ଧ ରହିବ।</string>
+    <string name="error_search_needs_internet">ଏହି ଅଞ୍ଚଳରେ ସନ୍ଧାନ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ସଂଯୋଗ ଦରକାର।</string>
+    <string name="error_timeout">ଅନୁରୋଧ ପାଇଁ ବହୁତ ସମୟ ଲାଗିଲା। ସଂଯୋଗ ଯାଞ୍ଚ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="error_unauthorized">ମାନଚିତ୍ର ସେବାର ଅନୁମତି ମିଳିଲା ନାହିଁ। ଆକ୍ସେସ୍ ଟୋକେନ୍ ଭୁଲ୍ କିମ୍ବା ମିଆଦ ପୂର୍ଣ୍ଣ ହୋଇପାରେ। ତାହା ଅପଡେଟ୍ କରି ପୁଣି ବିଲ୍ଡ କରନ୍ତୁ।</string>
+    <string name="error_rate_limited">ବର୍ତ୍ତମାନ ବହୁତ ଅଧିକ ଅନୁରୋଧ ହୋଇଛି। ଟିକେ ଅପେକ୍ଷା କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="error_not_found">ଆମେ ତାହା ପାଇଲୁ ନାହିଁ। ଅନ୍ୟ ଏକ ସନ୍ଧାନ ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="error_no_route">ଏହି ସ୍ଟପ୍ ମଧ୍ୟରେ କୌଣସି ରାସ୍ତା ମିଳିଲା ନାହିଁ। ଏକ ସ୍ଟପ୍ କିମ୍ବା ଯାତ୍ରା ଉପାୟ ବଦଳାଇ ଦେଖନ୍ତୁ।</string>
+    <string name="error_server">ସେବାରେ ସମସ୍ୟା ଅଛି। ଦୟାକରି କିଛି ସମୟ ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="error_configuration">ଏହି ବିଲ୍ଡରେ ମାନଚିତ୍ର ସେବା ସେଟ୍ ହୋଇନାହିଁ। Mapbox ଟୋକେନ୍ ଯୋଗ କରି ପୁଣି ବିଲ୍ଡ କରନ୍ତୁ।</string>
+    <string name="error_location_unavailable">ଆପଣଙ୍କ ଲୋକେସନ୍ ମିଳୁନାହିଁ। ଡିଭାଇସ୍ ଲୋକେସନ୍ ଚାଲୁ କରନ୍ତୁ, ଭିତରେ ଥିଲେ ବାହାରକୁ ଆସନ୍ତୁ।</string>
+    <string name="error_permission_denied">ଲୋକେସନ୍ ଅନୁମତି ବନ୍ଦ ଅଛି। ଆପଣଙ୍କ ସ୍ଥାନ ଦେଖିବାକୁ ସେଟିଂସ୍‌ରେ ଏହାକୁ ଚାଲୁ କରନ୍ତୁ।</string>
+    <string name="error_storage_full">ଏହି ଡାଉନଲୋଡ୍ ପାଇଁ ଯଥେଷ୍ଟ ଷ୍ଟୋରେଜ୍ ନାହିଁ। ଜାଗା ଖାଲି କରନ୍ତୁ କିମ୍ବା ଛୋଟ ଅଞ୍ଚଳ ବାଛନ୍ତୁ।</string>
+    <string name="error_wifi_only">ଡାଉନଲୋଡ୍ କେବଳ ୱାଇ-ଫାଇରେ ସେଟ୍ ଅଛି। ୱାଇ-ଫାଇ ସହ ଯୋଡନ୍ତୁ କିମ୍ବା ସେଟିଂସ୍‌ରେ ବଦଳାନ୍ତୁ।</string>
+    <string name="error_unknown">କିଛି ଭୁଲ୍ ହୋଇଗଲା। ଦୟାକରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+
+    <string name="banner_offline">ଆପଣ ଅଫଲାଇନ୍ ଅଛନ୍ତି। ଡାଉନଲୋଡ୍ ହୋଇଥିବା ମାନଚିତ୍ର ଓ ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ ଚାଲିବ।</string>
+    <string name="banner_limited">ଦୁର୍ବଳ ସଂଯୋଗ। କିଛି ଫଳାଫଳ ଅଧୁରା କିମ୍ବା ପୁରୁଣା ହୋଇପାରେ।</string>
+
+    <string name="distance_meters">%1$d ମି</string>
+    <string name="distance_kilometers">%1$s କିମି</string>
+    <string name="duration_minutes">%1$d ମିନିଟ୍</string>
+    <string name="duration_hours_minutes">%1$d ଘଣ୍ଟା %2$d ମିନିଟ୍</string>
+    <string name="cached_days_ago">%1$d ଦିନ ପୂର୍ବେ ସେଭ୍ ହୋଇଛି</string>
+    <plurals name="cached_minutes_ago">
+        <item quantity="one">%d ମିନିଟ୍ ପୂର୍ବେ ସେଭ୍ ହୋଇଛି</item>
+        <item quantity="other">%d ମିନିଟ୍ ପୂର୍ବେ ସେଭ୍ ହୋଇଛି</item>
+    </plurals>
+    <plurals name="cached_hours_ago">
+        <item quantity="one">%d ଘଣ୍ଟା ପୂର୍ବେ ସେଭ୍ ହୋଇଛି</item>
+        <item quantity="other">%d ଘଣ୍ଟା ପୂର୍ବେ ସେଭ୍ ହୋଇଛି</item>
+    </plurals>
+
+    <string name="category_fuel">ଇନ୍ଧନ</string>
+    <string name="category_ev_charging">EV ଚାର୍ଜିଂ</string>
+    <string name="category_hospital">ଡାକ୍ତରଖାନା</string>
+    <string name="category_pharmacy">ଔଷଧ ଦୋକାନ</string>
+    <string name="category_police">ପୋଲିସ</string>
+    <string name="category_atm">ATM</string>
+    <string name="category_restaurant">ଖାଦ୍ୟ</string>
+    <string name="category_hotel">ହୋଟେଲ</string>
+    <string name="category_parking">ପାର୍କିଂ</string>
+    <string name="category_toilet">ଶୌଚାଳୟ</string>
+    <string name="category_place">ସ୍ଥାନ</string>
+
+    <string name="map_unavailable_title">ମାନଚିତ୍ର ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="map_unavailable_missing_token">Mapbox ଟୋକେନ୍ ସେଟ୍ ହୋଇନାହିଁ। local.propertiesରେ MAPBOX_ACCESS_TOKEN=pk.… ଯୋଗ କରି ପୁଣି ବିଲ୍ଡ କରନ୍ତୁ।</string>
+    <string name="map_unavailable_secret_token">ଏକ ଗୁପ୍ତ Mapbox ଟୋକେନ୍ (sk.…) ଦିଆଯାଇଛି। local.propertiesରେ ସାର୍ବଜନୀନ ଟୋକେନ୍ (pk.…) ବ୍ୟବହାର କରି ପୁଣି ବିଲ୍ଡ କରନ୍ତୁ।</string>
+    <string name="map_unavailable_malformed_token">Mapbox ଟୋକେନ୍ ଭୁଲ୍ ଲାଗୁଛି। ଏହା pk.ରେ ଆରମ୍ଭ ହେବା ଉଚିତ। local.propertiesରେ MAPBOX_ACCESS_TOKEN ଠିକ୍ କରି ପୁଣି ବିଲ୍ଡ କରନ୍ତୁ।</string>
+</resources>

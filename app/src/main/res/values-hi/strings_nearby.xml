@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_title">आस-पास</string>
+    <string name="nearby_empty_title">आस-पास की जगहें लोड हो रही हैं</string>
+    <string name="nearby_empty_body">आपके पास की जगहें यहाँ सूचीबद्ध होंगी।</string>
+</resources>

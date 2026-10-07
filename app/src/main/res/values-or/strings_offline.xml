@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">ଅଫଲାଇନ୍ ମାନଚିତ୍ର</string>
+    <string name="offline_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଅଫଲାଇନ୍ ମାନଚିତ୍ର ନାହିଁ</string>
+    <string name="offline_empty_body">ସିଗ୍ନାଲ୍ ବିନା ମାନଚିତ୍ର ପାଇଁ ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ।</string>
+    <string name="offline_action_pick">ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</string>
+</resources>

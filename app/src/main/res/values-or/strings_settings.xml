@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">ସେଟିଂସ୍</string>
+    <string name="settings_empty_title">ସେଟିଂସ୍ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
+    <string name="settings_empty_body">ଥିମ୍, ମାନଚିତ୍ର ଶୈଳୀ, ରୁଟ୍ ଡିଫଲ୍ଟ ଓ ଡାଉନଲୋଡ୍।</string>
+</resources>

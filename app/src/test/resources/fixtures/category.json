@@ -1,0 +1,51 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.211,
+          28.616
+        ]
+      },
+      "properties": {
+        "name": "HP Petrol Pump",
+        "mapbox_id": "poi.a",
+        "feature_type": "poi",
+        "full_address": "Connaught Place, New Delhi",
+        "coordinates": {
+          "latitude": 28.616,
+          "longitude": 77.211
+        },
+        "poi_category_ids": [
+          "gas_station"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.23,
+          28.63
+        ]
+      },
+      "properties": {
+        "name": "Shell",
+        "mapbox_id": "poi.b",
+        "feature_type": "poi",
+        "full_address": "Lodhi Road, New Delhi",
+        "coordinates": {
+          "latitude": 28.63,
+          "longitude": 77.23
+        },
+        "poi_category_ids": [
+          "gas_station"
+        ]
+      }
+    }
+  ]
+}

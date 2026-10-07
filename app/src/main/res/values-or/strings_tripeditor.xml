@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tripeditor_title">ଯାତ୍ରା ଯୋଜନା</string>
+    <string name="tripeditor_empty_title">ଯାତ୍ରା ଏଡିଟର୍ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
+    <string name="tripeditor_empty_body">ସ୍ଟପ୍ ଯୋଗ କରନ୍ତୁ, କ୍ରମ ବଦଳାନ୍ତୁ ଓ ଯାତ୍ରା ଉପାୟ ବାଛନ୍ତୁ।</string>
+</resources>

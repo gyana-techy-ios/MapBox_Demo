@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="saved_title">ସେଭ୍ ହୋଇଛି</string>
+    <string name="saved_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କିଛି ସେଭ୍ ହୋଇନାହିଁ</string>
+    <string name="saved_empty_body">ଘର, କାମ ସ୍ଥାନ, ପାର୍କିଂ ଓ ପସନ୍ଦର ସ୍ଥାନ ଏଠାରେ ଦେଖାଯିବ।</string>
+    <string name="saved_action_contacts">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
+</resources>

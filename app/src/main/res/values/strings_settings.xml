@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Settings</string>
+    <string name="settings_empty_title">Settings are getting ready</string>
+    <string name="settings_empty_body">Theme, map style, route defaults and downloads.</string>
+</resources>

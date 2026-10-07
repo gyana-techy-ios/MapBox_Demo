@@ -1,0 +1,27 @@
+{
+  "suggestions": [
+    {
+      "name": "Indian Oil Petrol Pump",
+      "mapbox_id": "dXJuOm1ieHBvaToxMjM",
+      "feature_type": "poi",
+      "address": "12 Ring Road",
+      "full_address": "12 Ring Road, New Delhi, Delhi 110001, India",
+      "place_formatted": "New Delhi, Delhi 110001, India",
+      "poi_category_ids": [
+        "gas_station"
+      ],
+      "distance": 820.5,
+      "unknown_field": true
+    },
+    {
+      "name": "India Gate",
+      "mapbox_id": "dXJuOm1ieHBvaTo0NTY",
+      "feature_type": "poi",
+      "place_formatted": "New Delhi, Delhi, India",
+      "poi_category_ids": [
+        "monument"
+      ]
+    }
+  ],
+  "attribution": "(c) 2026 Mapbox"
+}

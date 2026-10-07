@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guidance_title">Guidance</string>
+    <string name="guidance_empty_title">Guidance is getting ready</string>
+    <string name="guidance_empty_body">Turn-by-turn directions will appear here.</string>
+</resources>

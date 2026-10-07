@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_tagline">आपकी यात्रा, सिग्नल न हो तब भी।</string>
+
+    <string name="tab_explore">खोजें</string>
+    <string name="tab_trips">यात्राएँ</string>
+    <string name="tab_offline">ऑफ़लाइन</string>
+    <string name="tab_saved">सहेजे गए</string>
+    <string name="tab_profile">प्रोफ़ाइल</string>
+
+    <string name="action_back">वापस</string>
+    <string name="action_clear">साफ़ करें</string>
+    <string name="action_retry">फिर कोशिश करें</string>
+    <string name="action_cancel">रद्द करें</string>
+    <string name="action_save">सहेजें</string>
+    <string name="action_settings">सेटिंग</string>
+    <string name="action_more_options">और विकल्प</string>
+    <string name="loading">लोड हो रहा है</string>
+
+    <string name="error_title">कुछ गड़बड़ है</string>
+    <string name="error_no_internet">इंटरनेट कनेक्शन नहीं है। आपके डाउनलोड किए गए नक्शे उपलब्ध रहेंगे।</string>
+    <string name="error_search_needs_internet">इस क्षेत्र में खोज के लिए इंटरनेट कनेक्शन चाहिए।</string>
+    <string name="error_timeout">अनुरोध में बहुत समय लगा। कनेक्शन जाँचें और फिर कोशिश करें।</string>
+    <string name="error_unauthorized">नक्शा सेवा की पहुँच अस्वीकार हुई। एक्सेस टोकन अमान्य या समाप्त हो सकता है। उसे अपडेट करके दोबारा बनाएँ।</string>
+    <string name="error_rate_limited">अभी बहुत ज़्यादा अनुरोध हो गए हैं। थोड़ी देर रुककर फिर कोशिश करें।</string>
+    <string name="error_not_found">हमें वह नहीं मिला। कोई दूसरी खोज आज़माएँ।</string>
+    <string name="error_no_route">इन पड़ावों के बीच कोई रास्ता नहीं मिला। कोई पड़ाव या यात्रा का तरीका बदलकर देखें।</string>
+    <string name="error_server">सेवा में समस्या है। कृपया थोड़ी देर में फिर कोशिश करें।</string>
+    <string name="error_configuration">इस बिल्ड में नक्शा सेवाएँ सेट नहीं हैं। Mapbox टोकन जोड़कर दोबारा बनाएँ।</string>
+    <string name="error_location_unavailable">आपकी लोकेशन नहीं मिल रही। डिवाइस की लोकेशन चालू करें, और अंदर हों तो बाहर आएँ।</string>
+    <string name="error_permission_denied">लोकेशन की अनुमति बंद है। अपनी स्थिति देखने के लिए इसे सेटिंग में चालू करें।</string>
+    <string name="error_storage_full">इस डाउनलोड के लिए पर्याप्त स्टोरेज नहीं है। जगह खाली करें या छोटा क्षेत्र चुनें।</string>
+    <string name="error_wifi_only">डाउनलोड सिर्फ़ वाई-फ़ाई पर सेट हैं। वाई-फ़ाई से जुड़ें या सेटिंग में बदलें।</string>
+    <string name="error_unknown">कुछ गलत हो गया। कृपया फिर कोशिश करें।</string>
+
+    <string name="banner_offline">आप ऑफ़लाइन हैं। डाउनलोड किए नक्शे और सहेजी जगहें अब भी काम करेंगी।</string>
+    <string name="banner_limited">कमज़ोर कनेक्शन। कुछ नतीजे अधूरे या पुराने हो सकते हैं।</string>
+
+    <string name="distance_meters">%1$d मी</string>
+    <string name="distance_kilometers">%1$s किमी</string>
+    <string name="duration_minutes">%1$d मिनट</string>
+    <string name="duration_hours_minutes">%1$d घंटे %2$d मिनट</string>
+    <string name="cached_days_ago">%1$d दिन पहले सहेजा गया</string>
+    <plurals name="cached_minutes_ago">
+        <item quantity="one">%d मिनट पहले सहेजा गया</item>
+        <item quantity="other">%d मिनट पहले सहेजा गया</item>
+    </plurals>
+    <plurals name="cached_hours_ago">
+        <item quantity="one">%d घंटे पहले सहेजा गया</item>
+        <item quantity="other">%d घंटे पहले सहेजा गया</item>
+    </plurals>
+
+    <string name="category_fuel">ईंधन</string>
+    <string name="category_ev_charging">EV चार्जिंग</string>
+    <string name="category_hospital">अस्पताल</string>
+    <string name="category_pharmacy">दवाई की दुकानें</string>
+    <string name="category_police">पुलिस</string>
+    <string name="category_atm">ATM</string>
+    <string name="category_restaurant">खाना</string>
+    <string name="category_hotel">होटल</string>
+    <string name="category_parking">पार्किंग</string>
+    <string name="category_toilet">शौचालय</string>
+    <string name="category_place">जगह</string>
+
+    <string name="map_unavailable_title">नक्शा उपलब्ध नहीं</string>
+    <string name="map_unavailable_missing_token">Mapbox टोकन सेट नहीं है। local.properties में MAPBOX_ACCESS_TOKEN=pk.… जोड़ें और दोबारा बनाएँ।</string>
+    <string name="map_unavailable_secret_token">गुप्त Mapbox टोकन (sk.…) दिया गया है। local.properties में सार्वजनिक टोकन (pk.…) इस्तेमाल करें और दोबारा बनाएँ।</string>
+    <string name="map_unavailable_malformed_token">Mapbox टोकन गलत लग रहा है। वह pk. से शुरू होना चाहिए। local.properties में MAPBOX_ACCESS_TOKEN ठीक करें और दोबारा बनाएँ।</string>
+</resources>

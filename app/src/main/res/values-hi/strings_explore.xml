@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="explore_search_hint">जगहें और पते खोजें</string>
+    <string name="explore_my_location">मेरी लोकेशन</string>
+    <string name="explore_emergency">आपातकाल</string>
+    <string name="explore_style_to_satellite">सैटेलाइट नक्शे पर जाएँ</string>
+    <string name="explore_style_to_standard">सामान्य नक्शे पर जाएँ</string>
+    <string name="explore_save_parking">यहाँ पार्किंग सहेजें</string>
+    <string name="explore_save_parking_message">इस जगह को सहेजें ताकि बाद में, ऑफ़लाइन भी, अपना वाहन ढूँढ सकें।</string>
+    <string name="explore_parking_saved">पार्किंग की जगह सहेजी गई</string>
+    <string name="explore_parking_default_name">मेरी पार्किंग</string>
+    <string name="explore_location_permission_needed">आप कहाँ हैं यह दिखाने के लिए लोकेशन की अनुमति चाहिए।</string>
+    <string name="explore_location_disabled">डिवाइस की लोकेशन बंद है। अपनी स्थिति देखने के लिए इसे चालू करें।</string>
+    <string name="explore_results_title">आस-पास %1$s · %2$d</string>
+    <string name="explore_close_results">नतीजे बंद करें</string>
+    <string name="explore_cached_results">सहेजे हुए नतीजे दिख रहे हैं (%1$s)</string>
+    <string name="explore_no_results_title">आस-पास कुछ नहीं मिला</string>
+    <string name="explore_no_results_body">नक्शे के इस हिस्से में %1$s नहीं मिले। नक्शा खिसकाएँ या ज़ूम आउट करके फिर कोशिश करें।</string>
+</resources>

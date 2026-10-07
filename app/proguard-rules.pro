@@ -1,0 +1,4 @@
+-keepattributes *Annotation*, InnerClasses, Signature, EnclosingMethod
+-dontwarn org.slf4j.**
+-keepclassmembers class kotlinx.serialization.json.** { *** Companion; }
+-keepclasseswithmembers class com.raahi.app.** { kotlinx.serialization.KSerializer serializer(...); }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tripdetail_title">ଯାତ୍ରା</string>
+    <string name="tripdetail_empty_title">ଯାତ୍ରା ବିବରଣୀ ଲୋଡ୍ ହେଉଛି</string>
+    <string name="tripdetail_empty_body">ଏହି ଯାତ୍ରାର ସ୍ଟପ୍, ଦୂରତା ଓ ସମୟ ଏଠାରେ ଦେଖାଯିବ।</string>
+    <string name="tripdetail_action_preview">ରୁଟ୍ ଦେଖନ୍ତୁ</string>
+</resources>

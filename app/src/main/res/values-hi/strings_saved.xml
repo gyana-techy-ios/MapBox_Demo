@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="saved_title">सहेजे गए</string>
+    <string name="saved_empty_title">अभी कुछ सहेजा नहीं गया</string>
+    <string name="saved_empty_body">घर, ऑफ़िस, पार्किंग और पसंदीदा जगहें यहाँ दिखेंगी।</string>
+    <string name="saved_action_contacts">आपातकालीन संपर्क</string>
+</resources>

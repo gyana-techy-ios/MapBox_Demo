@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offlineregionpicker_title">क्षेत्र चुनें</string>
+    <string name="offlineregionpicker_empty_title">क्षेत्र चयन तैयार हो रहा है</string>
+    <string name="offlineregionpicker_empty_body">नक्शे का वह क्षेत्र चुनें जो डाउनलोड करना है।</string>
+</resources>

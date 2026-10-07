@@ -1,0 +1,3 @@
+# Copy to local.properties (gitignored) and fill in.
+# sdk.dir=/Users/<you>/Library/Android/sdk
+MAPBOX_ACCESS_TOKEN=pk.your_public_token_here

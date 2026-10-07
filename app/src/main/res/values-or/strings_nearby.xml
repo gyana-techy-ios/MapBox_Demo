@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_title">ନିକଟରେ</string>
+    <string name="nearby_empty_title">ନିକଟସ୍ଥ ସ୍ଥାନ ଲୋଡ୍ ହେଉଛି</string>
+    <string name="nearby_empty_body">ଆପଣଙ୍କ ନିକଟର ସ୍ଥାନ ଏଠାରେ ତାଲିକାଭୁକ୍ତ ହେବ।</string>
+</resources>

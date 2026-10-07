@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Raahi</string>
+    <string name="app_tagline">Your journey, even when the signal isn\'t.</string>
+
+    <string name="tab_explore">Explore</string>
+    <string name="tab_trips">Trips</string>
+    <string name="tab_offline">Offline</string>
+    <string name="tab_saved">Saved</string>
+    <string name="tab_profile">Profile</string>
+
+    <string name="action_back">Back</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_retry">Try again</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_more_options">More options</string>
+    <string name="loading">Loading</string>
+
+    <string name="error_title">Something\'s not right</string>
+    <string name="error_no_internet">No internet connection. Your downloaded maps remain available.</string>
+    <string name="error_search_needs_internet">Search needs an internet connection for this area.</string>
+    <string name="error_timeout">The request took too long. Check your connection and try again.</string>
+    <string name="error_unauthorized">Map service access was rejected. The access token may be invalid or expired. Update it and rebuild.</string>
+    <string name="error_rate_limited">Too many requests right now. Wait a moment and try again.</string>
+    <string name="error_not_found">We couldn\'t find that. Try a different search.</string>
+    <string name="error_no_route">No route found between these stops. Try changing a stop or the travel mode.</string>
+    <string name="error_server">The service is having trouble. Please try again shortly.</string>
+    <string name="error_configuration">Map services aren\'t set up in this build. Add a Mapbox token and rebuild.</string>
+    <string name="error_location_unavailable">Can\'t get your location. Turn on device location, and step outdoors if you are inside.</string>
+    <string name="error_permission_denied">Location permission is off. Allow it in Settings to see where you are.</string>
+    <string name="error_storage_full">Not enough storage for this download. Free up space or choose a smaller area.</string>
+    <string name="error_wifi_only">Downloads are set to Wi-Fi only. Connect to Wi-Fi or change this in Settings.</string>
+    <string name="error_unknown">Something went wrong. Please try again.</string>
+
+    <string name="banner_offline">You\'re offline. Downloaded maps and saved places still work.</string>
+    <string name="banner_limited">Weak connection. Some results may be missing or out of date.</string>
+
+    <string name="distance_meters">%1$d m</string>
+    <string name="distance_kilometers">%1$s km</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_hours_minutes">%1$d h %2$d min</string>
+    <string name="cached_days_ago">cached %1$d days ago</string>
+    <plurals name="cached_minutes_ago">
+        <item quantity="one">cached %d min ago</item>
+        <item quantity="other">cached %d min ago</item>
+    </plurals>
+    <plurals name="cached_hours_ago">
+        <item quantity="one">cached %d h ago</item>
+        <item quantity="other">cached %d h ago</item>
+    </plurals>
+
+    <string name="category_fuel">Fuel</string>
+    <string name="category_ev_charging">EV charging</string>
+    <string name="category_hospital">Hospitals</string>
+    <string name="category_pharmacy">Pharmacies</string>
+    <string name="category_police">Police</string>
+    <string name="category_atm">ATMs</string>
+    <string name="category_restaurant">Food</string>
+    <string name="category_hotel">Hotels</string>
+    <string name="category_parking">Parking</string>
+    <string name="category_toilet">Toilets</string>
+    <string name="category_place">Place</string>
+
+    <string name="map_unavailable_title">Map unavailable</string>
+    <string name="map_unavailable_missing_token">Mapbox token not configured. Add MAPBOX_ACCESS_TOKEN=pk.… to local.properties and rebuild.</string>
+    <string name="map_unavailable_secret_token">A secret Mapbox token (sk.…) was supplied. Use a public token (pk.…) in local.properties and rebuild.</string>
+    <string name="map_unavailable_malformed_token">The Mapbox token looks malformed. It must start with pk. Fix MAPBOX_ACCESS_TOKEN in local.properties and rebuild.</string>
+</resources>

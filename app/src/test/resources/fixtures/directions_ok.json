@@ -1,0 +1,79 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "geometry": "womqu@oymgrCg|J_vJ_pR_pR_pR_pR",
+      "distance": 3100.0,
+      "duration": 600.0,
+      "legs": [
+        {
+          "summary": "Ring Road, Mathura Road",
+          "annotation": {
+            "congestion": [
+              "low",
+              "low",
+              "moderate",
+              "unknown"
+            ]
+          },
+          "steps": [
+            {
+              "distance": 1000.0,
+              "duration": 200.0,
+              "name": "Ring Road",
+              "maneuver": {
+                "instruction": "Head north on Ring Road",
+                "type": "depart",
+                "modifier": "straight",
+                "location": [
+                  77.209,
+                  28.6139
+                ]
+              }
+            },
+            {
+              "distance": 2100.0,
+              "duration": 400.0,
+              "name": "Mathura Road",
+              "maneuver": {
+                "instruction": "Turn right onto Mathura Road",
+                "type": "turn",
+                "modifier": "right",
+                "location": [
+                  77.215,
+                  28.62
+                ]
+              }
+            },
+            {
+              "distance": 0.0,
+              "duration": 0.0,
+              "name": "",
+              "maneuver": {
+                "instruction": "You have arrived",
+                "type": "arrive",
+                "modifier": null,
+                "location": [
+                  77.235,
+                  28.64
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": "womqu@oymgrCg|J_vJ_pR_pR_pR_pR",
+      "distance": 3500.0,
+      "duration": 720.0,
+      "legs": [
+        {
+          "summary": "Outer Ring Road",
+          "steps": []
+        }
+      ]
+    }
+  ],
+  "waypoints": []
+}

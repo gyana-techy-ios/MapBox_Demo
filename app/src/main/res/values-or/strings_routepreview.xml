@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="routepreview_title">ରୁଟ୍ ପ୍ରିଭ୍ୟୁ</string>
+    <string name="routepreview_empty_title">ରୁଟ୍ ଲୋଡ୍ ହେଉଛି</string>
+    <string name="routepreview_empty_body">ଆରମ୍ଭ କରିବା ପୂର୍ବରୁ ରୁଟ୍ ବିକଳ୍ପ ତୁଳନା କରନ୍ତୁ।</string>
+    <string name="routepreview_action_start">ମାର୍ଗଦର୍ଶନ ଆରମ୍ଭ କରନ୍ତୁ</string>
+</resources>

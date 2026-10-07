@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guidance_title">मार्गदर्शन</string>
+    <string name="guidance_empty_title">मार्गदर्शन तैयार हो रहा है</string>
+    <string name="guidance_empty_body">मोड़-दर-मोड़ दिशा-निर्देश यहाँ दिखेंगे।</string>
+</resources>

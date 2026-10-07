@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trips_title">यात्राएँ</string>
+    <string name="trips_empty_title">अभी कोई यात्रा नहीं</string>
+    <string name="trips_empty_body">कई पड़ावों वाली यात्रा बनाएँ, वह यहाँ दिखेगी।</string>
+    <string name="trips_action_new">नई यात्रा</string>
+</resources>

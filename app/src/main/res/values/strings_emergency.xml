@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emergency_title">Emergency</string>
+    <string name="emergency_empty_title">Emergency help is getting ready</string>
+    <string name="emergency_empty_body">Nearest hospitals, police and pharmacies will appear here, even from your last known data.</string>
+    <string name="emergency_action_contacts">Emergency contacts</string>
+</resources>

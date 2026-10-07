@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_page1_title">खोजें और ज़रूरी चीज़ें पाएँ</string>
+    <string name="onboarding_page1_body">अपने आस-पास देखें: पेट्रोल पंप, अस्पताल, ATM, खाना और बहुत कुछ, सीधे नक्शे पर।</string>
+    <string name="onboarding_page2_title">कई पड़ावों की यात्रा बनाएँ</string>
+    <string name="onboarding_page2_body">कई पड़ावों वाली यात्रा बनाएँ, रास्तों की तुलना करें और भरोसे के साथ निकलें।</string>
+    <string name="onboarding_page3_title">ऑफ़लाइन पैक और आपातकालीन मदद</string>
+    <string name="onboarding_page3_body">निकलने से पहले नक्शे डाउनलोड करें। सिग्नल जाने पर भी नज़दीकी अस्पताल या थाना ढूँढें।</string>
+    <string name="onboarding_next">आगे</string>
+    <string name="onboarding_skip">छोड़ें</string>
+    <string name="onboarding_get_started">शुरू करें</string>
+    <string name="onboarding_continue">जारी रखें</string>
+    <string name="onboarding_page_indicator">पृष्ठ %1$d / %2$d</string>
+
+    <string name="onboarding_location_title">लोकेशन की अनुमति दें</string>
+    <string name="onboarding_location_body">राही आपकी लोकेशन से आस-पास की जगहें दिखाता है और रास्ते में मार्गदर्शन करता है।</string>
+    <string name="onboarding_location_precise_note">मोड़-दर-मोड़ सटीकता के लिए \"सटीक\" चुनें। आस-पास की खोज के लिए \"अनुमानित\" काफ़ी है।</string>
+    <string name="onboarding_location_allow">लोकेशन की अनुमति दें</string>
+    <string name="onboarding_location_skip">लोकेशन के बिना आगे बढ़ें</string>
+    <string name="onboarding_location_precise_granted">सटीक लोकेशन चालू है। सब तैयार है।</string>
+    <string name="onboarding_location_approximate_granted">अनुमानित लोकेशन चालू है। आप कभी भी सेटिंग में सटीक कर सकते हैं।</string>
+    <string name="onboarding_location_denied_title">लोकेशन बंद है</string>
+    <string name="onboarding_location_denied_body">आप नक्शा देख और खोज सकते हैं, पर आस-पास के नतीजे सीमित होंगे।</string>
+    <string name="onboarding_location_blocked_body">लोकेशन की अनुमति रोकी गई है। इसे चालू करने के लिए सेटिंग खोलें, या सीमित सुविधाओं के साथ आगे बढ़ें।</string>
+    <string name="onboarding_location_try_again">फिर कोशिश करें</string>
+    <string name="onboarding_open_settings">सेटिंग खोलें</string>
+
+    <string name="onboarding_notifications_title">सड़क पर जानकारी पाते रहें</string>
+    <string name="onboarding_notifications_body">डाउनलोड अपडेट और यात्रा अलर्ट पाएँ। यह वैकल्पिक है।</string>
+    <string name="onboarding_notifications_allow">सूचनाओं की अनुमति दें</string>
+    <string name="onboarding_notifications_skip">अभी नहीं</string>
+</resources>

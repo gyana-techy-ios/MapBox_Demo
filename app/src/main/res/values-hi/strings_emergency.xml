@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emergency_title">आपातकाल</string>
+    <string name="emergency_empty_title">आपातकालीन सहायता तैयार हो रही है</string>
+    <string name="emergency_empty_body">नज़दीकी अस्पताल, पुलिस और दवाई की दुकानें यहाँ दिखेंगी, पुराने डेटा से भी।</string>
+    <string name="emergency_action_contacts">आपातकालीन संपर्क</string>
+</resources>

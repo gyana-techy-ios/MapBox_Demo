@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">ऑफ़लाइन नक्शे</string>
+    <string name="offline_empty_title">अभी कोई ऑफ़लाइन नक्शा नहीं</string>
+    <string name="offline_empty_body">बिना सिग्नल के नक्शे उपलब्ध रखने के लिए क्षेत्र डाउनलोड करें।</string>
+    <string name="offline_action_pick">क्षेत्र डाउनलोड करें</string>
+</resources>

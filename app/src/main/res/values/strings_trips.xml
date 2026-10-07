@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trips_title">Trips</string>
+    <string name="trips_empty_title">No trips yet</string>
+    <string name="trips_empty_body">Plan a multi-stop journey and it will show up here.</string>
+    <string name="trips_action_new">New trip</string>
+</resources>

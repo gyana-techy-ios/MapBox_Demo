@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="placedetail_title">Place details</string>
+    <string name="placedetail_empty_title">Place details are loading</string>
+    <string name="placedetail_empty_body">Details, directions and save options will appear here.</string>
+</resources>

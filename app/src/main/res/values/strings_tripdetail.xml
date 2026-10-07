@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tripdetail_title">Trip</string>
+    <string name="tripdetail_empty_title">Trip details are loading</string>
+    <string name="tripdetail_empty_body">Stops, distance and time for this trip will appear here.</string>
+    <string name="tripdetail_action_preview">Preview route</string>
+</resources>

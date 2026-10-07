@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offlineregionpicker_title">ଅଞ୍ଚଳ ବାଛନ୍ତୁ</string>
+    <string name="offlineregionpicker_empty_title">ଅଞ୍ଚଳ ଚୟନ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
+    <string name="offlineregionpicker_empty_body">ଡାଉନଲୋଡ୍ କରିବାକୁ ମାନଚିତ୍ରର ଅଞ୍ଚଳ ବାଛନ୍ତୁ।</string>
+</resources>

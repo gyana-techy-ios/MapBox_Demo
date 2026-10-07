@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emergencycontacts_title">आपातकालीन संपर्क</string>
+    <string name="emergencycontacts_empty_title">कोई आपातकालीन संपर्क नहीं</string>
+    <string name="emergencycontacts_empty_body">ज़रूरत पड़ने पर जल्दी संपर्क के लिए लोगों को जोड़ें।</string>
+</resources>

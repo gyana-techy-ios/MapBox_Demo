@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="routepreview_title">रूट पूर्वावलोकन</string>
+    <string name="routepreview_empty_title">रूट लोड हो रहे हैं</string>
+    <string name="routepreview_empty_body">शुरू करने से पहले रूट विकल्पों की तुलना करें।</string>
+    <string name="routepreview_action_start">मार्गदर्शन शुरू करें</string>
+</resources>

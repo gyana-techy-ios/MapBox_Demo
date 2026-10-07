@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tripdetail_title">यात्रा</string>
+    <string name="tripdetail_empty_title">यात्रा विवरण लोड हो रहा है</string>
+    <string name="tripdetail_empty_body">इस यात्रा के पड़ाव, दूरी और समय यहाँ दिखेंगे।</string>
+    <string name="tripdetail_action_preview">रूट देखें</string>
+</resources>
