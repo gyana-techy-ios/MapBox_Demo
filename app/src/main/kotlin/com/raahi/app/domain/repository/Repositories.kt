@@ -81,8 +81,8 @@ interface OfflineMapRepository {
     val regions: Flow<List<OfflineRegion>>
     suspend fun reconcile()
     fun estimate(bounds: GeoBounds, minZoom: Int, maxZoom: Int): OfflineEstimate
-    fun download(region: OfflineRegion): Flow<DownloadProgress>
-    fun resume(regionId: String): Flow<DownloadProgress>
+    fun download(region: OfflineRegion, allowMetered: Boolean = false): Flow<DownloadProgress>
+    fun resume(regionId: String, allowMetered: Boolean = false): Flow<DownloadProgress>
     suspend fun cancel(regionId: String)
     suspend fun delete(regionId: String): AppResult<Unit>
 }
@@ -100,4 +100,5 @@ interface PreferencesRepository {
 interface NearbyCacheRepository {
     suspend fun get(key: String): CachedPlaces?
     suspend fun put(key: String, places: List<Place>)
+    suspend fun clear()
 }

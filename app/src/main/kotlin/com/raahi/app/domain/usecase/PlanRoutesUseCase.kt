@@ -14,7 +14,7 @@ class PlanRoutesUseCase(
     private val directionsRepository: DirectionsRepository,
     private val validator: TripValidator,
 ) {
-    suspend operator fun invoke(trip: Trip, options: RouteOptions = RouteOptions()): AppResult<List<Route>> {
+    suspend operator fun invoke(trip: Trip, options: RouteOptions = trip.options): AppResult<List<Route>> {
         val validation = validator.validate(trip)
         if (!validation.isValid) return AppResult.Failure(AppError.Unknown("invalid trip: ${validation.issues}"))
 

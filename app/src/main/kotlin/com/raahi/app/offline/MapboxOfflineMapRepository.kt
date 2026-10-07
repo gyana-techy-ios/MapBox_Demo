@@ -60,6 +60,7 @@ class MapboxOfflineMapRepository(
     private val tileStore: TileStore by lazy { TileStore.create() }
     private val offlineManager: OfflineManager by lazy { OfflineManager() }
     private val activeLoads = ConcurrentHashMap<String, Cancelable>()
+    private val lastReportedPercent = ConcurrentHashMap<String, Int>()
 
     override val regions: Flow<List<OfflineRegion>> =
         regionDao.observeAll().map { list -> list.map { it.toDomain(clock.nowMillis()) } }
@@ -90,8 +91,8 @@ class MapboxOfflineMapRepository(
         }
     }
 
-    override fun download(region: OfflineRegion): Flow<DownloadProgress> = callbackFlow {
-        val failure = preflightError(region)
+    override fun download(region: OfflineRegion, allowMetered: Boolean): Flow<DownloadProgress> = callbackFlow {
+        val failure = preflightError(region, allowMetered)
         if (failure != null) {
             regionDao.upsert(region.copy(status = OfflineRegionStatus.Failed).toEntity())
             trySend(DownloadProgress(region.id, OfflineRegionStatus.Failed, 0f, 0L, failure))
@@ -107,7 +108,7 @@ class MapboxOfflineMapRepository(
         awaitClose { }
     }
 
-    override fun resume(regionId: String): Flow<DownloadProgress> = callbackFlow {
+    override fun resume(regionId: String, allowMetered: Boolean): Flow<DownloadProgress> = callbackFlow {
         val entity = regionDao.get(regionId)
         if (entity == null) {
             trySend(DownloadProgress(regionId, OfflineRegionStatus.Failed, 0f, 0L, AppError.NotFound))
@@ -115,7 +116,7 @@ class MapboxOfflineMapRepository(
             return@callbackFlow
         }
         val region = entity.toDomain(clock.nowMillis())
-        val failure = preflightError(region)
+        val failure = preflightError(region, allowMetered)
         if (failure != null) {
             trySend(DownloadProgress(regionId, OfflineRegionStatus.Failed, region.progress, region.sizeBytes, failure))
             close()
@@ -143,10 +144,10 @@ class MapboxOfflineMapRepository(
         return AppResult.Success(Unit)
     }
 
-    private suspend fun preflightError(region: OfflineRegion): AppError? {
+    private suspend fun preflightError(region: OfflineRegion, allowMetered: Boolean = false): AppError? {
         if (!config.isMapAvailable) return AppError.Configuration
         if (connectivity.state.value == ConnectivityState.Offline) return AppError.NoInternet
-        if (preferences.preferences.first().wifiOnlyDownloads && connectivity.isActiveNetworkMetered()) {
+        if (!allowMetered && preferences.preferences.first().wifiOnlyDownloads && connectivity.isActiveNetworkMetered()) {
             return AppError.WifiOnlyRestriction
         }
         val needed = estimate(region.bounds, region.minZoom, region.maxZoom).approximateBytes
@@ -162,7 +163,11 @@ class MapboxOfflineMapRepository(
                 .glyphsRasterizationMode(GlyphsRasterizationMode.IDEOGRAPHS_RASTERIZED_LOCALLY)
                 .acceptExpired(false)
                 .build(),
-            { },
+            { progress ->
+                val required = progress.requiredResourceCount.coerceAtLeast(1L)
+                val fraction = progress.completedResourceCount.toFloat() / required
+                report(region, STYLE_PACK_SHARE * fraction.coerceIn(0f, 1f), progress.completedResourceSize, emit)
+            },
         ) { result ->
             if (result.isError) {
                 finishFailed(region, AppError.Unknown(result.error?.message), emit)
@@ -190,27 +195,13 @@ class MapboxOfflineMapRepository(
             .networkRestriction(NetworkRestriction.NONE)
             .build()
 
-        var lastReportedPercent = -1
         val cancelable = tileStore.loadTileRegion(
             region.id,
             options,
             { progress ->
                 val required = progress.requiredResourceCount.coerceAtLeast(1L)
                 val fraction = (progress.completedResourceCount.toFloat() / required).coerceIn(0f, 1f)
-                val percent = (fraction * 100).toInt()
-                if (percent != lastReportedPercent) {
-                    lastReportedPercent = percent
-                    scope.launch {
-                        regionDao.updateProgress(
-                            region.id,
-                            OfflineRegionStatus.Downloading.name,
-                            fraction,
-                            progress.loadedResourceSize,
-                            null,
-                        )
-                    }
-                    emit(DownloadProgress(region.id, OfflineRegionStatus.Downloading, fraction, progress.loadedResourceSize))
-                }
+                report(region, STYLE_PACK_SHARE + (1f - STYLE_PACK_SHARE) * fraction, progress.loadedResourceSize, emit)
             },
         ) { result ->
             activeLoads.remove(region.id)
@@ -234,6 +225,15 @@ class MapboxOfflineMapRepository(
             }
         }
         activeLoads[region.id] = cancelable
+    }
+
+    private fun report(region: OfflineRegion, fraction: Float, bytes: Long, emit: (DownloadProgress) -> Unit) {
+        val percent = (fraction * PERCENT).toInt()
+        if (lastReportedPercent.put(region.id, percent) == percent) return
+        scope.launch {
+            regionDao.updateProgress(region.id, OfflineRegionStatus.Downloading.name, fraction, bytes, null)
+        }
+        emit(DownloadProgress(region.id, OfflineRegionStatus.Downloading, fraction, bytes))
     }
 
     private fun finishFailed(region: OfflineRegion, error: AppError, emit: (DownloadProgress) -> Unit) {
@@ -265,5 +265,7 @@ class MapboxOfflineMapRepository(
 
     private companion object {
         const val STORAGE_SAFETY_FACTOR = 1.25
+        const val STYLE_PACK_SHARE = 0.2f
+        const val PERCENT = 100
     }
 }

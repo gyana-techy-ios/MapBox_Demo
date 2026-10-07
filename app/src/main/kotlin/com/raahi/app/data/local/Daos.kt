@@ -120,4 +120,7 @@ interface NearbyCacheDao {
 
     @Upsert
     suspend fun upsert(entity: NearbyCacheEntity)
+
+    @Query("DELETE FROM nearby_cache")
+    suspend fun clear()
 }

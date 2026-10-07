@@ -11,6 +11,7 @@ import com.raahi.app.domain.model.Place
 import com.raahi.app.domain.model.PlaceCategory
 import com.raahi.app.domain.model.PlaceSource
 import com.raahi.app.domain.model.RecentSearch
+import com.raahi.app.domain.model.RouteOptions
 import com.raahi.app.domain.model.RouteProfile
 import com.raahi.app.domain.model.SavedPlace
 import com.raahi.app.domain.model.SavedPlaceType
@@ -29,6 +30,7 @@ fun TripWithStops.toDomain(): Trip = Trip(
     createdAt = trip.createdAt,
     updatedAt = trip.updatedAt,
     isQuick = trip.isQuick,
+    options = RouteOptions(trip.avoidTolls, trip.avoidMotorways, trip.avoidFerries),
 )
 
 fun TripStopEntity.toDomain(): TripStop {
@@ -55,6 +57,9 @@ fun Trip.toEntity(): TripEntity = TripEntity(
     createdAt = createdAt,
     updatedAt = updatedAt,
     isQuick = isQuick,
+    avoidTolls = options.avoidTolls,
+    avoidMotorways = options.avoidMotorways,
+    avoidFerries = options.avoidFerries,
 )
 
 fun Trip.toStopEntities(): List<TripStopEntity> = stops.sortedBy { it.order }.mapIndexed { index, stop ->

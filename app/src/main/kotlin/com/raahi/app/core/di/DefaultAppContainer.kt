@@ -33,11 +33,17 @@ import com.raahi.app.domain.repository.PreferencesRepository
 import com.raahi.app.domain.repository.RecentSearchRepository
 import com.raahi.app.domain.repository.SavedPlaceRepository
 import com.raahi.app.domain.repository.TripRepository
+import com.raahi.app.domain.usecase.ActiveRouteStore
 import com.raahi.app.domain.usecase.FindNearestEmergencyUseCase
 import com.raahi.app.domain.usecase.PlanRoutesUseCase
 import com.raahi.app.domain.usecase.TripValidator
 import com.raahi.app.location.FusedLocationRepository
+import com.raahi.app.domain.voice.VoiceGuide
+import com.raahi.app.offline.DeviceStorageProbe
+import com.raahi.app.offline.DownloadCoordinator
 import com.raahi.app.offline.MapboxOfflineMapRepository
+import com.raahi.app.offline.StorageProbe
+import com.raahi.app.voice.TextToSpeechVoiceGuide
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
@@ -101,4 +107,10 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val findNearestEmergencyUseCase: FindNearestEmergencyUseCase by lazy {
         FindNearestEmergencyUseCase(placeSearchRepository, nearbyCacheRepository)
     }
+    override val activeRouteStore: ActiveRouteStore = ActiveRouteStore()
+    override val voiceGuide: VoiceGuide by lazy { TextToSpeechVoiceGuide(appContext) }
+    override val downloadCoordinator: DownloadCoordinator by lazy {
+        DownloadCoordinator(offlineMapRepository, CoroutineScope(SupervisorJob() + DefaultDispatcherProvider.default))
+    }
+    override val storageProbe: StorageProbe by lazy { DeviceStorageProbe(appContext) }
 }

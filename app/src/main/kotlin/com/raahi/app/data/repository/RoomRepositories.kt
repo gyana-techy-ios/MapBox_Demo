@@ -87,4 +87,6 @@ class RoomNearbyCacheRepository(
     override suspend fun put(key: String, places: List<Place>) {
         dao.upsert(NearbyCacheEntity(key = key, payloadJson = places.toJson(), cachedAt = clock.nowMillis()))
     }
+
+    override suspend fun clear() = dao.clear()
 }

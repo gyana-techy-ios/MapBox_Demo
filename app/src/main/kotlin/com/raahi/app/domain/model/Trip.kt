@@ -8,6 +8,7 @@ data class Trip(
     val createdAt: Long,
     val updatedAt: Long,
     val isQuick: Boolean,
+    val options: RouteOptions = RouteOptions(),
 ) {
     companion object {
         const val NEW_ID = 0L

@@ -102,12 +102,18 @@ fun RaahiNavHost(
             )
         }
         composable<TripEditor> { entry ->
+            val editorTripId = entry.toRoute<TripEditor>().tripId
+            val isNewTrip = editorTripId == TripEditor.NEW_TRIP_ID
             TripEditorRoute(
-                tripId = entry.toRoute<TripEditor>().tripId,
+                tripId = editorTripId,
                 onBack = back,
                 onSaved = { id ->
-                    navController.navigate(TripDetail(id)) {
-                        popUpTo<TripEditor> { inclusive = true }
+                    if (isNewTrip) {
+                        navController.navigate(TripDetail(id)) {
+                            popUpTo<TripEditor> { inclusive = true }
+                        }
+                    } else {
+                        navController.popBackStack()
                     }
                 },
             )
@@ -120,6 +126,7 @@ fun RaahiNavHost(
                 onBack = back,
                 onEdit = { navController.navigate(TripEditor(it)) },
                 onPreviewRoute = { navController.navigate(RoutePreview(it)) },
+                onBackToTrips = { navController.navigateToTab(TopLevelTab.TRIPS) },
             )
         }
         composable<RoutePreview> { entry ->
@@ -127,6 +134,7 @@ fun RaahiNavHost(
                 tripId = entry.toRoute<RoutePreview>().tripId,
                 onBack = back,
                 onStartGuidance = { tripId, routeIndex -> navController.navigate(Guidance(tripId, routeIndex)) },
+                onEditTrip = { navController.navigate(TripEditor(it)) },
             )
         }
         composable<Guidance> { entry ->
@@ -155,6 +163,7 @@ fun RaahiNavHost(
                 onOpenLanguage = { navController.navigate(Language) },
                 onOpenContacts = { navController.navigate(EmergencyContacts) },
                 onOpenAbout = { navController.navigate(About) },
+                onOpenOffline = { navController.navigateToTab(TopLevelTab.OFFLINE) },
             )
         }
         composable<Settings> { SettingsRoute(onBack = back) }

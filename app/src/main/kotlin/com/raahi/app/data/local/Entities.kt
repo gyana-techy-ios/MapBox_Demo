@@ -1,5 +1,6 @@
 package com.raahi.app.data.local
 
+import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -15,6 +16,9 @@ data class TripEntity(
     val createdAt: Long,
     val updatedAt: Long,
     val isQuick: Boolean,
+    @ColumnInfo(defaultValue = "0") val avoidTolls: Boolean = false,
+    @ColumnInfo(defaultValue = "0") val avoidMotorways: Boolean = false,
+    @ColumnInfo(defaultValue = "0") val avoidFerries: Boolean = false,
 )
 
 @Entity(
