@@ -1,0 +1,19 @@
+# Local secrets — never commit
+local.properties
+*.keystore
+*.jks
+.env
+
+# Build
+.gradle/
+build/
+**/build/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
