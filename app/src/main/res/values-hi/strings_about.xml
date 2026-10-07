@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about_title">परिचय</string>
-    <string name="about_empty_title">राही</string>
-    <string name="about_empty_body">आपकी यात्रा, सिग्नल न हो तब भी।</string>
+    <string name="about_version">वर्ज़न %1$s</string>
+    <string name="about_description">Raahi भारत के लिए ऑफ़लाइन-फ़र्स्ट रोड-ट्रिप और सफ़र का साथी है।</string>
+    <string name="about_section_data">नक्शे का डेटा</string>
+    <string name="about_link_mapbox">Mapbox नक्शे</string>
+    <string name="about_link_osm">OpenStreetMap कॉपीराइट</string>
+    <string name="about_link_description">%1$s आपके ब्राउज़र में खुलेगा</string>
+    <string name="about_no_browser">इस लिंक को खोलने के लिए कोई ब्राउज़र उपलब्ध नहीं है।</string>
+    <string name="about_section_privacy">गोपनीयता</string>
+    <string name="about_privacy_body">आपकी लोकेशन आपके डिवाइस पर ही रहती है। कोई खाता या साइन-इन नहीं है। Raahi नक्शे दिखाने और रास्ते बनाने के लिए Mapbox का इस्तेमाल करता है, और Mapbox अपनी गोपनीयता नीति के अनुसार गुमनाम उपयोग टेलीमेट्री इकट्ठा कर सकता है।</string>
+    <string name="about_section_licenses">ओपन सोर्स</string>
+    <string name="about_licenses_body">Raahi ओपन-सोर्स सॉफ़्टवेयर से बना है, जिनमें AndroidX, Jetpack Compose, Kotlin, Retrofit, OkHttp और Mapbox Maps SDK शामिल हैं। इनके लाइसेंस इनके अपने कोड पर लागू होते हैं।</string>
+    <string name="about_section_limits">जानने लायक बातें</string>
+    <string name="about_limits_body">खोज और रास्ते के लिए इंटरनेट चाहिए, और नेविगेशन सिर्फ़ ऐप खुला होने पर चलता है। ऑफ़लाइन मोड में डाउनलोड किए गए क्षेत्रों में नक्शा देखना, सहेजी गई जगहें, यात्राएँ और आपातकालीन जानकारी शामिल हैं।</string>
 </resources>

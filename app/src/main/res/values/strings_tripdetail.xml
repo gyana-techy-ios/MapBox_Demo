@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tripdetail_title">Trip</string>
-    <string name="tripdetail_empty_title">Trip details are loading</string>
-    <string name="tripdetail_empty_body">Stops, distance and time for this trip will appear here.</string>
     <string name="tripdetail_action_preview">Preview route</string>
+    <string name="tripdetail_map_description">Map showing the %1$d stops of this trip</string>
+    <string name="tripdetail_timeline_title">Itinerary</string>
+    <string name="tripdetail_stop_description">Stop %1$d of %2$d: %3$s</string>
+    <string name="tripdetail_stop_start">Start</string>
+    <string name="tripdetail_stop_destination">Destination</string>
+    <string name="tripdetail_start_my_location_hint">Uses your location when you start</string>
+    <string name="tripdetail_distance_hint">About %1$s in a straight line. Preview the route for the real distance.</string>
+    <string name="tripdetail_missing_title">Trip not found</string>
+    <string name="tripdetail_missing_body">This trip was deleted, or the link is not valid.</string>
+    <string name="tripdetail_back_to_trips">Back to trips</string>
+    <string name="tripdetail_delete_title">Delete this trip?</string>
+    <string name="tripdetail_delete_message">“%1$s” will be removed from this phone.</string>
+    <string name="tripdetail_share_chooser">Share trip</string>
+    <string name="tripdetail_share_header">Trip: %1$s</string>
+    <string name="tripdetail_share_stop">%1$d. %2$s</string>
+    <string name="tripdetail_share_open">Open in Raahi: %1$s</string>
 </resources>

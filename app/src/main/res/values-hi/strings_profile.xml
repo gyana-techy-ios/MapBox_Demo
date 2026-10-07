@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="profile_title">प्रोफ़ाइल</string>
-    <string name="profile_empty_title">आपकी प्रोफ़ाइल</string>
-    <string name="profile_empty_body">सेटिंग, भाषा और ऐप की जानकारी यहाँ मिलेगी।</string>
+    <string name="profile_privacy_note">खाते की ज़रूरत नहीं। आपकी जगहें, यात्राएँ और सेटिंग इसी फ़ोन में रहती हैं।</string>
+    <string name="profile_stats_title">आपकी यात्राएँ</string>
+    <string name="profile_stat_places">सहेजी गई जगहें</string>
+    <string name="profile_stat_trips">यात्राएँ</string>
+    <string name="profile_stat_regions">ऑफ़लाइन क्षेत्र</string>
+    <plurals name="profile_stat_places_description">
+        <item quantity="one">%d सहेजी गई जगह</item>
+        <item quantity="other">%d सहेजी गई जगहें</item>
+    </plurals>
+    <plurals name="profile_stat_trips_description">
+        <item quantity="one">%d यात्रा</item>
+        <item quantity="other">%d यात्राएँ</item>
+    </plurals>
+    <plurals name="profile_stat_regions_description">
+        <item quantity="one">%d ऑफ़लाइन क्षेत्र</item>
+        <item quantity="other">%d ऑफ़लाइन क्षेत्र</item>
+    </plurals>
     <string name="profile_action_settings">सेटिंग</string>
+    <string name="profile_settings_subtitle">थीम, नक्शा, रास्ते और डाउनलोड</string>
     <string name="profile_action_language">भाषा</string>
     <string name="profile_action_contacts">आपातकालीन संपर्क</string>
-    <string name="profile_action_about">राही के बारे में</string>
+    <string name="profile_contacts_subtitle">आपातकाल में संपर्क करने के लिए लोग</string>
+    <string name="profile_action_offline">ऑफ़लाइन नक्शे</string>
+    <string name="profile_offline_subtitle">डाउनलोड किए गए क्षेत्र संभालें</string>
+    <string name="profile_action_about">Raahi के बारे में</string>
+    <string name="profile_about_subtitle">वर्ज़न, डेटा स्रोत और गोपनीयता</string>
 </resources>

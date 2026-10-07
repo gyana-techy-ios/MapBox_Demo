@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="offline_title">Offline maps</string>
-    <string name="offline_empty_title">No offline maps yet</string>
-    <string name="offline_empty_body">Download regions to keep your maps available without signal.</string>
-    <string name="offline_action_pick">Download a region</string>
+    <string name="offline_intro_title">What works without signal</string>
+    <string name="offline_matrix_map">Map viewing in downloaded areas</string>
+    <string name="offline_matrix_search">Search and routing need internet</string>
+    <string name="offline_matrix_saved">Saved places, trips and emergency info</string>
+    <string name="offline_works">Works offline</string>
+    <string name="offline_needs_internet">Needs internet</string>
+    <string name="offline_regions_title">Downloaded areas</string>
+    <string name="offline_empty_title">No offline areas yet</string>
+    <string name="offline_empty_body">Download an area to keep its map available without signal.</string>
+    <string name="offline_empty_cta">Download an area</string>
+    <string name="offline_action_pick">Download area</string>
+    <plurals name="offline_storage_summary">
+        <item quantity="one">%1$s used by %2$d area</item>
+        <item quantity="other">%1$s used by %2$d areas</item>
+    </plurals>
+    <string name="offline_status_downloading">Downloading</string>
+    <string name="offline_status_ready">Ready</string>
+    <string name="offline_status_failed">Failed</string>
+    <string name="offline_status_cancelled">Cancelled</string>
+    <string name="offline_status_partial">Incomplete</string>
+    <string name="offline_outdated">Outdated</string>
+    <string name="offline_downloaded_on">Downloaded %1$s</string>
+    <string name="offline_not_downloaded">Not downloaded yet</string>
+    <string name="offline_progress_description">%1$s, %2$d percent downloaded</string>
+    <string name="offline_region_description">%1$s. %2$s. %3$s.</string>
+    <string name="offline_action_resume">Resume</string>
+    <string name="offline_action_update">Update</string>
+    <string name="offline_action_delete">Delete</string>
+    <string name="offline_action_cancel">Cancel</string>
+    <string name="offline_delete_title">Delete this area?</string>
+    <string name="offline_delete_message">“%1$s” will be removed and its map will no longer work offline.</string>
+    <string name="offline_deleted">Area deleted</string>
+    <string name="offline_config_title">Offline downloads unavailable</string>
+    <string name="offline_metered_title">Download anyway?</string>
+    <string name="offline_metered_message">You are on mobile data and downloads are set to Wi-Fi only. This download can use a lot of data.</string>
+    <string name="offline_metered_confirm">Download anyway</string>
 </resources>

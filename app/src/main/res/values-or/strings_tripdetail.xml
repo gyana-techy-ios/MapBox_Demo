@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tripdetail_title">ଯାତ୍ରା</string>
-    <string name="tripdetail_empty_title">ଯାତ୍ରା ବିବରଣୀ ଲୋଡ୍ ହେଉଛି</string>
-    <string name="tripdetail_empty_body">ଏହି ଯାତ୍ରାର ସ୍ଟପ୍, ଦୂରତା ଓ ସମୟ ଏଠାରେ ଦେଖାଯିବ।</string>
-    <string name="tripdetail_action_preview">ରୁଟ୍ ଦେଖନ୍ତୁ</string>
+    <string name="tripdetail_action_preview">ମାର୍ଗ ପ୍ରିଭ୍ୟୁ</string>
+    <string name="tripdetail_map_description">ଏହି ଯାତ୍ରାର %1$d ସ୍ଟପ୍ ଦେଖାଉଥିବା ମାନଚିତ୍ର</string>
+    <string name="tripdetail_timeline_title">ଯାତ୍ରା କ୍ରମ</string>
+    <string name="tripdetail_stop_description">ସ୍ଟପ୍ %1$d / %2$d: %3$s</string>
+    <string name="tripdetail_stop_start">ଆରମ୍ଭ</string>
+    <string name="tripdetail_stop_destination">ଗନ୍ତବ୍ୟସ୍ଥଳ</string>
+    <string name="tripdetail_start_my_location_hint">ଆରମ୍ଭ କଲେ ଆପଣଙ୍କ ଲୋକେସନ୍ ବ୍ୟବହାର ହେବ</string>
+    <string name="tripdetail_distance_hint">ସିଧା ରେଖାରେ ପ୍ରାୟ %1$s। ପ୍ରକୃତ ଦୂରତା ପାଇଁ ମାର୍ଗ ପ୍ରିଭ୍ୟୁ ଦେଖନ୍ତୁ।</string>
+    <string name="tripdetail_missing_title">ଯାତ୍ରା ମିଳିଲା ନାହିଁ</string>
+    <string name="tripdetail_missing_body">ଏହି ଯାତ୍ରା ହଟାଯାଇଛି, କିମ୍ବା ଲିଙ୍କ୍ ବୈଧ ନୁହେଁ।</string>
+    <string name="tripdetail_back_to_trips">ଯାତ୍ରାକୁ ଫେରନ୍ତୁ</string>
+    <string name="tripdetail_delete_title">ଏହି ଯାତ୍ରା ହଟାଇବେ?</string>
+    <string name="tripdetail_delete_message">“%1$s” ଏହି ଫୋନ୍‌ରୁ ହଟାଯିବ।</string>
+    <string name="tripdetail_share_chooser">ଯାତ୍ରା ସେୟାର୍ କରନ୍ତୁ</string>
+    <string name="tripdetail_share_header">ଯାତ୍ରା: %1$s</string>
+    <string name="tripdetail_share_stop">%1$d. %2$s</string>
+    <string name="tripdetail_share_open">Raahi ରେ ଖୋଲନ୍ତୁ: %1$s</string>
 </resources>

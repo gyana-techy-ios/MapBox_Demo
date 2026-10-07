@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tripeditor_title">Plan trip</string>
-    <string name="tripeditor_empty_title">Trip editor is getting ready</string>
-    <string name="tripeditor_empty_body">Add stops, reorder them and choose how you travel.</string>
+    <string name="tripeditor_title_edit">Edit trip</string>
+    <string name="tripeditor_name_label">Trip name</string>
+    <string name="tripeditor_default_name">Trip on %1$s</string>
+    <string name="tripeditor_start_title">Start</string>
+    <string name="tripeditor_start_my_location">Start from my location</string>
+    <string name="tripeditor_start_choose">Choose starting point</string>
+    <string name="tripeditor_start_change">Change starting point</string>
+    <string name="tripeditor_stops_title">Stops</string>
+    <string name="tripeditor_stops_hint">Press and hold the handle, then drag to reorder. You can also use the arrows.</string>
+    <string name="tripeditor_stops_empty">No stops yet.</string>
+    <string name="tripeditor_stop_item_description">Stop %1$d: %2$s</string>
+    <string name="tripeditor_drag_handle">Reorder %1$s. Press and hold, then drag.</string>
+    <string name="tripeditor_move_up">Move up</string>
+    <string name="tripeditor_move_down">Move down</string>
+    <string name="tripeditor_move_up_description">Move %1$s up</string>
+    <string name="tripeditor_move_down_description">Move %1$s down</string>
+    <string name="tripeditor_remove_description">Remove %1$s</string>
+    <string name="tripeditor_add_stop">Add stop</string>
+    <string name="tripeditor_travel_title">Travel mode</string>
+    <string name="tripeditor_avoid_title">Avoid</string>
+    <string name="tripeditor_issue_few">Add at least one destination.</string>
+    <string name="tripeditor_issue_many">A trip can have at most %1$d stops.</string>
+    <string name="tripeditor_issue_empty">Choose a starting point.</string>
+    <string name="tripeditor_issue_multi">Only one stop can use your location.</string>
+    <string name="tripeditor_issue_duplicate">Two stops in a row are the same place.</string>
+    <string name="tripeditor_save">Save trip</string>
+    <string name="tripeditor_discard_title">Discard changes?</string>
+    <string name="tripeditor_discard_message">Your changes to this trip have not been saved.</string>
+    <string name="tripeditor_discard_confirm">Discard</string>
+    <string name="tripeditor_keep_editing">Keep editing</string>
+    <string name="tripeditor_not_found_title">Trip not found</string>
+    <string name="tripeditor_not_found_body">This trip may have been deleted.</string>
+    <string name="tripeditor_back_to_trips">Back to trips</string>
+    <string name="tripeditor_moved">%1$s moved to position %2$d</string>
+    <string name="tripeditor_save_failed">Could not save the trip. Please try again.</string>
+
+    <string name="stoppicker_title_stop">Add a stop</string>
+    <string name="stoppicker_title_start">Choose starting point</string>
+    <string name="stoppicker_search_label">Search for a place</string>
+    <string name="stoppicker_saved_title">Saved places</string>
+    <string name="stoppicker_saved_empty">Places you save will show up here for quick picks.</string>
+    <string name="stoppicker_results_title">Results</string>
+    <string name="stoppicker_no_results">No places found. Check the spelling or try a nearby landmark.</string>
+    <string name="stoppicker_offline">Search needs an internet connection. You can still pick from your saved places.</string>
+    <string name="stoppicker_pick_description">Add %1$s</string>
+    <string name="stoppicker_close">Close</string>
 </resources>

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="guidance_title">ମାର୍ଗଦର୍ଶନ</string>
-    <string name="guidance_empty_title">ମାର୍ଗଦର୍ଶନ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
-    <string name="guidance_empty_body">ମୋଡ଼-ମୋଡ଼ ଦିଗନିର୍ଦ୍ଦେଶ ଏଠାରେ ଦେଖାଯିବ।</string>
+    <string name="guidance_title">ନେଭିଗେସନ୍</string>
+    <string name="guidance_loading">ନେଭିଗେସନ୍ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
+    <string name="guidance_exit">ବାହାରନ୍ତୁ</string>
+    <string name="guidance_exit_title">ନେଭିଗେସନ୍ ବନ୍ଦ କରିବେ?</string>
+    <string name="guidance_exit_message">ଆପଣ ମାର୍ଗ ପ୍ରିଭ୍ୟୁକୁ ଫେରିଯିବେ।</string>
+    <string name="guidance_exit_keep">ନେଭିଗେସନ୍ ଜାରି ରଖନ୍ତୁ</string>
+    <string name="guidance_label_distance">ଦୂରତା</string>
+    <string name="guidance_label_arrival">ପହଞ୍ଚିବା ସମୟ</string>
+    <string name="guidance_label_time">ବାକି ସମୟ</string>
+    <string name="guidance_in_distance">%1$s ପରେ</string>
+    <string name="guidance_follow_route">ମାର୍ଗ ଅନୁସରଣ କରନ୍ତୁ</string>
+    <string name="guidance_banner_description">%1$s, %2$s</string>
+    <string name="guidance_rerouting">ନୂଆ ମାର୍ଗ ଖୋଜାଯାଉଛି…</string>
+    <string name="guidance_off_route_offline">ମାର୍ଗରୁ ହଟିଗଲେ — ନୂଆ ମାର୍ଗ ପାଇଁ ପୁଣି ସଂଯୋଗ କରନ୍ତୁ</string>
+    <string name="guidance_waiting_gps">GPS ପାଇଁ ଅପେକ୍ଷା</string>
+    <string name="guidance_arrived_title">ଆପଣ ପହଞ୍ଚିଗଲେ</string>
+    <string name="guidance_reached_stop">ଆପଣ %1$s ରେ ପହଞ୍ଚିଲେ</string>
+    <string name="guidance_next_stop">ପରବର୍ତ୍ତୀ ସ୍ଟପ୍</string>
+    <string name="guidance_permission_title">ନେଭିଗେସନ୍ ପାଇଁ ଲୋକେସନ୍ ଆବଶ୍ୟକ</string>
+    <string name="guidance_permission_body">ମୋଡ଼ ମୋଡ଼ରେ ଦିଗ ଦେଖାଇବା ପାଇଁ Raahi କୁ ଆପଣଙ୍କ ଲୋକେସନ୍ ଦରକାର। ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ, କିମ୍ବା ବାହାରନ୍ତୁ।</string>
+    <string name="guidance_foreground_note">Raahi ସ୍କ୍ରିନ୍‌ରେ ଖୋଲା ଥିବା ବେଳେ ହିଁ ମାର୍ଗଦର୍ଶନ କାମ କରେ।</string>
+    <string name="guidance_mute">ଭଏସ୍ ମାର୍ଗଦର୍ଶନ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="guidance_unmute">ଭଏସ୍ ମାର୍ଗଦର୍ଶନ ଚାଲୁ କରନ୍ତୁ</string>
+    <string name="guidance_voice_unavailable">ଏହି ଭାଷାରେ ଭଏସ୍ ମାର୍ଗଦର୍ଶନ ଉପଲବ୍ଧ ନାହିଁ। କେବଳ ଦୃଶ୍ୟ ନିର୍ଦ୍ଦେଶ ଦେଖାଯାଉଛି।</string>
+    <string name="guidance_recenter">ମାନଚିତ୍ରକୁ କେନ୍ଦ୍ରକୁ ଆଣନ୍ତୁ</string>
+    <string name="guidance_map_description">ଆପଣଙ୍କ ସ୍ଥିତି ଅନୁସରଣ କରୁଥିବା ନେଭିଗେସନ୍ ମାନଚିତ୍ର</string>
+    <string name="guidance_voice_in_distance">%1$s ପରେ, %2$s</string>
+    <string name="guidance_voice_arrived">ଆପଣ ପହଞ୍ଚିଗଲେ</string>
+    <string name="guidance_voice_reached_stop">ଆପଣ %1$s ରେ ପହଞ୍ଚିଲେ</string>
+    <string name="guidance_voice_rerouting">ନୂଆ ମାର୍ଗ ଖୋଜାଯାଉଛି</string>
+    <string name="guidance_missing_trip">ଏହି ଯାତ୍ରା ମିଳିପାରିଲା ନାହିଁ।</string>
 </resources>

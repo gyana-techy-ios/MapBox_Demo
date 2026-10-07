@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tripeditor_title">यात्रा बनाएँ</string>
-    <string name="tripeditor_empty_title">यात्रा संपादक तैयार हो रहा है</string>
-    <string name="tripeditor_empty_body">पड़ाव जोड़ें, क्रम बदलें और यात्रा का तरीका चुनें।</string>
+    <string name="tripeditor_title_edit">यात्रा बदलें</string>
+    <string name="tripeditor_name_label">यात्रा का नाम</string>
+    <string name="tripeditor_default_name">%1$s की यात्रा</string>
+    <string name="tripeditor_start_title">शुरुआत</string>
+    <string name="tripeditor_start_my_location">मेरी लोकेशन से शुरू करें</string>
+    <string name="tripeditor_start_choose">शुरुआती जगह चुनें</string>
+    <string name="tripeditor_start_change">शुरुआती जगह बदलें</string>
+    <string name="tripeditor_stops_title">पड़ाव</string>
+    <string name="tripeditor_stops_hint">हैंडल को दबाए रखें, फिर खींचकर क्रम बदलें। आप तीर वाले बटन भी इस्तेमाल कर सकते हैं।</string>
+    <string name="tripeditor_stops_empty">अभी कोई पड़ाव नहीं है।</string>
+    <string name="tripeditor_stop_item_description">पड़ाव %1$d: %2$s</string>
+    <string name="tripeditor_drag_handle">%1$s का क्रम बदलें। दबाए रखें, फिर खींचें।</string>
+    <string name="tripeditor_move_up">ऊपर ले जाएँ</string>
+    <string name="tripeditor_move_down">नीचे ले जाएँ</string>
+    <string name="tripeditor_move_up_description">%1$s को ऊपर ले जाएँ</string>
+    <string name="tripeditor_move_down_description">%1$s को नीचे ले जाएँ</string>
+    <string name="tripeditor_remove_description">%1$s हटाएँ</string>
+    <string name="tripeditor_add_stop">पड़ाव जोड़ें</string>
+    <string name="tripeditor_travel_title">यात्रा का तरीका</string>
+    <string name="tripeditor_avoid_title">बचें</string>
+    <string name="tripeditor_issue_few">कम से कम एक गंतव्य जोड़ें।</string>
+    <string name="tripeditor_issue_many">एक यात्रा में अधिकतम %1$d पड़ाव हो सकते हैं।</string>
+    <string name="tripeditor_issue_empty">शुरुआती जगह चुनें।</string>
+    <string name="tripeditor_issue_multi">सिर्फ़ एक पड़ाव आपकी लोकेशन इस्तेमाल कर सकता है।</string>
+    <string name="tripeditor_issue_duplicate">लगातार दो पड़ाव एक ही जगह हैं।</string>
+    <string name="tripeditor_save">यात्रा सहेजें</string>
+    <string name="tripeditor_discard_title">बदलाव छोड़ें?</string>
+    <string name="tripeditor_discard_message">इस यात्रा में किए गए बदलाव सहेजे नहीं गए हैं।</string>
+    <string name="tripeditor_discard_confirm">छोड़ें</string>
+    <string name="tripeditor_keep_editing">बदलते रहें</string>
+    <string name="tripeditor_not_found_title">यात्रा नहीं मिली</string>
+    <string name="tripeditor_not_found_body">हो सकता है यह यात्रा हटा दी गई हो।</string>
+    <string name="tripeditor_back_to_trips">यात्राओं पर वापस जाएँ</string>
+    <string name="tripeditor_moved">%1$s को स्थान %2$d पर ले जाया गया</string>
+    <string name="tripeditor_save_failed">यात्रा सहेजी नहीं जा सकी। कृपया फिर कोशिश करें।</string>
+
+    <string name="stoppicker_title_stop">पड़ाव जोड़ें</string>
+    <string name="stoppicker_title_start">शुरुआती जगह चुनें</string>
+    <string name="stoppicker_search_label">जगह खोजें</string>
+    <string name="stoppicker_saved_title">सहेजी गई जगहें</string>
+    <string name="stoppicker_saved_empty">आपकी सहेजी हुई जगहें जल्दी चुनने के लिए यहाँ दिखेंगी।</string>
+    <string name="stoppicker_results_title">परिणाम</string>
+    <string name="stoppicker_no_results">कोई जगह नहीं मिली। वर्तनी जाँचें या पास का कोई स्थान आज़माएँ।</string>
+    <string name="stoppicker_offline">खोज के लिए इंटरनेट चाहिए। आप अपनी सहेजी हुई जगहों में से अब भी चुन सकते हैं।</string>
+    <string name="stoppicker_pick_description">%1$s जोड़ें</string>
+    <string name="stoppicker_close">बंद करें</string>
 </resources>

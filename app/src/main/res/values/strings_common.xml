@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_share">Share</string>
+    <string name="action_done">Done</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_allow_location">Allow location</string>
+
+    <string name="route_profile_driving_traffic">Car with traffic</string>
+    <string name="route_profile_driving">Car</string>
+    <string name="route_profile_walking">Walk</string>
+    <string name="route_profile_cycling">Bike</string>
+    <string name="route_profile_short_driving_traffic">Traffic</string>
+    <string name="route_profile_short_driving">Car</string>
+    <string name="route_profile_short_walking">Walk</string>
+    <string name="route_profile_short_cycling">Bike</string>
+
+    <string name="route_option_avoid_tolls">Avoid tolls</string>
+    <string name="route_option_avoid_motorways">Avoid motorways</string>
+    <string name="route_option_avoid_ferries">Avoid ferries</string>
+
+    <string name="trip_stop_my_location">My location</string>
+    <string name="trip_stop_unnamed">Unnamed place</string>
+    <plurals name="trip_stop_count">
+        <item quantity="one">%d stop</item>
+        <item quantity="other">%d stops</item>
+    </plurals>
+    <string name="trip_first_to_last" translatable="false">%1$s → %2$s</string>
+    <string name="stats_separator" translatable="false">%1$s · %2$s</string>
+</resources>

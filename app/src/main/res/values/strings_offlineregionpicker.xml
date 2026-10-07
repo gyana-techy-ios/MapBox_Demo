@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="offlineregionpicker_title">Choose area</string>
-    <string name="offlineregionpicker_empty_title">Area picker is getting ready</string>
-    <string name="offlineregionpicker_empty_body">Pick the area of the map you want to download.</string>
+    <string name="offlineregionpicker_title">Download area</string>
+    <string name="offlineregionpicker_map_description">Map. Move and zoom so the frame covers the area to download.</string>
+    <string name="offlineregionpicker_frame_description">Area that will be downloaded</string>
+    <string name="offlineregionpicker_hint">Move and zoom the map so the frame covers the area you need.</string>
+    <string name="offlineregionpicker_name_label">Area name</string>
+    <string name="offlineregionpicker_default_name">Area %1$d</string>
+    <string name="offlineregionpicker_preset_roads">Roads &amp; places (zoom 10–14)</string>
+    <string name="offlineregionpicker_preset_street">Street detail (zoom 10–16)</string>
+    <string name="offlineregionpicker_detail_title">Detail</string>
+    <plurals name="offlineregionpicker_estimate">
+        <item quantity="one">About %1$d tile · %2$s</item>
+        <item quantity="other">About %1$d tiles · %2$s</item>
+    </plurals>
+    <string name="offlineregionpicker_too_large">Zoom in to choose a smaller area</string>
+    <string name="offlineregionpicker_storage_low">Not enough free storage for this area. Choose a smaller area or free up space.</string>
+    <string name="offlineregionpicker_offline">You are offline. Downloads need an internet connection.</string>
+    <string name="offlineregionpicker_action_download">Download</string>
 </resources>

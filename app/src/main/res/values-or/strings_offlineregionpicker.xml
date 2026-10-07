@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="offlineregionpicker_title">ଅଞ୍ଚଳ ବାଛନ୍ତୁ</string>
-    <string name="offlineregionpicker_empty_title">ଅଞ୍ଚଳ ଚୟନ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
-    <string name="offlineregionpicker_empty_body">ଡାଉନଲୋଡ୍ କରିବାକୁ ମାନଚିତ୍ରର ଅଞ୍ଚଳ ବାଛନ୍ତୁ।</string>
+    <string name="offlineregionpicker_title">ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</string>
+    <string name="offlineregionpicker_map_description">ମାନଚିତ୍ର। ଫ୍ରେମ୍ ଡାଉନଲୋଡ୍ ହେବାକୁ ଥିବା ଅଞ୍ଚଳକୁ ଘେରିବା ପାଇଁ ମାନଚିତ୍ର ଘୁଞ୍ଚାନ୍ତୁ ଓ ଜୁମ୍ କରନ୍ତୁ।</string>
+    <string name="offlineregionpicker_frame_description">ଯେଉଁ ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ ହେବ</string>
+    <string name="offlineregionpicker_hint">ଫ୍ରେମ୍ ଆପଣଙ୍କ ଆବଶ୍ୟକ ଅଞ୍ଚଳକୁ ଘେରିବା ପାଇଁ ମାନଚିତ୍ର ଘୁଞ୍ଚାନ୍ତୁ ଓ ଜୁମ୍ କରନ୍ତୁ।</string>
+    <string name="offlineregionpicker_name_label">ଅଞ୍ଚଳର ନାମ</string>
+    <string name="offlineregionpicker_default_name">ଅଞ୍ଚଳ %1$d</string>
+    <string name="offlineregionpicker_preset_roads">ରାସ୍ତା ଓ ସ୍ଥାନ (ଜୁମ୍ 10–14)</string>
+    <string name="offlineregionpicker_preset_street">ଗଳିର ବିବରଣୀ (ଜୁମ୍ 10–16)</string>
+    <string name="offlineregionpicker_detail_title">ବିବରଣୀ</string>
+    <plurals name="offlineregionpicker_estimate">
+        <item quantity="one">ପ୍ରାୟ %1$d ଟାଇଲ୍ · %2$s</item>
+        <item quantity="other">ପ୍ରାୟ %1$d ଟାଇଲ୍ · %2$s</item>
+    </plurals>
+    <string name="offlineregionpicker_too_large">ଛୋଟ ଅଞ୍ଚଳ ବାଛିବା ପାଇଁ ଜୁମ୍ ଇନ୍ କରନ୍ତୁ</string>
+    <string name="offlineregionpicker_storage_low">ଏହି ଅଞ୍ଚଳ ପାଇଁ ଯଥେଷ୍ଟ ଖାଲି ଷ୍ଟୋରେଜ୍ ନାହିଁ। ଛୋଟ ଅଞ୍ଚଳ ବାଛନ୍ତୁ କିମ୍ବା ଜାଗା ଖାଲି କରନ୍ତୁ।</string>
+    <string name="offlineregionpicker_offline">ଆପଣ ଅଫଲାଇନ୍ ଅଛନ୍ତି। ଡାଉନଲୋଡ୍ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ଆବଶ୍ୟକ।</string>
+    <string name="offlineregionpicker_action_download">ଡାଉନଲୋଡ୍</string>
 </resources>

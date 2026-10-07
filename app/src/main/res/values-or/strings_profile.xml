@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="profile_title">ପ୍ରୋଫାଇଲ୍</string>
-    <string name="profile_empty_title">ଆପଣଙ୍କ ପ୍ରୋଫାଇଲ୍</string>
-    <string name="profile_empty_body">ସେଟିଂସ୍, ଭାଷା ଓ ଆପ୍ ତଥ୍ୟ ଏଠାରେ ଅଛି।</string>
+    <string name="profile_privacy_note">ଖାତା ଦରକାର ନାହିଁ। ଆପଣଙ୍କ ସ୍ଥାନ, ଯାତ୍ରା ଓ ସେଟିଂସ୍ ଏହି ଫୋନ୍‌ରେ ହିଁ ରହେ।</string>
+    <string name="profile_stats_title">ଆପଣଙ୍କ ଯାତ୍ରା</string>
+    <string name="profile_stat_places">ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ</string>
+    <string name="profile_stat_trips">ଯାତ୍ରା</string>
+    <string name="profile_stat_regions">ଅଫଲାଇନ୍ ଅଞ୍ଚଳ</string>
+    <plurals name="profile_stat_places_description">
+        <item quantity="one">%d ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ</item>
+        <item quantity="other">%d ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ</item>
+    </plurals>
+    <plurals name="profile_stat_trips_description">
+        <item quantity="one">%d ଯାତ୍ରା</item>
+        <item quantity="other">%d ଯାତ୍ରା</item>
+    </plurals>
+    <plurals name="profile_stat_regions_description">
+        <item quantity="one">%d ଅଫଲାଇନ୍ ଅଞ୍ଚଳ</item>
+        <item quantity="other">%d ଅଫଲାଇନ୍ ଅଞ୍ଚଳ</item>
+    </plurals>
     <string name="profile_action_settings">ସେଟିଂସ୍</string>
+    <string name="profile_settings_subtitle">ଥିମ୍, ମାନଚିତ୍ର, ମାର୍ଗ ଓ ଡାଉନଲୋଡ୍</string>
     <string name="profile_action_language">ଭାଷା</string>
-    <string name="profile_action_contacts">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
-    <string name="profile_action_about">ରାହୀ ବିଷୟରେ</string>
+    <string name="profile_action_contacts">ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗ</string>
+    <string name="profile_contacts_subtitle">ଜରୁରୀକାଳୀନ ସମୟରେ ଯୋଗାଯୋଗ କରିବାକୁ ଲୋକ</string>
+    <string name="profile_action_offline">ଅଫଲାଇନ୍ ମାନଚିତ୍ର</string>
+    <string name="profile_offline_subtitle">ଡାଉନଲୋଡ୍ ହୋଇଥିବା ଅଞ୍ଚଳ ପରିଚାଳନା କରନ୍ତୁ</string>
+    <string name="profile_action_about">Raahi ବିଷୟରେ</string>
+    <string name="profile_about_subtitle">ସଂସ୍କରଣ, ଡାଟା ଉତ୍ସ ଓ ଗୋପନୀୟତା</string>
 </resources>

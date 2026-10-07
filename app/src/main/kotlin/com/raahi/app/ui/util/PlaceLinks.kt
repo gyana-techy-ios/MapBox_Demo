@@ -40,3 +40,13 @@ object PlaceLinks {
 
     private fun encode(value: String): String = URLEncoder.encode(value, "UTF-8").replace("+", "%20")
 }
+
+object TripLinks {
+    fun deepLink(tripId: Long): String = "${DeepLinks.TRIP_BASE}/$tripId"
+
+    fun shareText(header: String, stopLines: List<String>, openLine: String): String = buildString {
+        appendLine(header)
+        stopLines.forEach { appendLine(it) }
+        append(openLine)
+    }
+}

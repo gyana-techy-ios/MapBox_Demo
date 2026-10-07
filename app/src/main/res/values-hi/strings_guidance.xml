@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="guidance_title">मार्गदर्शन</string>
-    <string name="guidance_empty_title">मार्गदर्शन तैयार हो रहा है</string>
-    <string name="guidance_empty_body">मोड़-दर-मोड़ दिशा-निर्देश यहाँ दिखेंगे।</string>
+    <string name="guidance_title">नेविगेशन</string>
+    <string name="guidance_loading">नेविगेशन तैयार हो रहा है</string>
+    <string name="guidance_exit">बाहर निकलें</string>
+    <string name="guidance_exit_title">नेविगेशन रोकें?</string>
+    <string name="guidance_exit_message">आप रास्ते के पूर्वावलोकन पर वापस चले जाएँगे।</string>
+    <string name="guidance_exit_keep">नेविगेशन जारी रखें</string>
+    <string name="guidance_label_distance">दूरी</string>
+    <string name="guidance_label_arrival">पहुँचने का समय</string>
+    <string name="guidance_label_time">बचा समय</string>
+    <string name="guidance_in_distance">%1$s बाद</string>
+    <string name="guidance_follow_route">रास्ते पर चलें</string>
+    <string name="guidance_banner_description">%1$s, %2$s</string>
+    <string name="guidance_rerouting">नया रास्ता खोज रहे हैं…</string>
+    <string name="guidance_off_route_offline">रास्ते से हट गए — नया रास्ता पाने के लिए दोबारा जुड़ें</string>
+    <string name="guidance_waiting_gps">GPS का इंतज़ार है</string>
+    <string name="guidance_arrived_title">आप पहुँच गए</string>
+    <string name="guidance_reached_stop">आप %1$s पहुँच गए</string>
+    <string name="guidance_next_stop">अगला पड़ाव</string>
+    <string name="guidance_permission_title">नेविगेशन के लिए लोकेशन चाहिए</string>
+    <string name="guidance_permission_body">Raahi को मोड़-दर-मोड़ रास्ता बताने के लिए आपकी लोकेशन चाहिए। लोकेशन की अनुमति दें, या बाहर निकलें।</string>
+    <string name="guidance_foreground_note">मार्गदर्शन तभी काम करता है जब Raahi स्क्रीन पर खुला हो।</string>
+    <string name="guidance_mute">आवाज़ वाला मार्गदर्शन बंद करें</string>
+    <string name="guidance_unmute">आवाज़ वाला मार्गदर्शन चालू करें</string>
+    <string name="guidance_voice_unavailable">इस भाषा में आवाज़ वाला मार्गदर्शन उपलब्ध नहीं है। सिर्फ़ दृश्य निर्देश दिखाए जा रहे हैं।</string>
+    <string name="guidance_recenter">नक्शा वापस केंद्र में लाएँ</string>
+    <string name="guidance_map_description">आपकी स्थिति के साथ चलता नेविगेशन नक्शा</string>
+    <string name="guidance_voice_in_distance">%1$s बाद, %2$s</string>
+    <string name="guidance_voice_arrived">आप पहुँच गए</string>
+    <string name="guidance_voice_reached_stop">आप %1$s पहुँच गए</string>
+    <string name="guidance_voice_rerouting">नया रास्ता खोज रहे हैं</string>
+    <string name="guidance_missing_trip">यह यात्रा नहीं मिल सकी।</string>
 </resources>

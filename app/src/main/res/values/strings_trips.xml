@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="trips_title">Trips</string>
-    <string name="trips_empty_title">No trips yet</string>
-    <string name="trips_empty_body">Plan a multi-stop journey and it will show up here.</string>
     <string name="trips_action_new">New trip</string>
+    <string name="trips_empty_title">Plan your first trip</string>
+    <string name="trips_empty_body">Add several stops, put them in order and preview the route. Trips are saved on this phone and open even without signal.</string>
+    <string name="trips_empty_cta">Plan a trip</string>
+    <string name="trips_recent_title">Recent directions</string>
+    <string name="trips_recent_clear">Clear</string>
+    <string name="trips_recent_cleared">Recent directions cleared</string>
+    <string name="trips_updated">Updated %1$s</string>
+    <string name="trips_card_description">%1$s. %2$s. From %3$s to %4$s. Updated %5$s.</string>
+    <string name="trips_delete_action">Delete trip %1$s</string>
+    <string name="trips_delete_title">Delete this trip?</string>
+    <string name="trips_delete_message">“%1$s” will be removed from this phone.</string>
+    <string name="trips_deleted">Trip deleted</string>
 </resources>

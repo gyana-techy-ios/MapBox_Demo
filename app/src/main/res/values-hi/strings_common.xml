@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_delete">हटाएँ</string>
+    <string name="action_edit">बदलें</string>
+    <string name="action_share">साझा करें</string>
+    <string name="action_done">हो गया</string>
+    <string name="action_undo">पहले जैसा करें</string>
+    <string name="action_allow_location">लोकेशन की अनुमति दें</string>
+
+    <string name="route_profile_driving_traffic">ट्रैफ़िक के साथ कार</string>
+    <string name="route_profile_driving">कार</string>
+    <string name="route_profile_walking">पैदल</string>
+    <string name="route_profile_cycling">साइकिल</string>
+    <string name="route_profile_short_driving_traffic">ट्रैफ़िक</string>
+    <string name="route_profile_short_driving">कार</string>
+    <string name="route_profile_short_walking">पैदल</string>
+    <string name="route_profile_short_cycling">साइकिल</string>
+
+    <string name="route_option_avoid_tolls">टोल से बचें</string>
+    <string name="route_option_avoid_motorways">हाईवे से बचें</string>
+    <string name="route_option_avoid_ferries">फ़ेरी से बचें</string>
+
+    <string name="trip_stop_my_location">मेरी लोकेशन</string>
+    <string name="trip_stop_unnamed">बिना नाम की जगह</string>
+    <plurals name="trip_stop_count">
+        <item quantity="one">%d पड़ाव</item>
+        <item quantity="other">%d पड़ाव</item>
+    </plurals>
+</resources>

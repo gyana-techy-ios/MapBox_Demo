@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="profile_title">Profile</string>
-    <string name="profile_empty_title">Your profile</string>
-    <string name="profile_empty_body">Settings, language and app information live here.</string>
+    <string name="profile_privacy_note">No account needed. Your places, trips and settings stay on this phone.</string>
+    <string name="profile_stats_title">Your journeys</string>
+    <string name="profile_stat_places">Saved places</string>
+    <string name="profile_stat_trips">Trips</string>
+    <string name="profile_stat_regions">Offline areas</string>
+    <plurals name="profile_stat_places_description">
+        <item quantity="one">%d saved place</item>
+        <item quantity="other">%d saved places</item>
+    </plurals>
+    <plurals name="profile_stat_trips_description">
+        <item quantity="one">%d trip</item>
+        <item quantity="other">%d trips</item>
+    </plurals>
+    <plurals name="profile_stat_regions_description">
+        <item quantity="one">%d offline area</item>
+        <item quantity="other">%d offline areas</item>
+    </plurals>
     <string name="profile_action_settings">Settings</string>
+    <string name="profile_settings_subtitle">Theme, map, routes and downloads</string>
     <string name="profile_action_language">Language</string>
     <string name="profile_action_contacts">Emergency contacts</string>
+    <string name="profile_contacts_subtitle">People to reach in an emergency</string>
+    <string name="profile_action_offline">Offline maps</string>
+    <string name="profile_offline_subtitle">Manage downloaded areas</string>
     <string name="profile_action_about">About Raahi</string>
+    <string name="profile_about_subtitle">Version, data sources and privacy</string>
 </resources>

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="guidance_title">Guidance</string>
-    <string name="guidance_empty_title">Guidance is getting ready</string>
-    <string name="guidance_empty_body">Turn-by-turn directions will appear here.</string>
+    <string name="guidance_title">Navigation</string>
+    <string name="guidance_loading">Preparing navigation</string>
+    <string name="guidance_exit">Exit</string>
+    <string name="guidance_exit_title">Stop navigation?</string>
+    <string name="guidance_exit_message">You will go back to the route preview.</string>
+    <string name="guidance_exit_keep">Keep navigating</string>
+    <string name="guidance_label_distance">Distance</string>
+    <string name="guidance_label_arrival">Arrival</string>
+    <string name="guidance_label_time">Time left</string>
+    <string name="guidance_in_distance">In %1$s</string>
+    <string name="guidance_follow_route">Follow the route</string>
+    <string name="guidance_banner_description">%1$s, %2$s</string>
+    <string name="guidance_rerouting">Rerouting…</string>
+    <string name="guidance_off_route_offline">Off route — reconnect to reroute</string>
+    <string name="guidance_waiting_gps">Waiting for GPS</string>
+    <string name="guidance_arrived_title">You have arrived</string>
+    <string name="guidance_reached_stop">You have reached %1$s</string>
+    <string name="guidance_next_stop">Next stop</string>
+    <string name="guidance_permission_title">Location needed for navigation</string>
+    <string name="guidance_permission_body">Raahi needs your location to guide you turn by turn. Allow location access, or exit.</string>
+    <string name="guidance_foreground_note">Guidance works only while Raahi is open on screen.</string>
+    <string name="guidance_mute">Mute voice guidance</string>
+    <string name="guidance_unmute">Turn on voice guidance</string>
+    <string name="guidance_voice_unavailable">Voice guidance is not available for this language. Showing visual directions only.</string>
+    <string name="guidance_recenter">Recenter map</string>
+    <string name="guidance_map_description">Navigation map following your position</string>
+    <string name="guidance_voice_in_distance">In %1$s, %2$s</string>
+    <string name="guidance_voice_arrived">You have arrived</string>
+    <string name="guidance_voice_reached_stop">You have reached %1$s</string>
+    <string name="guidance_voice_rerouting">Rerouting</string>
+    <string name="guidance_missing_trip">This trip could not be found.</string>
 </resources>

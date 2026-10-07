@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_delete">ହଟାନ୍ତୁ</string>
+    <string name="action_edit">ବଦଳାନ୍ତୁ</string>
+    <string name="action_share">ସେୟାର୍ କରନ୍ତୁ</string>
+    <string name="action_done">ହୋଇଗଲା</string>
+    <string name="action_undo">ପୂର୍ବ ଅବସ୍ଥାକୁ ଫେରାନ୍ତୁ</string>
+    <string name="action_allow_location">ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+
+    <string name="route_profile_driving_traffic">ଟ୍ରାଫିକ୍ ସହିତ କାର୍</string>
+    <string name="route_profile_driving">କାର୍</string>
+    <string name="route_profile_walking">ପଦଯାତ୍ରା</string>
+    <string name="route_profile_cycling">ସାଇକେଲ୍</string>
+    <string name="route_profile_short_driving_traffic">ଟ୍ରାଫିକ୍</string>
+    <string name="route_profile_short_driving">କାର୍</string>
+    <string name="route_profile_short_walking">ପଦଯାତ୍ରା</string>
+    <string name="route_profile_short_cycling">ସାଇକେଲ୍</string>
+
+    <string name="route_option_avoid_tolls">ଟୋଲ୍ ଏଡ଼ାନ୍ତୁ</string>
+    <string name="route_option_avoid_motorways">ହାଇୱେ ଏଡ଼ାନ୍ତୁ</string>
+    <string name="route_option_avoid_ferries">ଫେରି ଏଡ଼ାନ୍ତୁ</string>
+
+    <string name="trip_stop_my_location">ମୋ ଲୋକେସନ୍</string>
+    <string name="trip_stop_unnamed">ନାମହୀନ ସ୍ଥାନ</string>
+    <plurals name="trip_stop_count">
+        <item quantity="one">%d ସ୍ଟପ୍</item>
+        <item quantity="other">%d ସ୍ଟପ୍</item>
+    </plurals>
+</resources>

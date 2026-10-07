@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="trips_title">यात्राएँ</string>
-    <string name="trips_empty_title">अभी कोई यात्रा नहीं</string>
-    <string name="trips_empty_body">कई पड़ावों वाली यात्रा बनाएँ, वह यहाँ दिखेगी।</string>
     <string name="trips_action_new">नई यात्रा</string>
+    <string name="trips_empty_title">अपनी पहली यात्रा बनाएँ</string>
+    <string name="trips_empty_body">कई पड़ाव जोड़ें, उन्हें क्रम में लगाएँ और रास्ते का पूर्वावलोकन देखें। यात्राएँ इसी फ़ोन में सहेजी जाती हैं और सिग्नल के बिना भी खुलती हैं।</string>
+    <string name="trips_empty_cta">यात्रा बनाएँ</string>
+    <string name="trips_recent_title">हाल के दिशा-निर्देश</string>
+    <string name="trips_recent_clear">साफ़ करें</string>
+    <string name="trips_recent_cleared">हाल के दिशा-निर्देश साफ़ हो गए</string>
+    <string name="trips_updated">%1$s को अपडेट हुई</string>
+    <string name="trips_card_description">%1$s. %2$s. %3$s से %4$s तक. %5$s को अपडेट हुई.</string>
+    <string name="trips_delete_action">यात्रा %1$s हटाएँ</string>
+    <string name="trips_delete_title">यह यात्रा हटाएँ?</string>
+    <string name="trips_delete_message">“%1$s” इस फ़ोन से हटा दी जाएगी।</string>
+    <string name="trips_deleted">यात्रा हटाई गई</string>
 </resources>

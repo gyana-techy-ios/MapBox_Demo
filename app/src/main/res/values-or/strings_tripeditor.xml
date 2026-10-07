@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tripeditor_title">ଯାତ୍ରା ଯୋଜନା</string>
-    <string name="tripeditor_empty_title">ଯାତ୍ରା ଏଡିଟର୍ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
-    <string name="tripeditor_empty_body">ସ୍ଟପ୍ ଯୋଗ କରନ୍ତୁ, କ୍ରମ ବଦଳାନ୍ତୁ ଓ ଯାତ୍ରା ଉପାୟ ବାଛନ୍ତୁ।</string>
+    <string name="tripeditor_title_edit">ଯାତ୍ରା ବଦଳାନ୍ତୁ</string>
+    <string name="tripeditor_name_label">ଯାତ୍ରାର ନାମ</string>
+    <string name="tripeditor_default_name">%1$s ର ଯାତ୍ରା</string>
+    <string name="tripeditor_start_title">ଆରମ୍ଭ</string>
+    <string name="tripeditor_start_my_location">ମୋ ଲୋକେସନ୍‌ରୁ ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="tripeditor_start_choose">ଆରମ୍ଭ ସ୍ଥାନ ବାଛନ୍ତୁ</string>
+    <string name="tripeditor_start_change">ଆରମ୍ଭ ସ୍ଥାନ ବଦଳାନ୍ତୁ</string>
+    <string name="tripeditor_stops_title">ସ୍ଟପ୍</string>
+    <string name="tripeditor_stops_hint">ହ୍ୟାଣ୍ଡଲ୍ ଦବାଇ ଧରନ୍ତୁ, ତା’ପରେ କ୍ରମ ବଦଳାଇବାକୁ ଟାଣନ୍ତୁ। ଆପଣ ତୀର ବଟନ୍ ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ।</string>
+    <string name="tripeditor_stops_empty">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ସ୍ଟପ୍ ନାହିଁ।</string>
+    <string name="tripeditor_stop_item_description">ସ୍ଟପ୍ %1$d: %2$s</string>
+    <string name="tripeditor_drag_handle">%1$s ର କ୍ରମ ବଦଳାନ୍ତୁ। ଦବାଇ ଧରନ୍ତୁ, ତା’ପରେ ଟାଣନ୍ତୁ।</string>
+    <string name="tripeditor_move_up">ଉପରକୁ ନିଅନ୍ତୁ</string>
+    <string name="tripeditor_move_down">ତଳକୁ ନିଅନ୍ତୁ</string>
+    <string name="tripeditor_move_up_description">%1$s କୁ ଉପରକୁ ନିଅନ୍ତୁ</string>
+    <string name="tripeditor_move_down_description">%1$s କୁ ତଳକୁ ନିଅନ୍ତୁ</string>
+    <string name="tripeditor_remove_description">%1$s ହଟାନ୍ତୁ</string>
+    <string name="tripeditor_add_stop">ସ୍ଟପ୍ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="tripeditor_travel_title">ଯାତ୍ରା ଉପାୟ</string>
+    <string name="tripeditor_avoid_title">ଏଡ଼ାନ୍ତୁ</string>
+    <string name="tripeditor_issue_few">ଅତିକମରେ ଗୋଟିଏ ଗନ୍ତବ୍ୟସ୍ଥଳ ଯୋଡ଼ନ୍ତୁ।</string>
+    <string name="tripeditor_issue_many">ଗୋଟିଏ ଯାତ୍ରାରେ ସର୍ବାଧିକ %1$d ସ୍ଟପ୍ ରହିପାରିବ।</string>
+    <string name="tripeditor_issue_empty">ଆରମ୍ଭ ସ୍ଥାନ ବାଛନ୍ତୁ।</string>
+    <string name="tripeditor_issue_multi">କେବଳ ଗୋଟିଏ ସ୍ଟପ୍ ଆପଣଙ୍କ ଲୋକେସନ୍ ବ୍ୟବହାର କରିପାରିବ।</string>
+    <string name="tripeditor_issue_duplicate">ଲଗାତାର ଦୁଇଟି ସ୍ଟପ୍ ଗୋଟିଏ ହିଁ ସ୍ଥାନ।</string>
+    <string name="tripeditor_save">ଯାତ୍ରା ସେଭ୍ କରନ୍ତୁ</string>
+    <string name="tripeditor_discard_title">ପରିବର୍ତ୍ତନ ଛାଡ଼ିବେ?</string>
+    <string name="tripeditor_discard_message">ଏହି ଯାତ୍ରାରେ ଆପଣଙ୍କ ପରିବର୍ତ୍ତନ ସେଭ୍ ହୋଇନାହିଁ।</string>
+    <string name="tripeditor_discard_confirm">ଛାଡ଼ନ୍ତୁ</string>
+    <string name="tripeditor_keep_editing">ବଦଳାଉଥାନ୍ତୁ</string>
+    <string name="tripeditor_not_found_title">ଯାତ୍ରା ମିଳିଲା ନାହିଁ</string>
+    <string name="tripeditor_not_found_body">ଏହି ଯାତ୍ରା ହୁଏତ ହଟାଯାଇଥିବ।</string>
+    <string name="tripeditor_back_to_trips">ଯାତ୍ରାକୁ ଫେରନ୍ତୁ</string>
+    <string name="tripeditor_moved">%1$s କୁ ସ୍ଥାନ %2$d କୁ ନିଆଗଲା</string>
+    <string name="tripeditor_save_failed">ଯାତ୍ରା ସେଭ୍ ହୋଇପାରିଲା ନାହିଁ। ଦୟାକରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+
+    <string name="stoppicker_title_stop">ସ୍ଟପ୍ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="stoppicker_title_start">ଆରମ୍ଭ ସ୍ଥାନ ବାଛନ୍ତୁ</string>
+    <string name="stoppicker_search_label">ସ୍ଥାନ ସନ୍ଧାନ କରନ୍ତୁ</string>
+    <string name="stoppicker_saved_title">ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ</string>
+    <string name="stoppicker_saved_empty">ଆପଣ ସେଭ୍ କରିଥିବା ସ୍ଥାନ ଶୀଘ୍ର ବାଛିବା ପାଇଁ ଏଠାରେ ଦେଖାଯିବ।</string>
+    <string name="stoppicker_results_title">ଫଳାଫଳ</string>
+    <string name="stoppicker_no_results">କୌଣସି ସ୍ଥାନ ମିଳିଲା ନାହିଁ। ବନାନ ଯାଞ୍ଚ କରନ୍ତୁ କିମ୍ବା ନିକଟସ୍ଥ କୌଣସି ସ୍ଥାନ ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="stoppicker_offline">ସନ୍ଧାନ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ଆବଶ୍ୟକ। ଆପଣ ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନରୁ ଏବେ ବି ବାଛିପାରିବେ।</string>
+    <string name="stoppicker_pick_description">%1$s ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="stoppicker_close">ବନ୍ଦ କରନ୍ତୁ</string>
 </resources>

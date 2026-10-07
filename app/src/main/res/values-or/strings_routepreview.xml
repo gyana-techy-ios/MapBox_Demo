@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="routepreview_title">ରୁଟ୍ ପ୍ରିଭ୍ୟୁ</string>
-    <string name="routepreview_empty_title">ରୁଟ୍ ଲୋଡ୍ ହେଉଛି</string>
-    <string name="routepreview_empty_body">ଆରମ୍ଭ କରିବା ପୂର୍ବରୁ ରୁଟ୍ ବିକଳ୍ପ ତୁଳନା କରନ୍ତୁ।</string>
-    <string name="routepreview_action_start">ମାର୍ଗଦର୍ଶନ ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="routepreview_title">ମାର୍ଗ ପ୍ରିଭ୍ୟୁ</string>
+    <string name="routepreview_action_start">ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="routepreview_action_edit">ଯାତ୍ରା ବଦଳାନ୍ତୁ</string>
+    <string name="routepreview_loading">ସର୍ବୋତ୍ତମ ମାର୍ଗ ଖୋଜାଯାଉଛି</string>
+    <string name="routepreview_fastest">ସବୁଠାରୁ ଦ୍ରୁତ</string>
+    <string name="routepreview_selected">ବଛାଯାଇଛି</string>
+    <string name="routepreview_option_title">ମାର୍ଗ %1$d</string>
+    <string name="routepreview_option_description">ମାର୍ଗ %1$d: %2$s, %3$s. %4$s</string>
+    <string name="routepreview_via">%1$s ଦେଇ</string>
+    <string name="routepreview_legs_title">ଭାଗ</string>
+    <string name="routepreview_leg_description">ଭାଗ %1$d, %2$s</string>
+    <string name="routepreview_congestion_light">ହାଲୁକା ଟ୍ରାଫିକ୍</string>
+    <string name="routepreview_congestion_moderate">ମଧ୍ୟମ ଟ୍ରାଫିକ୍</string>
+    <string name="routepreview_congestion_heavy">ଭାରୀ ଟ୍ରାଫିକ୍</string>
+    <string name="routepreview_congestion_severe">ଅତି ଭାରୀ ଟ୍ରାଫିକ୍</string>
+    <string name="routepreview_no_route_title">କୌଣସି ମାର୍ଗ ମିଳିଲା ନାହିଁ</string>
+    <string name="routepreview_no_route_body">ଆପଣଙ୍କ ସେଟିଂସ୍ ସହିତ ଏହି ସ୍ଟପ୍ ମଧ୍ୟରେ କୌଣସି ମାର୍ଗ ମିଳିଲା ନାହିଁ। ଏକ ସ୍ଟପ୍, ଯାତ୍ରା ଉପାୟ କିମ୍ବା ଏଡ଼ାଇବାର ବିକଳ୍ପ ବଦଳାଇ ଦେଖନ୍ତୁ।</string>
+    <string name="routepreview_permission_title">ଲୋକେସନ୍ ଆବଶ୍ୟକ</string>
+    <string name="routepreview_permission_body">ଏହି ଯାତ୍ରା \'ମୋ ଲୋକେସନ୍\'ରୁ ଆରମ୍ଭ ହୁଏ। ଆପଣ ଯେଉଁଠି ଅଛନ୍ତି ସେଠାରୁ ଯୋଜନା କରିବା ପାଇଁ ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ, କିମ୍ବା ଯାତ୍ରା ବଦଳାଇ ଆରମ୍ଭ ସ୍ଥାନ ବାଛନ୍ତୁ।</string>
+    <string name="routepreview_offline_title">ମାର୍ଗ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ଆବଶ୍ୟକ</string>
+    <string name="routepreview_offline_body">ଏହି ମାର୍ଗ ଯୋଜନା କରିବା ପାଇଁ ଇଣ୍ଟରନେଟ୍ ସହିତ ଯୋଡ଼ନ୍ତୁ। ଆପଣଙ୍କ ସେଭ୍ ହୋଇଥିବା ଯାତ୍ରା ଓ ଡାଉନଲୋଡ୍ ହୋଇଥିବା ମାନଚିତ୍ର ଏବେ ବି ଉପଲବ୍ଧ।</string>
+    <string name="routepreview_missing_title">ଯାତ୍ରା ମିଳିଲା ନାହିଁ</string>
+    <string name="routepreview_missing_body">ଏହି ଯାତ୍ରା ହଟାଯାଇଛି, ତେଣୁ ପ୍ରିଭ୍ୟୁ ପାଇଁ କିଛି ନାହିଁ।</string>
+    <string name="routepreview_map_description">%1$d ମାର୍ଗ ବିକଳ୍ପ ଦେଖାଉଥିବା ମାନଚିତ୍ର</string>
 </resources>

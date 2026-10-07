@@ -1,5 +1,6 @@
 package com.raahi.app.ui.format
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -40,3 +41,10 @@ fun formatCachedAge(cachedAtMillis: Long, nowMillis: Long): String {
         else -> stringResource(R.string.cached_days_ago, ageHours / 24)
     }
 }
+
+fun Context.formatDistanceText(meters: Double): String =
+    if (meters < SHORT_RANGE_METERS) {
+        getString(R.string.distance_meters, meters.toInt().coerceAtLeast(0))
+    } else {
+        getString(R.string.distance_kilometers, String.format(Locale.getDefault(), "%.1f", meters / METERS_PER_KM))
+    }

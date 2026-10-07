@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="offlineregionpicker_title">क्षेत्र चुनें</string>
-    <string name="offlineregionpicker_empty_title">क्षेत्र चयन तैयार हो रहा है</string>
-    <string name="offlineregionpicker_empty_body">नक्शे का वह क्षेत्र चुनें जो डाउनलोड करना है।</string>
+    <string name="offlineregionpicker_title">क्षेत्र डाउनलोड करें</string>
+    <string name="offlineregionpicker_map_description">नक्शा। फ़्रेम में डाउनलोड होने वाला क्षेत्र आए, इस तरह नक्शा खिसकाएँ और ज़ूम करें।</string>
+    <string name="offlineregionpicker_frame_description">जो क्षेत्र डाउनलोड होगा</string>
+    <string name="offlineregionpicker_hint">नक्शा खिसकाएँ और ज़ूम करें ताकि फ़्रेम में आपका ज़रूरी क्षेत्र आ जाए।</string>
+    <string name="offlineregionpicker_name_label">क्षेत्र का नाम</string>
+    <string name="offlineregionpicker_default_name">क्षेत्र %1$d</string>
+    <string name="offlineregionpicker_preset_roads">सड़कें और जगहें (ज़ूम 10–14)</string>
+    <string name="offlineregionpicker_preset_street">गली का विवरण (ज़ूम 10–16)</string>
+    <string name="offlineregionpicker_detail_title">विवरण</string>
+    <plurals name="offlineregionpicker_estimate">
+        <item quantity="one">लगभग %1$d टाइल · %2$s</item>
+        <item quantity="other">लगभग %1$d टाइलें · %2$s</item>
+    </plurals>
+    <string name="offlineregionpicker_too_large">छोटा क्षेत्र चुनने के लिए ज़ूम इन करें</string>
+    <string name="offlineregionpicker_storage_low">इस क्षेत्र के लिए खाली स्टोरेज कम है। छोटा क्षेत्र चुनें या जगह खाली करें।</string>
+    <string name="offlineregionpicker_offline">आप ऑफ़लाइन हैं। डाउनलोड के लिए इंटरनेट चाहिए।</string>
+    <string name="offlineregionpicker_action_download">डाउनलोड करें</string>
 </resources>

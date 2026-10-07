@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="trips_title">ଯାତ୍ରା</string>
-    <string name="trips_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଯାତ୍ରା ନାହିଁ</string>
-    <string name="trips_empty_body">ବହୁ ସ୍ଟପ୍ ଯାତ୍ରା ଯୋଜନା କରନ୍ତୁ, ଏଠାରେ ଦେଖାଯିବ।</string>
     <string name="trips_action_new">ନୂଆ ଯାତ୍ରା</string>
+    <string name="trips_empty_title">ଆପଣଙ୍କ ପ୍ରଥମ ଯାତ୍ରା ଯୋଜନା କରନ୍ତୁ</string>
+    <string name="trips_empty_body">ଅନେକ ସ୍ଟପ୍ ଯୋଡ଼ନ୍ତୁ, ସେଗୁଡ଼ିକୁ କ୍ରମରେ ସଜାନ୍ତୁ ଏବଂ ମାର୍ଗର ପ୍ରିଭ୍ୟୁ ଦେଖନ୍ତୁ। ଯାତ୍ରା ଏହି ଫୋନ୍‌ରେ ସେଭ୍ ହୁଏ ଏବଂ ସିଗ୍ନାଲ୍ ନଥିଲେ ମଧ୍ୟ ଖୋଲେ।</string>
+    <string name="trips_empty_cta">ଯାତ୍ରା ଯୋଜନା କରନ୍ତୁ</string>
+    <string name="trips_recent_title">ସଦ୍ୟତମ ଦିଗନିର୍ଦ୍ଦେଶ</string>
+    <string name="trips_recent_clear">ସଫା କରନ୍ତୁ</string>
+    <string name="trips_recent_cleared">ସଦ୍ୟତମ ଦିଗନିର୍ଦ୍ଦେଶ ସଫା ହେଲା</string>
+    <string name="trips_updated">%1$s ରେ ଅପଡେଟ୍ ହୋଇଛି</string>
+    <string name="trips_card_description">%1$s. %2$s. %3$s ଠାରୁ %4$s ପର୍ଯ୍ୟନ୍ତ. %5$s ରେ ଅପଡେଟ୍ ହୋଇଛି.</string>
+    <string name="trips_delete_action">ଯାତ୍ରା %1$s ହଟାନ୍ତୁ</string>
+    <string name="trips_delete_title">ଏହି ଯାତ୍ରା ହଟାଇବେ?</string>
+    <string name="trips_delete_message">“%1$s” ଏହି ଫୋନ୍‌ରୁ ହଟାଯିବ।</string>
+    <string name="trips_deleted">ଯାତ୍ରା ହଟାଗଲା</string>
 </resources>

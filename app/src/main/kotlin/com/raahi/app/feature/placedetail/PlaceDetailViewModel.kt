@@ -126,15 +126,16 @@ class PlaceDetailViewModel(
         viewModelScope.launch {
             val place = mutableState.value.place
             val now = clock.nowMillis()
-            val profile = preferences.preferences.first().defaultProfile
+            val prefs = preferences.preferences.first()
             val trip = Trip(
                 id = Trip.NEW_ID,
                 name = place.name,
                 stops = listOf(currentLocationStop(order = 0), placeStop(place, order = 1)),
-                profile = profile,
+                profile = prefs.defaultProfile,
                 createdAt = now,
                 updatedAt = now,
                 isQuick = true,
+                options = prefs.defaultRouteOptions,
             )
             val tripId = trips.upsert(trip)
             mutableState.update { it.copy(isCreatingTrip = false) }
@@ -159,15 +160,16 @@ class PlaceDetailViewModel(
         viewModelScope.launch {
             val place = mutableState.value.place
             val now = clock.nowMillis()
-            val profile = preferences.preferences.first().defaultProfile
+            val prefs = preferences.preferences.first()
             val trip = Trip(
                 id = Trip.NEW_ID,
                 name = tripName,
                 stops = listOf(currentLocationStop(order = 0), placeStop(place, order = 1)),
-                profile = profile,
+                profile = prefs.defaultProfile,
                 createdAt = now,
                 updatedAt = now,
                 isQuick = false,
+                options = prefs.defaultRouteOptions,
             )
             trips.upsert(trip)
             eventChannel.send(PlaceDetailEvent.ShowMessage(UiMessage(R.string.placedetail_added_to_trip, listOf(tripName))))

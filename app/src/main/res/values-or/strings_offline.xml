@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="offline_title">ଅଫଲାଇନ୍ ମାନଚିତ୍ର</string>
-    <string name="offline_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଅଫଲାଇନ୍ ମାନଚିତ୍ର ନାହିଁ</string>
-    <string name="offline_empty_body">ସିଗ୍ନାଲ୍ ବିନା ମାନଚିତ୍ର ପାଇଁ ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ।</string>
+    <string name="offline_intro_title">ସିଗ୍ନାଲ୍ ବିନା କ’ଣ କାମ କରେ</string>
+    <string name="offline_matrix_map">ଡାଉନଲୋଡ୍ ହୋଇଥିବା ଅଞ୍ଚଳରେ ମାନଚିତ୍ର ଦେଖିବା</string>
+    <string name="offline_matrix_search">ସନ୍ଧାନ ଓ ମାର୍ଗ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ଆବଶ୍ୟକ</string>
+    <string name="offline_matrix_saved">ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ, ଯାତ୍ରା ଓ ଜରୁରୀକାଳୀନ ସୂଚନା</string>
+    <string name="offline_works">ଅଫଲାଇନ୍‌ରେ ଚାଲେ</string>
+    <string name="offline_needs_internet">ଇଣ୍ଟରନେଟ୍ ଆବଶ୍ୟକ</string>
+    <string name="offline_regions_title">ଡାଉନଲୋଡ୍ ହୋଇଥିବା ଅଞ୍ଚଳ</string>
+    <string name="offline_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଅଫଲାଇନ୍ ଅଞ୍ଚଳ ନାହିଁ</string>
+    <string name="offline_empty_body">ସିଗ୍ନାଲ୍ ବିନା ମାନଚିତ୍ର ଉପଲବ୍ଧ ରଖିବା ପାଇଁ ଏକ ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ।</string>
+    <string name="offline_empty_cta">ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</string>
     <string name="offline_action_pick">ଅଞ୍ଚଳ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</string>
+    <plurals name="offline_storage_summary">
+        <item quantity="one">%2$d ଅଞ୍ଚଳ ଦ୍ୱାରା %1$s ବ୍ୟବହୃତ</item>
+        <item quantity="other">%2$d ଅଞ୍ଚଳ ଦ୍ୱାରା %1$s ବ୍ୟବହୃତ</item>
+    </plurals>
+    <string name="offline_status_downloading">ଡାଉନଲୋଡ୍ ହେଉଛି</string>
+    <string name="offline_status_ready">ପ୍ରସ୍ତୁତ</string>
+    <string name="offline_status_failed">ବିଫଳ</string>
+    <string name="offline_status_cancelled">ବାତିଲ୍ ହେଲା</string>
+    <string name="offline_status_partial">ଅସମ୍ପୂର୍ଣ୍ଣ</string>
+    <string name="offline_outdated">ପୁରୁଣା</string>
+    <string name="offline_downloaded_on">%1$s ରେ ଡାଉନଲୋଡ୍ ହୋଇଛି</string>
+    <string name="offline_not_downloaded">ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ ହୋଇନାହିଁ</string>
+    <string name="offline_progress_description">%1$s, %2$d ପ୍ରତିଶତ ଡାଉନଲୋଡ୍ ହୋଇଛି</string>
+    <string name="offline_region_description">%1$s. %2$s. %3$s.</string>
+    <string name="offline_action_resume">ଜାରି ରଖନ୍ତୁ</string>
+    <string name="offline_action_update">ଅପଡେଟ୍</string>
+    <string name="offline_action_delete">ହଟାନ୍ତୁ</string>
+    <string name="offline_action_cancel">ବାତିଲ୍</string>
+    <string name="offline_delete_title">ଏହି ଅଞ୍ଚଳ ହଟାଇବେ?</string>
+    <string name="offline_delete_message">“%1$s” ହଟାଯିବ ଏବଂ ତା’ର ମାନଚିତ୍ର ଆଉ ଅଫଲାଇନ୍‌ରେ କାମ କରିବ ନାହିଁ।</string>
+    <string name="offline_deleted">ଅଞ୍ଚଳ ହଟାଗଲା</string>
+    <string name="offline_config_title">ଅଫଲାଇନ୍ ଡାଉନଲୋଡ୍ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="offline_metered_title">ତଥାପି ଡାଉନଲୋଡ୍ କରିବେ?</string>
+    <string name="offline_metered_message">ଆପଣ ମୋବାଇଲ୍ ଡାଟାରେ ଅଛନ୍ତି ଏବଂ ଡାଉନଲୋଡ୍ କେବଳ Wi-Fi ପାଇଁ ସେଟ୍ ହୋଇଛି। ଏହି ଡାଉନଲୋଡ୍‌ରେ ବହୁତ ଡାଟା ଲାଗିପାରେ।</string>
+    <string name="offline_metered_confirm">ତଥାପି ଡାଉନଲୋଡ୍ କରନ୍ତୁ</string>
 </resources>

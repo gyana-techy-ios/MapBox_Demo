@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings_title">Settings</string>
-    <string name="settings_empty_title">Settings are getting ready</string>
-    <string name="settings_empty_body">Theme, map style, route defaults and downloads.</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_map_style">Map style</string>
+    <string name="settings_map_standard">Standard</string>
+    <string name="settings_map_satellite">Satellite</string>
+    <string name="settings_section_routing">Routing</string>
+    <string name="settings_default_profile">Default travel mode</string>
+    <string name="settings_avoid_title">Avoid by default</string>
+    <string name="settings_section_downloads">Downloads</string>
+    <string name="settings_wifi_only">Download over Wi-Fi only</string>
+    <string name="settings_wifi_only_hint">Saves mobile data when downloading offline maps</string>
+    <string name="settings_section_navigation">Navigation</string>
+    <string name="settings_voice">Voice guidance</string>
+    <string name="settings_voice_hint">Speak turn-by-turn instructions</string>
+    <string name="settings_section_privacy">Privacy and storage</string>
+    <string name="settings_clear_history">Clear search history</string>
+    <string name="settings_clear_history_hint">Removes recent searches from this phone</string>
+    <string name="settings_clear_cache">Clear nearby cache</string>
+    <string name="settings_clear_cache_hint">Removes nearby results saved for offline use</string>
+    <string name="settings_clear_history_title">Clear search history?</string>
+    <string name="settings_clear_history_message">This removes all recent searches. It cannot be undone.</string>
+    <string name="settings_clear_cache_title">Clear nearby cache?</string>
+    <string name="settings_clear_cache_message">Nearby results saved for offline use will be removed.</string>
+    <string name="settings_clear_confirm">Clear</string>
+    <string name="settings_history_cleared">Search history cleared</string>
+    <string name="settings_cache_cleared">Nearby cache cleared</string>
 </resources>

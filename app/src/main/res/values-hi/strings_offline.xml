@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="offline_title">ऑफ़लाइन नक्शे</string>
-    <string name="offline_empty_title">अभी कोई ऑफ़लाइन नक्शा नहीं</string>
-    <string name="offline_empty_body">बिना सिग्नल के नक्शे उपलब्ध रखने के लिए क्षेत्र डाउनलोड करें।</string>
+    <string name="offline_intro_title">बिना सिग्नल के क्या काम करता है</string>
+    <string name="offline_matrix_map">डाउनलोड किए गए क्षेत्रों में नक्शा देखना</string>
+    <string name="offline_matrix_search">खोज और रास्ते के लिए इंटरनेट चाहिए</string>
+    <string name="offline_matrix_saved">सहेजी गई जगहें, यात्राएँ और आपातकालीन जानकारी</string>
+    <string name="offline_works">ऑफ़लाइन चलता है</string>
+    <string name="offline_needs_internet">इंटरनेट चाहिए</string>
+    <string name="offline_regions_title">डाउनलोड किए गए क्षेत्र</string>
+    <string name="offline_empty_title">अभी कोई ऑफ़लाइन क्षेत्र नहीं</string>
+    <string name="offline_empty_body">बिना सिग्नल के नक्शा उपलब्ध रखने के लिए क्षेत्र डाउनलोड करें।</string>
+    <string name="offline_empty_cta">क्षेत्र डाउनलोड करें</string>
     <string name="offline_action_pick">क्षेत्र डाउनलोड करें</string>
+    <plurals name="offline_storage_summary">
+        <item quantity="one">%2$d क्षेत्र ने %1$s जगह ली</item>
+        <item quantity="other">%2$d क्षेत्रों ने %1$s जगह ली</item>
+    </plurals>
+    <string name="offline_status_downloading">डाउनलोड हो रहा है</string>
+    <string name="offline_status_ready">तैयार</string>
+    <string name="offline_status_failed">विफल</string>
+    <string name="offline_status_cancelled">रद्द किया गया</string>
+    <string name="offline_status_partial">अधूरा</string>
+    <string name="offline_outdated">पुराना</string>
+    <string name="offline_downloaded_on">%1$s को डाउनलोड हुआ</string>
+    <string name="offline_not_downloaded">अभी डाउनलोड नहीं हुआ</string>
+    <string name="offline_progress_description">%1$s, %2$d प्रतिशत डाउनलोड हुआ</string>
+    <string name="offline_region_description">%1$s. %2$s. %3$s.</string>
+    <string name="offline_action_resume">जारी रखें</string>
+    <string name="offline_action_update">अपडेट करें</string>
+    <string name="offline_action_delete">हटाएँ</string>
+    <string name="offline_action_cancel">रद्द करें</string>
+    <string name="offline_delete_title">यह क्षेत्र हटाएँ?</string>
+    <string name="offline_delete_message">“%1$s” हटा दिया जाएगा और उसका नक्शा ऑफ़लाइन काम नहीं करेगा।</string>
+    <string name="offline_deleted">क्षेत्र हटाया गया</string>
+    <string name="offline_config_title">ऑफ़लाइन डाउनलोड उपलब्ध नहीं</string>
+    <string name="offline_metered_title">फिर भी डाउनलोड करें?</string>
+    <string name="offline_metered_message">आप मोबाइल डेटा पर हैं और डाउनलोड सिर्फ़ Wi-Fi पर सेट हैं। इस डाउनलोड में काफ़ी डेटा लग सकता है।</string>
+    <string name="offline_metered_confirm">फिर भी डाउनलोड करें</string>
 </resources>

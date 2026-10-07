@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings_title">ସେଟିଂସ୍</string>
-    <string name="settings_empty_title">ସେଟିଂସ୍ ପ୍ରସ୍ତୁତ ହେଉଛି</string>
-    <string name="settings_empty_body">ଥିମ୍, ମାନଚିତ୍ର ଶୈଳୀ, ରୁଟ୍ ଡିଫଲ୍ଟ ଓ ଡାଉନଲୋଡ୍।</string>
+    <string name="settings_section_appearance">ଦୃଶ୍ୟ</string>
+    <string name="settings_theme">ଥିମ୍</string>
+    <string name="settings_theme_system">ସିଷ୍ଟମ୍</string>
+    <string name="settings_theme_light">ଲାଇଟ୍</string>
+    <string name="settings_theme_dark">ଡାର୍କ</string>
+    <string name="settings_map_style">ମାନଚିତ୍ର ଶୈଳୀ</string>
+    <string name="settings_map_standard">ସାଧାରଣ</string>
+    <string name="settings_map_satellite">ସାଟେଲାଇଟ୍</string>
+    <string name="settings_section_routing">ମାର୍ଗ</string>
+    <string name="settings_default_profile">ଡିଫଲ୍ଟ ଯାତ୍ରା ଉପାୟ</string>
+    <string name="settings_avoid_title">ଡିଫଲ୍ଟ ଭାବେ ଏଡ଼ାନ୍ତୁ</string>
+    <string name="settings_section_downloads">ଡାଉନଲୋଡ୍</string>
+    <string name="settings_wifi_only">କେବଳ Wi-Fi ରେ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</string>
+    <string name="settings_wifi_only_hint">ଅଫଲାଇନ୍ ମାନଚିତ୍ର ଡାଉନଲୋଡ୍ ବେଳେ ମୋବାଇଲ୍ ଡାଟା ବଞ୍ଚାଏ</string>
+    <string name="settings_section_navigation">ନେଭିଗେସନ୍</string>
+    <string name="settings_voice">ଭଏସ୍ ମାର୍ଗଦର୍ଶନ</string>
+    <string name="settings_voice_hint">ମୋଡ଼ ମୋଡ଼ର ନିର୍ଦ୍ଦେଶ କହି ଶୁଣାନ୍ତୁ</string>
+    <string name="settings_section_privacy">ଗୋପନୀୟତା ଓ ଷ୍ଟୋରେଜ୍</string>
+    <string name="settings_clear_history">ସନ୍ଧାନ ଇତିହାସ ସଫା କରନ୍ତୁ</string>
+    <string name="settings_clear_history_hint">ଏହି ଫୋନ୍‌ରୁ ସଦ୍ୟତମ ସନ୍ଧାନ ହଟାଏ</string>
+    <string name="settings_clear_cache">ଆଖପାଖ କ୍ୟାଶ୍ ସଫା କରନ୍ତୁ</string>
+    <string name="settings_clear_cache_hint">ଅଫଲାଇନ୍ ବ୍ୟବହାର ପାଇଁ ସେଭ୍ ହୋଇଥିବା ଆଖପାଖ ଫଳାଫଳ ହଟାଏ</string>
+    <string name="settings_clear_history_title">ସନ୍ଧାନ ଇତିହାସ ସଫା କରିବେ?</string>
+    <string name="settings_clear_history_message">ଏହା ସମସ୍ତ ସଦ୍ୟତମ ସନ୍ଧାନ ହଟାଇବ। ଏହାକୁ ଫେରାଇ ହେବ ନାହିଁ।</string>
+    <string name="settings_clear_cache_title">ଆଖପାଖ କ୍ୟାଶ୍ ସଫା କରିବେ?</string>
+    <string name="settings_clear_cache_message">ଅଫଲାଇନ୍ ବ୍ୟବହାର ପାଇଁ ସେଭ୍ ହୋଇଥିବା ଆଖପାଖ ଫଳାଫଳ ହଟାଯିବ।</string>
+    <string name="settings_clear_confirm">ସଫା କରନ୍ତୁ</string>
+    <string name="settings_history_cleared">ସନ୍ଧାନ ଇତିହାସ ସଫା ହେଲା</string>
+    <string name="settings_cache_cleared">ଆଖପାଖ କ୍ୟାଶ୍ ସଫା ହେଲା</string>
 </resources>

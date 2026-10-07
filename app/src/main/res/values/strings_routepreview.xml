@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="routepreview_title">Route preview</string>
-    <string name="routepreview_empty_title">Routes are loading</string>
-    <string name="routepreview_empty_body">Compare route options before you start.</string>
-    <string name="routepreview_action_start">Start guidance</string>
+    <string name="routepreview_action_start">Start</string>
+    <string name="routepreview_action_edit">Edit trip</string>
+    <string name="routepreview_loading">Finding the best routes</string>
+    <string name="routepreview_fastest">Fastest</string>
+    <string name="routepreview_selected">Selected</string>
+    <string name="routepreview_option_title">Route %1$d</string>
+    <string name="routepreview_option_description">Route %1$d: %2$s, %3$s. %4$s</string>
+    <string name="routepreview_via">via %1$s</string>
+    <string name="routepreview_legs_title">Legs</string>
+    <string name="routepreview_leg_description">Leg %1$d, %2$s</string>
+    <string name="routepreview_congestion_light">Light traffic</string>
+    <string name="routepreview_congestion_moderate">Moderate traffic</string>
+    <string name="routepreview_congestion_heavy">Heavy traffic</string>
+    <string name="routepreview_congestion_severe">Severe traffic</string>
+    <string name="routepreview_no_route_title">No route found</string>
+    <string name="routepreview_no_route_body">We could not find a route between these stops with your settings. Try changing a stop, the travel mode or what to avoid.</string>
+    <string name="routepreview_permission_title">Location needed</string>
+    <string name="routepreview_permission_body">This trip starts at My location. Allow location access so we can plan from where you are, or edit the trip and choose a starting point.</string>
+    <string name="routepreview_offline_title">Routing needs an internet connection</string>
+    <string name="routepreview_offline_body">Connect to the internet to plan this route. Your saved trip and downloaded maps are still available.</string>
+    <string name="routepreview_missing_title">Trip not found</string>
+    <string name="routepreview_missing_body">This trip was deleted, so there is nothing to preview.</string>
+    <string name="routepreview_map_description">Map showing %1$d route options</string>
 </resources>

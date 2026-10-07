@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about_title">ବିଷୟରେ</string>
-    <string name="about_empty_title">ରାହୀ</string>
-    <string name="about_empty_body">ଆପଣଙ୍କ ଯାତ୍ରା, ସିଗ୍ନାଲ୍ ନଥିଲେ ମଧ୍ୟ।</string>
+    <string name="about_version">ସଂସ୍କରଣ %1$s</string>
+    <string name="about_description">Raahi ଭାରତ ପାଇଁ ଏକ ଅଫଲାଇନ୍-ଫାଷ୍ଟ ରୋଡ୍-ଟ୍ରିପ୍ ଓ ଯାତ୍ରା ସାଥୀ।</string>
+    <string name="about_section_data">ମାନଚିତ୍ର ଡାଟା</string>
+    <string name="about_link_mapbox">Mapbox ମାନଚିତ୍ର</string>
+    <string name="about_link_osm">OpenStreetMap କପିରାଇଟ୍</string>
+    <string name="about_link_description">%1$s ଆପଣଙ୍କ ବ୍ରାଉଜରରେ ଖୋଲିବ</string>
+    <string name="about_no_browser">ଏହି ଲିଙ୍କ୍ ଖୋଲିବା ପାଇଁ କୌଣସି ବ୍ରାଉଜର୍ ଉପଲବ୍ଧ ନାହିଁ।</string>
+    <string name="about_section_privacy">ଗୋପନୀୟତା</string>
+    <string name="about_privacy_body">ଆପଣଙ୍କ ଲୋକେସନ୍ ଆପଣଙ୍କ ଡିଭାଇସ୍‌ରେ ହିଁ ରହେ। କୌଣସି ଖାତା ବା ସାଇନ୍-ଇନ୍ ନାହିଁ। ମାନଚିତ୍ର ଦେଖାଇବା ଓ ମାର୍ଗ ଯୋଜନା ପାଇଁ Raahi Mapbox ବ୍ୟବହାର କରେ, ଏବଂ Mapbox ତା’ର ଗୋପନୀୟତା ନୀତି ଅନୁସାରେ ଅଜଣା ବ୍ୟବହାର ଟେଲିମେଟ୍ରି ସଂଗ୍ରହ କରିପାରେ।</string>
+    <string name="about_section_licenses">ଓପନ୍ ସୋର୍ସ</string>
+    <string name="about_licenses_body">Raahi ଓପନ୍-ସୋର୍ସ ସଫ୍ଟୱେର୍ ସହିତ ନିର୍ମିତ, ଯେଉଁଥିରେ AndroidX, Jetpack Compose, Kotlin, Retrofit, OkHttp ଓ Mapbox Maps SDK ଅନ୍ତର୍ଭୁକ୍ତ। ସେମାନଙ୍କ ଲାଇସେନ୍ସ ସେମାନଙ୍କ ନିଜ କୋଡ୍‌ ପାଇଁ ଲାଗୁ।</string>
+    <string name="about_section_limits">ଜାଣିବା ଭଲ</string>
+    <string name="about_limits_body">ସନ୍ଧାନ ଓ ମାର୍ଗ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ଆବଶ୍ୟକ, ଏବଂ ନେଭିଗେସନ୍ କେବଳ ଆପ୍ ଖୋଲା ଥିବା ବେଳେ କାମ କରେ। ଅଫଲାଇନ୍ ମୋଡ୍‌ରେ ଡାଉନଲୋଡ୍ ହୋଇଥିବା ଅଞ୍ଚଳରେ ମାନଚିତ୍ର ଦେଖିବା, ସେଭ୍ ହୋଇଥିବା ସ୍ଥାନ, ଯାତ୍ରା ଓ ଜରୁରୀକାଳୀନ ସୂଚନା ଅନ୍ତର୍ଭୁକ୍ତ।</string>
 </resources>

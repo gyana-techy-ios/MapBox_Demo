@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings_title">सेटिंग</string>
-    <string name="settings_empty_title">सेटिंग तैयार हो रही हैं</string>
-    <string name="settings_empty_body">थीम, नक्शे की शैली, रूट डिफ़ॉल्ट और डाउनलोड।</string>
+    <string name="settings_section_appearance">दिखावट</string>
+    <string name="settings_theme">थीम</string>
+    <string name="settings_theme_system">सिस्टम के अनुसार</string>
+    <string name="settings_theme_light">लाइट</string>
+    <string name="settings_theme_dark">डार्क</string>
+    <string name="settings_map_style">नक्शे की शैली</string>
+    <string name="settings_map_standard">सामान्य</string>
+    <string name="settings_map_satellite">सैटेलाइट</string>
+    <string name="settings_section_routing">रास्ते</string>
+    <string name="settings_default_profile">यात्रा का डिफ़ॉल्ट तरीका</string>
+    <string name="settings_avoid_title">डिफ़ॉल्ट रूप से बचें</string>
+    <string name="settings_section_downloads">डाउनलोड</string>
+    <string name="settings_wifi_only">सिर्फ़ Wi-Fi पर डाउनलोड करें</string>
+    <string name="settings_wifi_only_hint">ऑफ़लाइन नक्शे डाउनलोड करते समय मोबाइल डेटा बचाता है</string>
+    <string name="settings_section_navigation">नेविगेशन</string>
+    <string name="settings_voice">आवाज़ वाला मार्गदर्शन</string>
+    <string name="settings_voice_hint">मोड़-दर-मोड़ निर्देश बोलकर बताएँ</string>
+    <string name="settings_section_privacy">गोपनीयता और स्टोरेज</string>
+    <string name="settings_clear_history">खोज का इतिहास साफ़ करें</string>
+    <string name="settings_clear_history_hint">इस फ़ोन से हाल की खोजें हटाता है</string>
+    <string name="settings_clear_cache">आस-पास का कैश साफ़ करें</string>
+    <string name="settings_clear_cache_hint">ऑफ़लाइन इस्तेमाल के लिए सहेजे गए आस-पास के परिणाम हटाता है</string>
+    <string name="settings_clear_history_title">खोज का इतिहास साफ़ करें?</string>
+    <string name="settings_clear_history_message">इससे सभी हाल की खोजें हट जाएँगी। इसे वापस नहीं किया जा सकता।</string>
+    <string name="settings_clear_cache_title">आस-पास का कैश साफ़ करें?</string>
+    <string name="settings_clear_cache_message">ऑफ़लाइन इस्तेमाल के लिए सहेजे गए आस-पास के परिणाम हटा दिए जाएँगे।</string>
+    <string name="settings_clear_confirm">साफ़ करें</string>
+    <string name="settings_history_cleared">खोज का इतिहास साफ़ हो गया</string>
+    <string name="settings_cache_cleared">आस-पास का कैश साफ़ हो गया</string>
 </resources>

@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="routepreview_title">रूट पूर्वावलोकन</string>
-    <string name="routepreview_empty_title">रूट लोड हो रहे हैं</string>
-    <string name="routepreview_empty_body">शुरू करने से पहले रूट विकल्पों की तुलना करें।</string>
-    <string name="routepreview_action_start">मार्गदर्शन शुरू करें</string>
+    <string name="routepreview_title">रास्ते का पूर्वावलोकन</string>
+    <string name="routepreview_action_start">शुरू करें</string>
+    <string name="routepreview_action_edit">यात्रा बदलें</string>
+    <string name="routepreview_loading">सबसे अच्छे रास्ते खोजे जा रहे हैं</string>
+    <string name="routepreview_fastest">सबसे तेज़</string>
+    <string name="routepreview_selected">चुना गया</string>
+    <string name="routepreview_option_title">रास्ता %1$d</string>
+    <string name="routepreview_option_description">रास्ता %1$d: %2$s, %3$s. %4$s</string>
+    <string name="routepreview_via">%1$s होकर</string>
+    <string name="routepreview_legs_title">चरण</string>
+    <string name="routepreview_leg_description">चरण %1$d, %2$s</string>
+    <string name="routepreview_congestion_light">हल्का ट्रैफ़िक</string>
+    <string name="routepreview_congestion_moderate">सामान्य ट्रैफ़िक</string>
+    <string name="routepreview_congestion_heavy">भारी ट्रैफ़िक</string>
+    <string name="routepreview_congestion_severe">बहुत भारी ट्रैफ़िक</string>
+    <string name="routepreview_no_route_title">कोई रास्ता नहीं मिला</string>
+    <string name="routepreview_no_route_body">आपकी सेटिंग के साथ इन पड़ावों के बीच कोई रास्ता नहीं मिला। कोई पड़ाव, यात्रा का तरीका या बचने के विकल्प बदलकर देखें।</string>
+    <string name="routepreview_permission_title">लोकेशन चाहिए</string>
+    <string name="routepreview_permission_body">यह यात्रा \'मेरी लोकेशन\' से शुरू होती है। लोकेशन की अनुमति दें ताकि हम आपकी मौजूदा जगह से योजना बना सकें, या यात्रा बदलकर शुरुआती जगह चुनें।</string>
+    <string name="routepreview_offline_title">रास्ता खोजने के लिए इंटरनेट चाहिए</string>
+    <string name="routepreview_offline_body">यह रास्ता बनाने के लिए इंटरनेट से जुड़ें। आपकी सहेजी हुई यात्रा और डाउनलोड किए गए नक्शे अब भी उपलब्ध हैं।</string>
+    <string name="routepreview_missing_title">यात्रा नहीं मिली</string>
+    <string name="routepreview_missing_body">यह यात्रा हटा दी गई है, इसलिए दिखाने के लिए कुछ नहीं है।</string>
+    <string name="routepreview_map_description">%1$d रास्तों के विकल्प दिखाता नक्शा</string>
 </resources>
