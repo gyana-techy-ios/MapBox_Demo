@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="placedetail_title">ସ୍ଥାନ ବିବରଣୀ</string>
-    <string name="placedetail_empty_title">ବିବରଣୀ ଲୋଡ୍ ହେଉଛି</string>
-    <string name="placedetail_empty_body">ବିବରଣୀ, ଦିଗ ଓ ସେଭ୍ ବିକଳ୍ପ ଏଠାରେ ଦେଖାଯିବ।</string>
+    <string name="placedetail_title">ସ୍ଥାନର ବିବରଣୀ</string>
+    <string name="placedetail_unnamed">ଚିହ୍ନିତ ସ୍ଥାନ</string>
+    <string name="placedetail_map_description">%1$s ର ସ୍ଥାନ ଦେଖାଉଥିବା ମାନଚିତ୍ର</string>
+    <string name="placedetail_badge_favorite">ପସନ୍ଦିତ</string>
+    <string name="placedetail_badge_home">ଘର</string>
+    <string name="placedetail_badge_work">କାର୍ଯ୍ୟାଳୟ</string>
+    <string name="placedetail_address">ଠିକଣା</string>
+    <string name="placedetail_address_loading">ଠିକଣା ଖୋଜାଯାଉଛି…</string>
+    <string name="placedetail_address_offline">ଅଫଲାଇନ୍‌ରେ ଠିକଣା ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="placedetail_address_unknown">ଏହି ସ୍ଥାନର ଠିକଣା ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="placedetail_coordinates">ସ୍ଥାନାଙ୍କ</string>
+    <string name="placedetail_copy_coordinates">ସ୍ଥାନାଙ୍କ କପି କରନ୍ତୁ</string>
+    <string name="placedetail_coordinates_copied">ସ୍ଥାନାଙ୍କ କପି ହେଲା</string>
+    <string name="placedetail_distance">ଆପଣଙ୍କ ଠାରୁ ଦୂରତା</string>
+    <string name="placedetail_distance_away">ଆପଣଙ୍କ ଠାରୁ %1$s ଦୂରରେ</string>
+    <string name="placedetail_directions">ରାସ୍ତା ଦେଖନ୍ତୁ</string>
+    <string name="placedetail_save">ସେଭ୍ କରନ୍ତୁ</string>
+    <string name="placedetail_saved">ସେଭ୍ ହୋଇଛି</string>
+    <string name="placedetail_add_to_trip">ଯାତ୍ରାରେ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="placedetail_share">ସେୟାର୍ କରନ୍ତୁ</string>
+    <string name="placedetail_home_work">ଘର ବା କାର୍ଯ୍ୟାଳୟ</string>
+    <string name="placedetail_save_as">ଏହିପରି ସେଭ୍ କରନ୍ତୁ</string>
+    <string name="placedetail_add_favorite">ପସନ୍ଦିତରେ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="placedetail_remove_favorite">ପସନ୍ଦିତରୁ ହଟାନ୍ତୁ</string>
+    <string name="placedetail_set_home">ଘର ଭାବରେ ସେଟ୍ କରନ୍ତୁ</string>
+    <string name="placedetail_remove_home">ଘରରୁ ହଟାନ୍ତୁ</string>
+    <string name="placedetail_set_work">କାର୍ଯ୍ୟାଳୟ ଭାବରେ ସେଟ୍ କରନ୍ତୁ</string>
+    <string name="placedetail_remove_work">କାର୍ଯ୍ୟାଳୟରୁ ହଟାନ୍ତୁ</string>
+    <string name="placedetail_new_trip">ନୂଆ ଯାତ୍ରା</string>
+    <string name="placedetail_new_trip_name">%1$s ଯାତ୍ରା</string>
+    <string name="placedetail_share_chooser">ସ୍ଥାନ ସେୟାର୍ କରନ୍ତୁ</string>
+    <string name="placedetail_saved_favorite">ପସନ୍ଦିତରେ ସେଭ୍ ହେଲା</string>
+    <string name="placedetail_removed_favorite">ପସନ୍ଦିତରୁ ହଟାଗଲା</string>
+    <string name="placedetail_home_set">ଘର ଭାବରେ ସେଟ୍ ହେଲା</string>
+    <string name="placedetail_home_removed">ଘରରୁ ହଟାଗଲା</string>
+    <string name="placedetail_work_set">କାର୍ଯ୍ୟାଳୟ ଭାବରେ ସେଟ୍ ହେଲା</string>
+    <string name="placedetail_work_removed">କାର୍ଯ୍ୟାଳୟରୁ ହଟାଗଲା</string>
+    <string name="placedetail_trip_full">ଏହି ଯାତ୍ରାରେ ପୂର୍ବରୁ ସର୍ବାଧିକ ଷ୍ଟପ୍ ଅଛି</string>
+    <string name="placedetail_added_to_trip">%1$s ରେ ଯୋଡ଼ାଗଲା</string>
+    <plurals name="placedetail_trip_stops">
+        <item quantity="one">%d ଷ୍ଟପ୍</item>
+        <item quantity="other">%d ଷ୍ଟପ୍</item>
+    </plurals>
 </resources>

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="emergency_title">Emergency</string>
-    <string name="emergency_empty_title">Emergency help is getting ready</string>
-    <string name="emergency_empty_body">Nearest hospitals, police and pharmacies will appear here, even from your last known data.</string>
-    <string name="emergency_action_contacts">Emergency contacts</string>
+    <string name="emergency_intro">Stay calm. Tap a number to open the dialer, then press call.</string>
+    <string name="emergency_dial_112">National emergency</string>
+    <string name="emergency_dial_108">Ambulance</string>
+    <string name="emergency_dial_description">Dial %1$s, %2$s</string>
+    <string name="emergency_dial_failed">No phone app available to place this call</string>
+    <string name="emergency_share_location">Share my location</string>
+    <string name="emergency_share_header">I need help. My location:</string>
+    <string name="emergency_share_chooser">Share location</string>
+    <string name="emergency_contacts_header">Emergency contacts</string>
+    <string name="emergency_contacts_empty">No contacts added yet. Add people you trust so you can call them in one tap.</string>
+    <string name="emergency_action_contacts">Manage contacts</string>
+    <string name="emergency_call_person">Call %1$s</string>
+    <string name="emergency_nearby_header">Nearest help</string>
+    <string name="emergency_services_need_location">Turn on location to see the nearest help. The call buttons above work without it.</string>
+    <string name="emergency_services_none">No %1$s found nearby.</string>
+    <string name="emergency_cached_results">Offline. Showing saved results (%1$s)</string>
+    <string name="emergency_location_help_title">Can’t get your location</string>
+    <string name="emergency_location_help_permission">Location permission is off. Allow it in Settings, then try again. You can still call 112 or 108.</string>
+    <string name="emergency_location_help_unavailable">Device location is off or has no signal. Turn it on, or step outdoors, then try again. You can still call 112 or 108.</string>
 </resources>

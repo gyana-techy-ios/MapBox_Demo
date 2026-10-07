@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="nearby_title">आस-पास</string>
-    <string name="nearby_empty_title">आस-पास की जगहें लोड हो रही हैं</string>
-    <string name="nearby_empty_body">आपके पास की जगहें यहाँ सूचीबद्ध होंगी।</string>
+    <string name="nearby_title_format">आस-पास: %1$s</string>
+    <string name="nearby_mode_list">सूची</string>
+    <string name="nearby_mode_map">नक्शा</string>
+    <string name="nearby_cached_results">ऑफ़लाइन। सहेजे गए परिणाम दिख रहे हैं (%1$s)</string>
+    <string name="nearby_empty_title">आस-पास कुछ नहीं मिला</string>
+    <string name="nearby_empty_body">आपके आस-पास %1$s नहीं मिले। ताज़ा करने के लिए नीचे खींचें या फिर कोशिश करें।</string>
+    <string name="nearby_location_needed_title">लोकेशन चाहिए</string>
+    <string name="nearby_location_needed_body">राही को आपके पास की जगहें खोजने देने के लिए लोकेशन की अनुमति दें।</string>
+    <string name="nearby_location_unavailable_body">आपकी लोकेशन नहीं मिल रही। डिवाइस की लोकेशन चालू करें, और अंदर हैं तो बाहर जाएँ।</string>
+    <string name="nearby_grant_location">लोकेशन की अनुमति दें</string>
 </resources>

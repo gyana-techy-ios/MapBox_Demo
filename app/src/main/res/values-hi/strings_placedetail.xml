@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="placedetail_title">जगह का विवरण</string>
-    <string name="placedetail_empty_title">विवरण लोड हो रहा है</string>
-    <string name="placedetail_empty_body">विवरण, दिशा-निर्देश और सहेजने के विकल्प यहाँ दिखेंगे।</string>
+    <string name="placedetail_unnamed">चुना गया स्थान</string>
+    <string name="placedetail_map_description">%1$s का स्थान दिखाता नक्शा</string>
+    <string name="placedetail_badge_favorite">पसंदीदा</string>
+    <string name="placedetail_badge_home">घर</string>
+    <string name="placedetail_badge_work">ऑफ़िस</string>
+    <string name="placedetail_address">पता</string>
+    <string name="placedetail_address_loading">पता खोजा जा रहा है…</string>
+    <string name="placedetail_address_offline">ऑफ़लाइन होने पर पता उपलब्ध नहीं</string>
+    <string name="placedetail_address_unknown">इस स्थान का पता उपलब्ध नहीं</string>
+    <string name="placedetail_coordinates">निर्देशांक</string>
+    <string name="placedetail_copy_coordinates">निर्देशांक कॉपी करें</string>
+    <string name="placedetail_coordinates_copied">निर्देशांक कॉपी हो गए</string>
+    <string name="placedetail_distance">आपसे दूरी</string>
+    <string name="placedetail_distance_away">आपसे %1$s दूर</string>
+    <string name="placedetail_directions">रास्ता देखें</string>
+    <string name="placedetail_save">सहेजें</string>
+    <string name="placedetail_saved">सहेजा गया</string>
+    <string name="placedetail_add_to_trip">यात्रा में जोड़ें</string>
+    <string name="placedetail_share">साझा करें</string>
+    <string name="placedetail_home_work">घर या ऑफ़िस</string>
+    <string name="placedetail_save_as">इस रूप में सहेजें</string>
+    <string name="placedetail_add_favorite">पसंदीदा में जोड़ें</string>
+    <string name="placedetail_remove_favorite">पसंदीदा से हटाएँ</string>
+    <string name="placedetail_set_home">घर के रूप में सेट करें</string>
+    <string name="placedetail_remove_home">घर से हटाएँ</string>
+    <string name="placedetail_set_work">ऑफ़िस के रूप में सेट करें</string>
+    <string name="placedetail_remove_work">ऑफ़िस से हटाएँ</string>
+    <string name="placedetail_new_trip">नई यात्रा</string>
+    <string name="placedetail_new_trip_name">%1$s की यात्रा</string>
+    <string name="placedetail_share_chooser">जगह साझा करें</string>
+    <string name="placedetail_saved_favorite">पसंदीदा में सहेजा गया</string>
+    <string name="placedetail_removed_favorite">पसंदीदा से हटाया गया</string>
+    <string name="placedetail_home_set">घर के रूप में सेट किया गया</string>
+    <string name="placedetail_home_removed">घर से हटाया गया</string>
+    <string name="placedetail_work_set">ऑफ़िस के रूप में सेट किया गया</string>
+    <string name="placedetail_work_removed">ऑफ़िस से हटाया गया</string>
+    <string name="placedetail_trip_full">इस यात्रा में पहले से अधिकतम पड़ाव हैं</string>
+    <string name="placedetail_added_to_trip">%1$s में जोड़ा गया</string>
+    <plurals name="placedetail_trip_stops">
+        <item quantity="one">%d पड़ाव</item>
+        <item quantity="other">%d पड़ाव</item>
+    </plurals>
 </resources>

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="emergency_title">ଜରୁରୀକାଳୀନ</string>
-    <string name="emergency_empty_title">ଜରୁରୀକାଳୀନ ସହାୟତା ପ୍ରସ୍ତୁତ ହେଉଛି</string>
-    <string name="emergency_empty_body">ନିକଟତମ ଡାକ୍ତରଖାନା, ପୋଲିସ ଓ ଔଷଧ ଦୋକାନ ଏଠାରେ ଦେଖାଯିବ, ପୂର୍ବ ତଥ୍ୟରୁ ମଧ୍ୟ।</string>
-    <string name="emergency_action_contacts">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
+    <string name="emergency_intro">ଶାନ୍ତ ରୁହନ୍ତୁ। ଡାଏଲର୍ ଖୋଲିବା ପାଇଁ ନମ୍ବର ଦବାନ୍ତୁ, ତା’ପରେ କଲ୍ କରନ୍ତୁ।</string>
+    <string name="emergency_dial_112">ରାଷ୍ଟ୍ରୀୟ ଜରୁରୀକାଳୀନ</string>
+    <string name="emergency_dial_108">ଆମ୍ବୁଲାନ୍ସ</string>
+    <string name="emergency_dial_description">%2$s: %1$s ଡାଏଲ୍ କରନ୍ତୁ</string>
+    <string name="emergency_dial_failed">ଏହି କଲ୍ ପାଇଁ କୌଣସି ଫୋନ୍ ଆପ୍ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="emergency_share_location">ମୋ ଲୋକେସନ୍ ପଠାନ୍ତୁ</string>
+    <string name="emergency_share_header">ମୋତେ ସାହାଯ୍ୟ ଦରକାର। ମୋ ଲୋକେସନ୍:</string>
+    <string name="emergency_share_chooser">ଲୋକେସନ୍ ସେୟାର୍ କରନ୍ତୁ</string>
+    <string name="emergency_contacts_header">ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗ</string>
+    <string name="emergency_contacts_empty">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଯୋଗାଯୋଗ ଯୋଡ଼ାଯାଇନାହିଁ। ବିଶ୍ୱସ୍ତ ଲୋକଙ୍କୁ ଯୋଡ଼ନ୍ତୁ ଯେପରି ଗୋଟିଏ ଟ୍ୟାପ୍‌ରେ କଲ୍ କରିପାରିବେ।</string>
+    <string name="emergency_action_contacts">ଯୋଗାଯୋଗ ପରିଚାଳନା କରନ୍ତୁ</string>
+    <string name="emergency_call_person">%1$s କୁ କଲ୍ କରନ୍ତୁ</string>
+    <string name="emergency_nearby_header">ସବୁଠାରୁ ନିକଟ ସହାୟତା</string>
+    <string name="emergency_services_need_location">ସବୁଠାରୁ ନିକଟ ସହାୟତା ଦେଖିବାକୁ ଲୋକେସନ୍ ଚାଲୁ କରନ୍ତୁ। ଉପରର କଲ୍ ବଟନ୍ ଏହା ବିନା ମଧ୍ୟ କାମ କରେ।</string>
+    <string name="emergency_services_none">ଆଖପାଖରେ %1$s ମିଳିଲା ନାହିଁ।</string>
+    <string name="emergency_cached_results">ଅଫଲାଇନ୍। ସେଭ୍ ହୋଇଥିବା ଫଳାଫଳ ଦେଖାଯାଉଛି (%1$s)</string>
+    <string name="emergency_location_help_title">ଆପଣଙ୍କ ଲୋକେସନ୍ ମିଳୁନାହିଁ</string>
+    <string name="emergency_location_help_permission">ଲୋକେସନ୍ ଅନୁମତି ବନ୍ଦ ଅଛି। ସେଟିଂସରେ ଅନୁମତି ଦିଅନ୍ତୁ, ତା’ପରେ ଚେଷ୍ଟା କରନ୍ତୁ। ଆପଣ 112 ବା 108 କୁ କଲ୍ କରିପାରିବେ।</string>
+    <string name="emergency_location_help_unavailable">ଡିଭାଇସ୍ ଲୋକେସନ୍ ବନ୍ଦ ଅଛି ବା ସିଗ୍ନାଲ୍ ନାହିଁ। ଏହାକୁ ଚାଲୁ କରନ୍ତୁ ବା ବାହାରକୁ ଯାଆନ୍ତୁ, ତା’ପରେ ଚେଷ୍ଟା କରନ୍ତୁ। ଆପଣ 112 ବା 108 କୁ କଲ୍ କରିପାରିବେ।</string>
 </resources>

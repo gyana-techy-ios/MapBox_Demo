@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
 import androidx.navigation.toRoute
 import com.raahi.app.domain.model.Place
+import com.raahi.app.domain.model.PlaceCategory
 import com.raahi.app.feature.about.AboutRoute
 import com.raahi.app.feature.emergency.EmergencyRoute
 import com.raahi.app.feature.emergencycontacts.EmergencyContactsRoute
@@ -44,6 +45,7 @@ fun RaahiNavHost(
     modifier: Modifier = Modifier,
 ) {
     val openPlace: (Place) -> Unit = { navController.navigate(it.toRoute()) }
+    val openNearby: (PlaceCategory) -> Unit = { navController.navigate(Nearby(it.name)) }
     val back: () -> Unit = { navController.popBackStack() }
 
     NavHost(navController = navController, startDestination = startDestination, modifier = modifier) {
@@ -62,10 +64,11 @@ fun RaahiNavHost(
                 onOpenSearch = { navController.navigate(Search) },
                 onOpenPlace = openPlace,
                 onOpenEmergency = { navController.navigate(Emergency) },
+                onOpenNearby = openNearby,
             )
         }
         composable<Search> {
-            SearchRoute(onBack = back, onOpenPlace = openPlace)
+            SearchRoute(onBack = back, onOpenPlace = openPlace, onOpenNearby = openNearby)
         }
         composable<PlaceDetail>(
             deepLinks = listOf(navDeepLink<PlaceDetail>(basePath = DeepLinks.PLACE_BASE)),
@@ -79,6 +82,7 @@ fun RaahiNavHost(
                 address = args.address,
                 category = args.category,
                 onBack = back,
+                onDirections = { tripId -> navController.navigate(RoutePreview(tripId)) },
             )
         }
         composable<Nearby> { entry ->
@@ -136,7 +140,11 @@ fun RaahiNavHost(
             OfflineRegionPickerRoute(onBack = back, onDownloadStarted = back)
         }
         composable<Saved> {
-            SavedRoute(onOpenPlace = openPlace, onOpenContacts = { navController.navigate(EmergencyContacts) })
+            SavedRoute(
+                onOpenPlace = openPlace,
+                onOpenContacts = { navController.navigate(EmergencyContacts) },
+                onOpenExplore = { navController.navigateToTab(TopLevelTab.EXPLORE) },
+            )
         }
         composable<EmergencyContacts> {
             EmergencyContactsRoute(onBack = back)

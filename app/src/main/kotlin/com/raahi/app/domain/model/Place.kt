@@ -35,6 +35,7 @@ data class Place(
     val category: PlaceCategory?,
     val distanceMeters: Double?,
     val source: PlaceSource,
+    val phone: String? = null,
 )
 
 data class SearchSuggestion(

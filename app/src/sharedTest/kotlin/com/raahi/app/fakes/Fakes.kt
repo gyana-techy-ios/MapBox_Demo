@@ -104,7 +104,7 @@ class FakeDirectionsRepository : DirectionsRepository {
 }
 
 class FakeTripRepository : TripRepository {
-    private val trips = MutableStateFlow<List<Trip>>(emptyList())
+    val trips = MutableStateFlow<List<Trip>>(emptyList())
     private var nextId = 1L
     override fun observeTrips(): Flow<List<Trip>> = trips
     override fun observeTrip(id: Long): Flow<Trip?> = trips.map { list -> list.firstOrNull { it.id == id } }
@@ -124,27 +124,30 @@ class FakeSavedPlaceRepository : SavedPlaceRepository {
     override fun observeAll(): Flow<List<SavedPlace>> = items
     override suspend fun save(saved: SavedPlace): Long {
         val id = if (saved.id == 0L) nextId++ else saved.id
-        items.update { it + saved.copy(id = id) }
+        items.update { list -> list.filterNot { it.id == id } + saved.copy(id = id) }
         return id
     }
     override suspend fun delete(id: Long) = items.update { list -> list.filterNot { it.id == id } }
 }
 
 class FakeEmergencyContactRepository : EmergencyContactRepository {
-    private val items = MutableStateFlow<List<EmergencyContact>>(emptyList())
+    val items = MutableStateFlow<List<EmergencyContact>>(emptyList())
+    private var nextId = 1L
     override fun observeAll(): Flow<List<EmergencyContact>> = items
     override suspend fun upsert(contact: EmergencyContact): Long {
-        items.update { it + contact }
-        return contact.id
+        val id = if (contact.id == 0L) nextId++ else contact.id
+        items.update { list -> list.filterNot { it.id == id } + contact.copy(id = id) }
+        return id
     }
     override suspend fun delete(id: Long) = items.update { list -> list.filterNot { it.id == id } }
 }
 
 class FakeRecentSearchRepository : RecentSearchRepository {
-    private val items = MutableStateFlow<List<RecentSearch>>(emptyList())
+    val items = MutableStateFlow<List<RecentSearch>>(emptyList())
+    private var nextId = 1L
     override fun observeRecent(limit: Int): Flow<List<RecentSearch>> = items
     override suspend fun record(query: String, place: Place?) {
-        items.update { it + RecentSearch(it.size + 1L, query, place, 0L) }
+        items.update { list -> listOf(RecentSearch(nextId++, query, place, 0L)) + list }
     }
     override suspend fun delete(id: Long) = items.update { list -> list.filterNot { it.id == id } }
     override suspend fun clear() = items.update { emptyList() }
@@ -214,9 +217,9 @@ class FakeAppContainer(
     override val dispatchers: DispatcherProvider = TestDispatcherProvider()
     override val clock: Clock = FakeClock()
     override val directionsRepository: FakeDirectionsRepository = FakeDirectionsRepository()
-    override val tripRepository: TripRepository = FakeTripRepository()
-    override val emergencyContactRepository: EmergencyContactRepository = FakeEmergencyContactRepository()
-    override val recentSearchRepository: RecentSearchRepository = FakeRecentSearchRepository()
+    override val tripRepository: FakeTripRepository = FakeTripRepository()
+    override val emergencyContactRepository: FakeEmergencyContactRepository = FakeEmergencyContactRepository()
+    override val recentSearchRepository: FakeRecentSearchRepository = FakeRecentSearchRepository()
     override val offlineMapRepository: OfflineMapRepository = FakeOfflineMapRepository()
     override val tripValidator: TripValidator = TripValidator()
     override val planRoutesUseCase: PlanRoutesUseCase = PlanRoutesUseCase(locationRepository, directionsRepository, tripValidator)

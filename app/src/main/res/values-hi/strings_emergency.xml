@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="emergency_title">आपातकाल</string>
-    <string name="emergency_empty_title">आपातकालीन सहायता तैयार हो रही है</string>
-    <string name="emergency_empty_body">नज़दीकी अस्पताल, पुलिस और दवाई की दुकानें यहाँ दिखेंगी, पुराने डेटा से भी।</string>
-    <string name="emergency_action_contacts">आपातकालीन संपर्क</string>
+    <string name="emergency_intro">शांत रहें। डायलर खोलने के लिए नंबर दबाएँ, फिर कॉल करें।</string>
+    <string name="emergency_dial_112">राष्ट्रीय आपातकाल</string>
+    <string name="emergency_dial_108">एम्बुलेंस</string>
+    <string name="emergency_dial_description">%2$s: %1$s डायल करें</string>
+    <string name="emergency_dial_failed">कॉल करने के लिए कोई फ़ोन ऐप उपलब्ध नहीं</string>
+    <string name="emergency_share_location">मेरी लोकेशन भेजें</string>
+    <string name="emergency_share_header">मुझे मदद चाहिए। मेरी लोकेशन:</string>
+    <string name="emergency_share_chooser">लोकेशन साझा करें</string>
+    <string name="emergency_contacts_header">आपातकालीन संपर्क</string>
+    <string name="emergency_contacts_empty">अभी कोई संपर्क नहीं जोड़ा गया। भरोसेमंद लोगों को जोड़ें ताकि एक टैप में कॉल कर सकें।</string>
+    <string name="emergency_action_contacts">संपर्क प्रबंधित करें</string>
+    <string name="emergency_call_person">%1$s को कॉल करें</string>
+    <string name="emergency_nearby_header">सबसे पास की मदद</string>
+    <string name="emergency_services_need_location">सबसे पास की मदद देखने के लिए लोकेशन चालू करें। ऊपर के कॉल बटन इसके बिना भी काम करते हैं।</string>
+    <string name="emergency_services_none">आस-पास %1$s नहीं मिले।</string>
+    <string name="emergency_cached_results">ऑफ़लाइन। सहेजे गए परिणाम दिख रहे हैं (%1$s)</string>
+    <string name="emergency_location_help_title">आपकी लोकेशन नहीं मिल रही</string>
+    <string name="emergency_location_help_permission">लोकेशन की अनुमति बंद है। सेटिंग्स में अनुमति दें, फिर कोशिश करें। आप 112 या 108 पर कॉल कर सकते हैं।</string>
+    <string name="emergency_location_help_unavailable">डिवाइस की लोकेशन बंद है या सिग्नल नहीं है। उसे चालू करें या बाहर जाएँ, फिर कोशिश करें। आप 112 या 108 पर कॉल कर सकते हैं।</string>
 </resources>

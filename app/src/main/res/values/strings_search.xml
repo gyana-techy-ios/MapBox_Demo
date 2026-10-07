@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search_title">Search</string>
-    <string name="search_empty_title">Search places</string>
-    <string name="search_empty_body">Find places, addresses and services on your route.</string>
+    <string name="search_hint">Search places and addresses</string>
+    <string name="search_empty_title">No recent searches</string>
+    <string name="search_empty_body">Places you open from search will show up here, even offline.</string>
+    <string name="search_recent_header">Recent searches</string>
+    <string name="search_clear_all">Clear all</string>
+    <string name="search_delete_recent">Remove from recent searches</string>
+    <string name="search_shortcuts_header">Find nearby</string>
+    <string name="search_no_results_title">No matches found</string>
+    <string name="search_no_results_body">Nothing found for \"%1$s\". Check the spelling or try a nearby landmark or city.</string>
+    <string name="search_needs_internet">Search needs an internet connection. Your recent searches are still available.</string>
+    <string name="search_place_unavailable">This place couldn’t be opened. Try another result.</string>
 </resources>

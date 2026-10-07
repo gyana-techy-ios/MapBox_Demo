@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="placedetail_title">Place details</string>
-    <string name="placedetail_empty_title">Place details are loading</string>
-    <string name="placedetail_empty_body">Details, directions and save options will appear here.</string>
+    <string name="placedetail_unnamed">Dropped pin</string>
+    <string name="placedetail_map_description">Map showing the location of %1$s</string>
+    <string name="placedetail_badge_favorite">Favourite</string>
+    <string name="placedetail_badge_home">Home</string>
+    <string name="placedetail_badge_work">Work</string>
+    <string name="placedetail_address">Address</string>
+    <string name="placedetail_address_loading">Finding address…</string>
+    <string name="placedetail_address_offline">Address unavailable while offline</string>
+    <string name="placedetail_address_unknown">No address available for this spot</string>
+    <string name="placedetail_coordinates">Coordinates</string>
+    <string name="placedetail_copy_coordinates">Copy coordinates</string>
+    <string name="placedetail_coordinates_copied">Coordinates copied</string>
+    <string name="placedetail_distance">Distance from you</string>
+    <string name="placedetail_distance_away">%1$s from you</string>
+    <string name="placedetail_directions">Directions</string>
+    <string name="placedetail_save">Save</string>
+    <string name="placedetail_saved">Saved</string>
+    <string name="placedetail_add_to_trip">Add to trip</string>
+    <string name="placedetail_share">Share</string>
+    <string name="placedetail_home_work">Home or work</string>
+    <string name="placedetail_save_as">Save as</string>
+    <string name="placedetail_add_favorite">Add to favourites</string>
+    <string name="placedetail_remove_favorite">Remove from favourites</string>
+    <string name="placedetail_set_home">Set as Home</string>
+    <string name="placedetail_remove_home">Remove as Home</string>
+    <string name="placedetail_set_work">Set as Work</string>
+    <string name="placedetail_remove_work">Remove as Work</string>
+    <string name="placedetail_new_trip">New trip</string>
+    <string name="placedetail_new_trip_name">Trip to %1$s</string>
+    <string name="placedetail_share_chooser">Share place</string>
+    <string name="placedetail_saved_favorite">Saved to favourites</string>
+    <string name="placedetail_removed_favorite">Removed from favourites</string>
+    <string name="placedetail_home_set">Set as Home</string>
+    <string name="placedetail_home_removed">Removed as Home</string>
+    <string name="placedetail_work_set">Set as Work</string>
+    <string name="placedetail_work_removed">Removed as Work</string>
+    <string name="placedetail_trip_full">This trip already has the maximum number of stops</string>
+    <string name="placedetail_added_to_trip">Added to %1$s</string>
+    <plurals name="placedetail_trip_stops">
+        <item quantity="one">%d stop</item>
+        <item quantity="other">%d stops</item>
+    </plurals>
 </resources>

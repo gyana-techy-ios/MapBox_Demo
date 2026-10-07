@@ -86,6 +86,7 @@ fun RaahiSearchField(
     onBack: () -> Unit,
     onSearch: () -> Unit,
     modifier: Modifier = Modifier,
+    fieldModifier: Modifier = Modifier,
 ) {
     Surface(
         modifier = modifier.fillMaxWidth(),
@@ -100,7 +101,7 @@ fun RaahiSearchField(
             TextField(
                 value = query,
                 onValueChange = onQueryChange,
-                modifier = Modifier.weight(1f),
+                modifier = fieldModifier.weight(1f),
                 placeholder = { Text(placeholder) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),

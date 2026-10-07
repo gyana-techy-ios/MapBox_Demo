@@ -2,5 +2,23 @@
 <resources>
     <string name="emergencycontacts_title">आपातकालीन संपर्क</string>
     <string name="emergencycontacts_empty_title">कोई आपातकालीन संपर्क नहीं</string>
-    <string name="emergencycontacts_empty_body">ज़रूरत पड़ने पर जल्दी संपर्क के लिए लोगों को जोड़ें।</string>
+    <string name="emergencycontacts_empty_body">मदद की ज़रूरत पर जल्दी संपर्क के लिए लोगों को जोड़ें।</string>
+    <string name="emergencycontacts_add">संपर्क जोड़ें</string>
+    <string name="emergencycontacts_add_title">आपातकालीन संपर्क जोड़ें</string>
+    <string name="emergencycontacts_edit_title">संपर्क संपादित करें</string>
+    <string name="emergencycontacts_name">नाम</string>
+    <string name="emergencycontacts_phone">फ़ोन नंबर</string>
+    <string name="emergencycontacts_import">संपर्कों में से चुनें</string>
+    <string name="emergencycontacts_undo">पूर्ववत करें</string>
+    <string name="emergencycontacts_saved">%1$s सहेजा गया</string>
+    <string name="emergencycontacts_deleted">%1$s हटाया गया</string>
+    <string name="emergencycontacts_delete_title">संपर्क हटाएँ?</string>
+    <string name="emergencycontacts_delete_message">%1$s आपके आपातकालीन संपर्कों से हटा दिया जाएगा।</string>
+    <string name="emergencycontacts_delete">हटाएँ</string>
+    <string name="emergencycontacts_delete_named">%1$s को हटाएँ</string>
+    <string name="emergencycontacts_call">%1$s को कॉल करें</string>
+    <string name="emergencycontacts_error_name_required">नाम दर्ज करें</string>
+    <string name="emergencycontacts_error_name_long">नाम बहुत लंबा है</string>
+    <string name="emergencycontacts_error_phone_required">फ़ोन नंबर दर्ज करें</string>
+    <string name="emergencycontacts_error_phone_invalid">10 अंकों का मोबाइल नंबर (+91 के साथ या बिना) या 108 जैसा 3 से 4 अंकों का सेवा नंबर दर्ज करें</string>
 </resources>

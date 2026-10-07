@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="nearby_title">Nearby</string>
-    <string name="nearby_empty_title">Nearby places are loading</string>
-    <string name="nearby_empty_body">Places near you will be listed here.</string>
+    <string name="nearby_title_format">%1$s nearby</string>
+    <string name="nearby_mode_list">List</string>
+    <string name="nearby_mode_map">Map</string>
+    <string name="nearby_cached_results">Offline. Showing saved results (%1$s)</string>
+    <string name="nearby_empty_title">Nothing found nearby</string>
+    <string name="nearby_empty_body">No %1$s found around you. Pull down to refresh or try again.</string>
+    <string name="nearby_location_needed_title">Location needed</string>
+    <string name="nearby_location_needed_body">Allow location access so Raahi can find places near you.</string>
+    <string name="nearby_location_unavailable_body">We can’t get your location. Turn on device location, and step outdoors if you are inside.</string>
+    <string name="nearby_grant_location">Allow location</string>
 </resources>

@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="emergencycontacts_title">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
-    <string name="emergencycontacts_empty_title">କୌଣସି ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ ନାହିଁ</string>
-    <string name="emergencycontacts_empty_body">ସାହାଯ୍ୟ ଦରକାର ହେଲେ ଶୀଘ୍ର ଯୋଗାଯୋଗ ପାଇଁ ଲୋକ ଯୋଗ କରନ୍ତୁ।</string>
+    <string name="emergencycontacts_title">ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗ</string>
+    <string name="emergencycontacts_empty_title">କୌଣସି ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗ ନାହିଁ</string>
+    <string name="emergencycontacts_empty_body">ସାହାଯ୍ୟ ଦରକାର ହେଲେ ଶୀଘ୍ର ଯୋଗାଯୋଗ ପାଇଁ ଲୋକଙ୍କୁ ଯୋଡ଼ନ୍ତୁ।</string>
+    <string name="emergencycontacts_add">ଯୋଗାଯୋଗ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="emergencycontacts_add_title">ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="emergencycontacts_edit_title">ଯୋଗାଯୋଗ ସମ୍ପାଦନ କରନ୍ତୁ</string>
+    <string name="emergencycontacts_name">ନାମ</string>
+    <string name="emergencycontacts_phone">ଫୋନ୍ ନମ୍ବର</string>
+    <string name="emergencycontacts_import">ଯୋଗାଯୋଗରୁ ବାଛନ୍ତୁ</string>
+    <string name="emergencycontacts_undo">ପୂର୍ବବତ୍ କରନ୍ତୁ</string>
+    <string name="emergencycontacts_saved">%1$s ସେଭ୍ ହେଲା</string>
+    <string name="emergencycontacts_deleted">%1$s ହଟାଗଲା</string>
+    <string name="emergencycontacts_delete_title">ଯୋଗାଯୋଗ ହଟାଇବେ?</string>
+    <string name="emergencycontacts_delete_message">%1$s ଆପଣଙ୍କ ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗରୁ ହଟାଇ ଦିଆଯିବ।</string>
+    <string name="emergencycontacts_delete">ହଟାନ୍ତୁ</string>
+    <string name="emergencycontacts_delete_named">%1$s କୁ ହଟାନ୍ତୁ</string>
+    <string name="emergencycontacts_call">%1$s କୁ କଲ୍ କରନ୍ତୁ</string>
+    <string name="emergencycontacts_error_name_required">ଏକ ନାମ ଲେଖନ୍ତୁ</string>
+    <string name="emergencycontacts_error_name_long">ନାମ ବହୁତ ଲମ୍ବା</string>
+    <string name="emergencycontacts_error_phone_required">ଏକ ଫୋନ୍ ନମ୍ବର ଲେଖନ୍ତୁ</string>
+    <string name="emergencycontacts_error_phone_invalid">10 ଅଙ୍କର ମୋବାଇଲ୍ ନମ୍ବର (+91 ସହିତ ବା ବିନା) କିମ୍ବା 108 ଭଳି 3 ରୁ 4 ଅଙ୍କର ସେବା ନମ୍ବର ଲେଖନ୍ତୁ</string>
 </resources>

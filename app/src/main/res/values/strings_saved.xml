@@ -2,6 +2,34 @@
 <resources>
     <string name="saved_title">Saved</string>
     <string name="saved_empty_title">Nothing saved yet</string>
-    <string name="saved_empty_body">Home, work, parking spots and favourites will appear here.</string>
+    <string name="saved_empty_body">Home, work, parking spots and favourites will appear here. Find a place in Explore and tap Save.</string>
     <string name="saved_action_contacts">Emergency contacts</string>
+    <string name="saved_action_explore">Go to Explore</string>
+    <string name="saved_section_home_work">Home and work</string>
+    <string name="saved_slot_home">Home</string>
+    <string name="saved_slot_work">Work</string>
+    <string name="saved_slot_home_empty">Not set. Open a place and choose Home or work, then Set as Home.</string>
+    <string name="saved_slot_work_empty">Not set. Open a place and choose Home or work, then Set as Work.</string>
+    <string name="saved_section_parking">Parking</string>
+    <string name="saved_parking_empty">No parking saved. On the map, use the menu in the search bar and choose Save parking here.</string>
+    <string name="saved_parking_time">Saved %1$s</string>
+    <string name="saved_open">Open</string>
+    <string name="saved_section_favorites">Favourites</string>
+    <string name="saved_favorites_empty">No favourites yet. Open any place and tap Save.</string>
+    <string name="saved_delete">Delete</string>
+    <string name="saved_undo">Undo</string>
+    <string name="saved_removed">%1$s removed</string>
+    <string name="saved_time_just_now">just now</string>
+    <plurals name="saved_time_minutes_ago">
+        <item quantity="one">%d minute ago</item>
+        <item quantity="other">%d minutes ago</item>
+    </plurals>
+    <plurals name="saved_time_hours_ago">
+        <item quantity="one">%d hour ago</item>
+        <item quantity="other">%d hours ago</item>
+    </plurals>
+    <plurals name="saved_time_days_ago">
+        <item quantity="one">%d day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
 </resources>

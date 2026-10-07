@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="saved_title">ସେଭ୍ ହୋଇଛି</string>
+    <string name="saved_title">ସେଭ୍ ହୋଇଥିବା</string>
     <string name="saved_empty_title">ଏପର୍ଯ୍ୟନ୍ତ କିଛି ସେଭ୍ ହୋଇନାହିଁ</string>
-    <string name="saved_empty_body">ଘର, କାମ ସ୍ଥାନ, ପାର୍କିଂ ଓ ପସନ୍ଦର ସ୍ଥାନ ଏଠାରେ ଦେଖାଯିବ।</string>
-    <string name="saved_action_contacts">ଜରୁରୀକାଳୀନ ସମ୍ପର୍କ</string>
+    <string name="saved_empty_body">ଘର, କାର୍ଯ୍ୟାଳୟ, ପାର୍କିଂ ଓ ପସନ୍ଦିତ ସ୍ଥାନ ଏଠାରେ ଦେଖାଯିବ। ଏକ୍ସପ୍ଲୋରରେ ଏକ ସ୍ଥାନ ଖୋଜି ସେଭ୍ ଦବାନ୍ତୁ।</string>
+    <string name="saved_action_contacts">ଜରୁରୀକାଳୀନ ଯୋଗାଯୋଗ</string>
+    <string name="saved_action_explore">ଏକ୍ସପ୍ଲୋରକୁ ଯାଆନ୍ତୁ</string>
+    <string name="saved_section_home_work">ଘର ଓ କାର୍ଯ୍ୟାଳୟ</string>
+    <string name="saved_slot_home">ଘର</string>
+    <string name="saved_slot_work">କାର୍ଯ୍ୟାଳୟ</string>
+    <string name="saved_slot_home_empty">ସେଟ୍ ହୋଇନାହିଁ। ଏକ ସ୍ଥାନ ଖୋଲନ୍ତୁ, \"ଘର ବା କାର୍ଯ୍ୟାଳୟ\" ବାଛନ୍ତୁ, ତା’ପରେ \"ଘର ଭାବରେ ସେଟ୍ କରନ୍ତୁ\" ଦବାନ୍ତୁ।</string>
+    <string name="saved_slot_work_empty">ସେଟ୍ ହୋଇନାହିଁ। ଏକ ସ୍ଥାନ ଖୋଲନ୍ତୁ, \"ଘର ବା କାର୍ଯ୍ୟାଳୟ\" ବାଛନ୍ତୁ, ତା’ପରେ \"କାର୍ଯ୍ୟାଳୟ ଭାବରେ ସେଟ୍ କରନ୍ତୁ\" ଦବାନ୍ତୁ।</string>
+    <string name="saved_section_parking">ପାର୍କିଂ</string>
+    <string name="saved_parking_empty">କୌଣସି ପାର୍କିଂ ସେଭ୍ ହୋଇନାହିଁ। ମାନଚିତ୍ରରେ ସନ୍ଧାନ ବାର୍‌ର ମେନୁ ଖୋଲି \"ଏଠାରେ ପାର୍କିଂ ସେଭ୍ କରନ୍ତୁ\" ବାଛନ୍ତୁ।</string>
+    <string name="saved_parking_time">%1$s ସେଭ୍ ହୋଇଛି</string>
+    <string name="saved_open">ଖୋଲନ୍ତୁ</string>
+    <string name="saved_section_favorites">ପସନ୍ଦିତ</string>
+    <string name="saved_favorites_empty">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ପସନ୍ଦିତ ନାହିଁ। ଯେକୌଣସି ସ୍ଥାନ ଖୋଲି \"ସେଭ୍ କରନ୍ତୁ\" ଦବାନ୍ତୁ।</string>
+    <string name="saved_delete">ହଟାନ୍ତୁ</string>
+    <string name="saved_undo">ପୂର୍ବବତ୍ କରନ୍ତୁ</string>
+    <string name="saved_removed">%1$s ହଟାଗଲା</string>
+    <string name="saved_time_just_now">ଏବେ</string>
+    <plurals name="saved_time_minutes_ago">
+        <item quantity="one">%d ମିନିଟ୍ ପୂର୍ବେ</item>
+        <item quantity="other">%d ମିନିଟ୍ ପୂର୍ବେ</item>
+    </plurals>
+    <plurals name="saved_time_hours_ago">
+        <item quantity="one">%d ଘଣ୍ଟା ପୂର୍ବେ</item>
+        <item quantity="other">%d ଘଣ୍ଟା ପୂର୍ବେ</item>
+    </plurals>
+    <plurals name="saved_time_days_ago">
+        <item quantity="one">%d ଦିନ ପୂର୍ବେ</item>
+        <item quantity="other">%d ଦିନ ପୂର୍ବେ</item>
+    </plurals>
 </resources>

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="search_title">खोज</string>
-    <string name="search_empty_title">जगहें खोजें</string>
-    <string name="search_empty_body">अपने रास्ते में जगहें, पते और सेवाएँ खोजें।</string>
+    <string name="search_title">खोजें</string>
+    <string name="search_hint">जगह और पते खोजें</string>
+    <string name="search_empty_title">कोई हाल की खोज नहीं</string>
+    <string name="search_empty_body">खोज से खोली गई जगहें यहाँ दिखेंगी, ऑफ़लाइन भी।</string>
+    <string name="search_recent_header">हाल की खोजें</string>
+    <string name="search_clear_all">सब हटाएँ</string>
+    <string name="search_delete_recent">हाल की खोजों से हटाएँ</string>
+    <string name="search_shortcuts_header">आस-पास खोजें</string>
+    <string name="search_no_results_title">कोई परिणाम नहीं मिला</string>
+    <string name="search_no_results_body">\"%1$s\" के लिए कुछ नहीं मिला। वर्तनी जाँचें या पास का कोई स्थान या शहर आज़माएँ।</string>
+    <string name="search_needs_internet">खोज के लिए इंटरनेट चाहिए। आपकी हाल की खोजें अब भी उपलब्ध हैं।</string>
+    <string name="search_place_unavailable">यह जगह नहीं खुल सकी। कोई दूसरा परिणाम आज़माएँ।</string>
 </resources>

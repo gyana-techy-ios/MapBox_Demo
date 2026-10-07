@@ -2,6 +2,34 @@
 <resources>
     <string name="saved_title">सहेजे गए</string>
     <string name="saved_empty_title">अभी कुछ सहेजा नहीं गया</string>
-    <string name="saved_empty_body">घर, ऑफ़िस, पार्किंग और पसंदीदा जगहें यहाँ दिखेंगी।</string>
+    <string name="saved_empty_body">घर, ऑफ़िस, पार्किंग और पसंदीदा जगहें यहाँ दिखेंगी। एक्सप्लोर में कोई जगह खोजें और सहेजें दबाएँ।</string>
     <string name="saved_action_contacts">आपातकालीन संपर्क</string>
+    <string name="saved_action_explore">एक्सप्लोर पर जाएँ</string>
+    <string name="saved_section_home_work">घर और ऑफ़िस</string>
+    <string name="saved_slot_home">घर</string>
+    <string name="saved_slot_work">ऑफ़िस</string>
+    <string name="saved_slot_home_empty">सेट नहीं है। कोई जगह खोलें, \"घर या ऑफ़िस\" चुनें, फिर \"घर के रूप में सेट करें\" दबाएँ।</string>
+    <string name="saved_slot_work_empty">सेट नहीं है। कोई जगह खोलें, \"घर या ऑफ़िस\" चुनें, फिर \"ऑफ़िस के रूप में सेट करें\" दबाएँ।</string>
+    <string name="saved_section_parking">पार्किंग</string>
+    <string name="saved_parking_empty">कोई पार्किंग सहेजी नहीं गई। नक्शे पर खोज पट्टी का मेनू खोलकर \"यहाँ पार्किंग सहेजें\" चुनें।</string>
+    <string name="saved_parking_time">%1$s सहेजा गया</string>
+    <string name="saved_open">खोलें</string>
+    <string name="saved_section_favorites">पसंदीदा</string>
+    <string name="saved_favorites_empty">अभी कोई पसंदीदा नहीं। कोई भी जगह खोलकर \"सहेजें\" दबाएँ।</string>
+    <string name="saved_delete">हटाएँ</string>
+    <string name="saved_undo">पूर्ववत करें</string>
+    <string name="saved_removed">%1$s हटाया गया</string>
+    <string name="saved_time_just_now">अभी</string>
+    <plurals name="saved_time_minutes_ago">
+        <item quantity="one">%d मिनट पहले</item>
+        <item quantity="other">%d मिनट पहले</item>
+    </plurals>
+    <plurals name="saved_time_hours_ago">
+        <item quantity="one">%d घंटा पहले</item>
+        <item quantity="other">%d घंटे पहले</item>
+    </plurals>
+    <plurals name="saved_time_days_ago">
+        <item quantity="one">%d दिन पहले</item>
+        <item quantity="other">%d दिन पहले</item>
+    </plurals>
 </resources>

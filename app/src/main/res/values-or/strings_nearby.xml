@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="nearby_title">ନିକଟରେ</string>
-    <string name="nearby_empty_title">ନିକଟସ୍ଥ ସ୍ଥାନ ଲୋଡ୍ ହେଉଛି</string>
-    <string name="nearby_empty_body">ଆପଣଙ୍କ ନିକଟର ସ୍ଥାନ ଏଠାରେ ତାଲିକାଭୁକ୍ତ ହେବ।</string>
+    <string name="nearby_title">ଆଖପାଖ</string>
+    <string name="nearby_title_format">ଆଖପାଖରେ %1$s</string>
+    <string name="nearby_mode_list">ତାଲିକା</string>
+    <string name="nearby_mode_map">ମାନଚିତ୍ର</string>
+    <string name="nearby_cached_results">ଅଫଲାଇନ୍। ସେଭ୍ ହୋଇଥିବା ଫଳାଫଳ ଦେଖାଯାଉଛି (%1$s)</string>
+    <string name="nearby_empty_title">ଆଖପାଖରେ କିଛି ମିଳିଲା ନାହିଁ</string>
+    <string name="nearby_empty_body">ଆପଣଙ୍କ ଆଖପାଖରେ %1$s ମିଳିଲା ନାହିଁ। ରିଫ୍ରେସ୍ ପାଇଁ ତଳକୁ ଟାଣନ୍ତୁ କିମ୍ବା ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="nearby_location_needed_title">ଲୋକେସନ୍ ଆବଶ୍ୟକ</string>
+    <string name="nearby_location_needed_body">ରାହି ଆପଣଙ୍କ ନିକଟର ସ୍ଥାନ ଖୋଜିବା ପାଇଁ ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ।</string>
+    <string name="nearby_location_unavailable_body">ଆପଣଙ୍କ ଲୋକେସନ୍ ମିଳୁନାହିଁ। ଡିଭାଇସ୍ ଲୋକେସନ୍ ଚାଲୁ କରନ୍ତୁ, ଭିତରେ ଥିଲେ ବାହାରକୁ ଯାଆନ୍ତୁ।</string>
+    <string name="nearby_grant_location">ଲୋକେସନ୍ ଅନୁମତି ଦିଅନ୍ତୁ</string>
 </resources>

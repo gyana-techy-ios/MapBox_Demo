@@ -3,4 +3,22 @@
     <string name="emergencycontacts_title">Emergency contacts</string>
     <string name="emergencycontacts_empty_title">No emergency contacts</string>
     <string name="emergencycontacts_empty_body">Add people to reach quickly when you need help.</string>
+    <string name="emergencycontacts_add">Add contact</string>
+    <string name="emergencycontacts_add_title">Add emergency contact</string>
+    <string name="emergencycontacts_edit_title">Edit contact</string>
+    <string name="emergencycontacts_name">Name</string>
+    <string name="emergencycontacts_phone">Phone number</string>
+    <string name="emergencycontacts_import">Choose from contacts</string>
+    <string name="emergencycontacts_undo">Undo</string>
+    <string name="emergencycontacts_saved">%1$s saved</string>
+    <string name="emergencycontacts_deleted">%1$s deleted</string>
+    <string name="emergencycontacts_delete_title">Delete contact?</string>
+    <string name="emergencycontacts_delete_message">%1$s will be removed from your emergency contacts.</string>
+    <string name="emergencycontacts_delete">Delete</string>
+    <string name="emergencycontacts_delete_named">Delete %1$s</string>
+    <string name="emergencycontacts_call">Call %1$s</string>
+    <string name="emergencycontacts_error_name_required">Enter a name</string>
+    <string name="emergencycontacts_error_name_long">Name is too long</string>
+    <string name="emergencycontacts_error_phone_required">Enter a phone number</string>
+    <string name="emergencycontacts_error_phone_invalid">Enter a 10-digit mobile number (with or without +91) or a 3 to 4 digit service number like 108</string>
 </resources>
