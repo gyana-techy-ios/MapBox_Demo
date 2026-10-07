@@ -17,3 +17,6 @@ captures/
 .idea/
 *.iml
 .DS_Store
+
+# Claude agent worktrees
+.claude/
