@@ -43,7 +43,16 @@ import com.raahi.app.domain.repository.TripRepository
 import com.raahi.app.domain.usecase.FindNearestEmergencyUseCase
 import com.raahi.app.domain.usecase.PlanRoutesUseCase
 import com.raahi.app.domain.usecase.TripValidator
+import com.raahi.app.domain.usecase.ActiveRouteStore
+import com.raahi.app.domain.voice.NoOpVoiceGuide
+import com.raahi.app.domain.voice.VoiceGuide
+import com.raahi.app.domain.voice.VoiceStatus
+import com.raahi.app.offline.DownloadCoordinator
+import com.raahi.app.offline.StorageProbe
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -167,20 +176,43 @@ class FakeLocationRepository(
     override fun isLocationEnabled(): Boolean = locationEnabled
     override suspend fun lastKnown(): AppResult<UserLocation> = locationResult
     override suspend fun currentLocation(): AppResult<UserLocation> = locationResult
-    override fun locationUpdates(intervalMillis: Long): Flow<UserLocation> = emptyFlow()
+    val updates = MutableSharedFlow<UserLocation>(extraBufferCapacity = 64)
+    override fun locationUpdates(intervalMillis: Long): Flow<UserLocation> = updates
 }
 
 fun sampleUserLocation(point: GeoPoint = GeoPoint(28.6139, 77.2090)) =
     UserLocation(point, 8f, 0L, null, null, isStale = false, isLowAccuracy = false)
 
 class FakeOfflineMapRepository : OfflineMapRepository {
-    override val regions: Flow<List<OfflineRegion>> = MutableStateFlow(emptyList())
-    override suspend fun reconcile() = Unit
+    val regionsState = MutableStateFlow<List<OfflineRegion>>(emptyList())
+    override val regions: Flow<List<OfflineRegion>> = regionsState
+    var reconcileCalls = 0
+    val downloadCalls = mutableListOf<Pair<OfflineRegion, Boolean>>()
+    val resumeCalls = mutableListOf<Pair<String, Boolean>>()
+    val cancelCalls = mutableListOf<String>()
+    val deleteCalls = mutableListOf<String>()
+    var downloadFlow: (OfflineRegion) -> Flow<DownloadProgress> = { emptyFlow() }
+    var resumeFlow: (String) -> Flow<DownloadProgress> = { emptyFlow() }
+    override suspend fun reconcile() {
+        reconcileCalls++
+    }
     override fun estimate(bounds: GeoBounds, minZoom: Int, maxZoom: Int) = OfflineEstimate(0, 0)
-    override fun download(region: OfflineRegion): Flow<DownloadProgress> = emptyFlow()
-    override fun resume(regionId: String): Flow<DownloadProgress> = emptyFlow()
-    override suspend fun cancel(regionId: String) = Unit
-    override suspend fun delete(regionId: String): AppResult<Unit> = AppResult.Success(Unit)
+    override fun download(region: OfflineRegion, allowMetered: Boolean): Flow<DownloadProgress> {
+        downloadCalls += region to allowMetered
+        return downloadFlow(region)
+    }
+    override fun resume(regionId: String, allowMetered: Boolean): Flow<DownloadProgress> {
+        resumeCalls += regionId to allowMetered
+        return resumeFlow(regionId)
+    }
+    override suspend fun cancel(regionId: String) {
+        cancelCalls += regionId
+    }
+    override suspend fun delete(regionId: String): AppResult<Unit> {
+        deleteCalls += regionId
+        regionsState.update { list -> list.filterNot { it.id == regionId } }
+        return AppResult.Success(Unit)
+    }
 }
 
 class FakePreferencesRepository(initial: UserPreferences = UserPreferences()) : PreferencesRepository {
@@ -202,6 +234,21 @@ class FakeNearbyCacheRepository : NearbyCacheRepository {
     override suspend fun put(key: String, places: List<Place>) {
         entries[key] = CachedPlaces(places, clock.nowMillis())
     }
+    override suspend fun clear() = entries.clear()
+}
+
+class RecordingVoiceGuide : VoiceGuide {
+    override val status: StateFlow<VoiceStatus> = MutableStateFlow(VoiceStatus.Ready)
+    val spoken = mutableListOf<String>()
+    var released = false
+    override fun prepare() = Unit
+    override fun speak(text: String) {
+        spoken += text
+    }
+    override fun stop() = Unit
+    override fun release() {
+        released = true
+    }
 }
 
 class FakeAppContainer(
@@ -220,9 +267,14 @@ class FakeAppContainer(
     override val tripRepository: FakeTripRepository = FakeTripRepository()
     override val emergencyContactRepository: FakeEmergencyContactRepository = FakeEmergencyContactRepository()
     override val recentSearchRepository: FakeRecentSearchRepository = FakeRecentSearchRepository()
-    override val offlineMapRepository: OfflineMapRepository = FakeOfflineMapRepository()
+    override val offlineMapRepository: FakeOfflineMapRepository = FakeOfflineMapRepository()
     override val tripValidator: TripValidator = TripValidator()
     override val planRoutesUseCase: PlanRoutesUseCase = PlanRoutesUseCase(locationRepository, directionsRepository, tripValidator)
     override val findNearestEmergencyUseCase: FindNearestEmergencyUseCase =
         FindNearestEmergencyUseCase(placeSearchRepository, nearbyCacheRepository)
+    override val activeRouteStore: ActiveRouteStore = ActiveRouteStore()
+    override val voiceGuide: VoiceGuide = NoOpVoiceGuide
+    override val downloadCoordinator: DownloadCoordinator =
+        DownloadCoordinator(offlineMapRepository, CoroutineScope(SupervisorJob() + Dispatchers.Default))
+    override val storageProbe: StorageProbe = StorageProbe { Long.MAX_VALUE }
 }
