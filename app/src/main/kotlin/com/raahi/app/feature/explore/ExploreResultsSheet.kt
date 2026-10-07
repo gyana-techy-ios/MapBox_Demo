@@ -10,12 +10,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.History
+import androidx.compose.material.icons.outlined.LocationOff
 import androidx.compose.material.icons.outlined.SearchOff
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,6 +26,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.raahi.app.R
 import com.raahi.app.domain.model.Place
+import com.raahi.app.domain.model.PlaceCategory
 import com.raahi.app.ui.components.EmptyState
 import com.raahi.app.ui.components.ErrorState
 import com.raahi.app.ui.components.PlaceListItem
@@ -32,6 +35,7 @@ import com.raahi.app.ui.components.labelRes
 import com.raahi.app.ui.format.formatCachedAge
 import com.raahi.app.ui.theme.LocalRaahiColors
 import com.raahi.app.ui.theme.LocalSpacing
+import com.raahi.app.ui.theme.Sizes
 
 @Composable
 internal fun ColumnScope.ExploreResultsSheet(
@@ -39,6 +43,8 @@ internal fun ColumnScope.ExploreResultsSheet(
     onClose: () -> Unit,
     onRetry: () -> Unit,
     onOpenPlace: (Place) -> Unit,
+    onSeeAll: (PlaceCategory) -> Unit,
+    onEnableLocation: () -> Unit,
     nowMillis: () -> Long,
 ) {
     val category = state.selectedCategory ?: return
@@ -54,6 +60,12 @@ internal fun ColumnScope.ExploreResultsSheet(
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.weight(1f),
         )
+        if (state.results.isNotEmpty()) {
+            TextButton(
+                onClick = { onSeeAll(category) },
+                modifier = Modifier.heightIn(min = Sizes.minTouchTarget).testTag("explore_see_all"),
+            ) { Text(stringResource(R.string.explore_see_all)) }
+        }
         IconButton(onClick = onClose, modifier = Modifier.testTag("explore_results_close")) {
             Icon(Icons.Outlined.Close, contentDescription = stringResource(R.string.explore_close_results))
         }
@@ -74,6 +86,14 @@ internal fun ColumnScope.ExploreResultsSheet(
     }
     HorizontalDivider()
     when {
+        state.needsLocation -> EmptyState(
+            icon = Icons.Outlined.LocationOff,
+            title = stringResource(R.string.explore_needs_location_title),
+            body = stringResource(R.string.explore_needs_location_body),
+            modifier = Modifier.heightIn(max = 280.dp),
+            actionLabel = stringResource(R.string.explore_enable_location),
+            onAction = onEnableLocation,
+        )
         state.isLoading -> SkeletonList(modifier = Modifier.padding(vertical = spacing.md), itemCount = 4)
         state.error != null -> ErrorState(error = state.error, onRetry = onRetry, modifier = Modifier.heightIn(max = 280.dp))
         state.results.isEmpty() -> EmptyState(

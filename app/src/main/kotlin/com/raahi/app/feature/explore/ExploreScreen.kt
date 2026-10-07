@@ -7,6 +7,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -45,6 +48,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -84,6 +88,8 @@ private val exploreCategories = listOf(
 )
 
 private val ResultsPeekHeight = 232.dp
+private val MapTopOverlay = 168.dp
+private val FitPadding = 48.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -92,6 +98,7 @@ fun ExploreRoute(
     onOpenPlace: (Place) -> Unit,
     onOpenEmergency: () -> Unit,
     modifier: Modifier = Modifier,
+    onOpenNearby: (PlaceCategory) -> Unit = {},
 ) {
     val viewModel = appViewModel {
         ExploreViewModel(
@@ -122,11 +129,36 @@ fun ExploreRoute(
     val gpsOffMessage = stringResource(R.string.explore_location_disabled)
     val settingsLabel = stringResource(R.string.action_settings)
     val latestMapState by rememberUpdatedState(mapState)
+    val density = LocalDensity.current
+    val statusBarTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+    var centredOnUser by rememberSaveable { mutableStateOf(false) }
+    val permissionGranted = state.locationPermission != LocationPermissionState.DENIED
+    LaunchedEffect(permissionGranted) {
+        if (permissionGranted && !centredOnUser) viewModel.centerOnUserOnce()
+    }
+    val requestLocation = {
+        if (state.locationPermission == LocationPermissionState.DENIED) {
+            permissionLauncher.launch(
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+            )
+        } else {
+            viewModel.onMyLocationClicked()
+        }
+    }
 
     LaunchedEffect(viewModel) {
         viewModel.events.collect { event ->
             when (event) {
-                is ExploreEvent.FlyToUser -> latestMapState.flyTo(event.point, zoom = 15.0)
+                is ExploreEvent.FlyToUser -> {
+                    centredOnUser = true
+                    latestMapState.flyTo(event.point, zoom = event.zoom)
+                }
+                is ExploreEvent.FitToResults -> latestMapState.fitPoints(
+                    event.points,
+                    paddingPx = with(density) { FitPadding.toPx().toDouble() },
+                    topPx = with(density) { (statusBarTop + MapTopOverlay).toPx().toDouble() },
+                    bottomPx = with(density) { (ResultsPeekHeight + FitPadding).toPx().toDouble() },
+                )
                 is ExploreEvent.ShowMessage -> snackbarHost.showSnackbar(context.getString(event.messageRes))
                 ExploreEvent.ShowPermissionRationale -> {
                     val result = snackbarHost.showSnackbar(rationaleMessage, settingsLabel, duration = SnackbarDuration.Long)
@@ -169,6 +201,8 @@ fun ExploreRoute(
                 onClose = viewModel::clearResults,
                 onRetry = viewModel::retry,
                 onOpenPlace = onOpenPlace,
+                onSeeAll = onOpenNearby,
+                onEnableLocation = requestLocation,
                 nowMillis = { clock.nowMillis() },
             )
         },
@@ -181,12 +215,12 @@ fun ExploreRoute(
                 style = state.mapStyle,
                 markers = markers,
                 showUserLocation = state.locationPermission != LocationPermissionState.DENIED,
-                contentPadding = PaddingValues(bottom = peekHeight),
+                contentPadding = PaddingValues(top = statusBarTop + MapTopOverlay, bottom = peekHeight),
                 onMarkerClick = { marker ->
                     state.results.firstOrNull { it.id == marker.id }?.let(onOpenPlace)
                 },
                 onMapLongClick = { pendingParkingPoint = it },
-                onCameraIdle = { viewModel.onCameraIdle(it.center) },
+                onCameraIdle = { viewModel.onCameraIdle(it.center, it.zoom) },
             )
 
             Column(modifier = Modifier.fillMaxWidth().statusBarsPadding()) {
@@ -254,15 +288,7 @@ fun ExploreRoute(
                     )
                 }
                 FloatingActionButton(
-                    onClick = {
-                        if (state.locationPermission == LocationPermissionState.DENIED) {
-                            permissionLauncher.launch(
-                                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
-                            )
-                        } else {
-                            viewModel.onMyLocationClicked()
-                        }
-                    },
+                    onClick = requestLocation,
                     modifier = Modifier.testTag("explore_my_location"),
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     contentColor = MaterialTheme.colorScheme.onPrimaryContainer,

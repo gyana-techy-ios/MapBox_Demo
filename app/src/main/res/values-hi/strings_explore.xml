@@ -16,4 +16,8 @@
     <string name="explore_cached_results">सहेजे हुए नतीजे दिख रहे हैं (%1$s)</string>
     <string name="explore_no_results_title">आस-पास कुछ नहीं मिला</string>
     <string name="explore_no_results_body">नक्शे के इस हिस्से में %1$s नहीं मिले। नक्शा खिसकाएँ या ज़ूम आउट करके फिर कोशिश करें।</string>
+    <string name="explore_see_all">सभी देखें</string>
+    <string name="explore_needs_location_title">आस-पास की जगहें खोजें</string>
+    <string name="explore_needs_location_body">किसी इलाके पर ज़ूम करें या आस-पास की जगहें खोजने के लिए लोकेशन चालू करें</string>
+    <string name="explore_enable_location">लोकेशन चालू करें</string>
 </resources>

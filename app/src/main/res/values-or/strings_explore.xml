@@ -16,4 +16,8 @@
     <string name="explore_cached_results">ସେଭ୍ ହୋଇଥିବା ଫଳାଫଳ ଦେଖାଯାଉଛି (%1$s)</string>
     <string name="explore_no_results_title">ନିକଟରେ କିଛି ମିଳିଲା ନାହିଁ</string>
     <string name="explore_no_results_body">ମାନଚିତ୍ରର ଏହି ଅଂଶରେ %1$s ମିଳିଲା ନାହିଁ। ମାନଚିତ୍ର ଘୁଞ୍ଚାନ୍ତୁ କିମ୍ବା ଜୁମ୍ ଆଉଟ୍ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="explore_see_all">ସମସ୍ତ ଦେଖନ୍ତୁ</string>
+    <string name="explore_needs_location_title">ନିକଟସ୍ଥ ସ୍ଥାନ ଖୋଜନ୍ତୁ</string>
+    <string name="explore_needs_location_body">ଏକ ଅଞ୍ଚଳକୁ ଜୁମ୍ ଇନ୍ କରନ୍ତୁ କିମ୍ବା ନିକଟସ୍ଥ ସ୍ଥାନ ଖୋଜିବାକୁ ଲୋକେସନ୍ ଚାଲୁ କରନ୍ତୁ</string>
+    <string name="explore_enable_location">ଲୋକେସନ୍ ଚାଲୁ କରନ୍ତୁ</string>
 </resources>

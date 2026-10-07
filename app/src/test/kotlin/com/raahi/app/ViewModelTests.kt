@@ -65,7 +65,7 @@ class ExploreViewModelTest {
         val far = samplePlace(id = "far", point = GeoPoint(28.9, 77.4), distance = 9000.0)
         val close = samplePlace(id = "close", point = GeoPoint(28.6141, 77.2091), distance = 30.0)
         search.categoryResult = AppResult.Success(listOf(far, close))
-        val vm = viewModel()
+        val vm = viewModel().apply { onCameraIdle(GeoPoint(28.6139, 77.2090), 12.0) }
 
         vm.onCategorySelected(PlaceCategory.FUEL)
 
@@ -78,16 +78,78 @@ class ExploreViewModelTest {
     }
 
     @Test
-    fun searchOriginPrefersCameraCenterOverDefault() = runTest {
+    fun zoomedInCameraCentreIsSearchOrigin() = runTest {
+        location.mutablePermission.value = LocationPermissionState.GRANTED_PRECISE
         val vm = viewModel()
-        vm.onCameraIdle(GeoPoint(12.97, 77.59))
+        vm.onCameraIdle(GeoPoint(12.97, 77.59), 10.0)
         vm.onCategorySelected(PlaceCategory.ATM)
         assertEquals(GeoPoint(12.97, 77.59), search.categoryCalls.single().second)
     }
 
     @Test
-    fun tappingSelectedCategoryAgainClearsResults() = runTest {
+    fun zoomedOutCameraUsesUserLocationAsOrigin() = runTest {
+        location.mutablePermission.value = LocationPermissionState.GRANTED_PRECISE
+        val user = GeoPoint(20.2961, 85.8245)
+        location.locationResult = AppResult.Success(sampleUserLocation(user))
         val vm = viewModel()
+        vm.onCameraIdle(GeoPoint.INDIA_CENTER, 4.2)
+        vm.onCategorySelected(PlaceCategory.HOSPITAL)
+        assertEquals(user, search.categoryCalls.single().second)
+        assertFalse(vm.uiState.value.needsLocation)
+    }
+
+    @Test
+    fun zoomedOutWithoutUserLocationNeedsLocationAndDoesNotSearch() = runTest {
+        val vm = viewModel()
+        vm.onCameraIdle(GeoPoint.INDIA_CENTER, 4.2)
+        vm.onCategorySelected(PlaceCategory.HOSPITAL)
+        assertTrue(vm.uiState.value.needsLocation)
+        assertFalse(vm.uiState.value.isLoading)
+        assertTrue(search.categoryCalls.isEmpty())
+    }
+
+    @Test
+    fun resultsShowDistanceFromUserAndFitEventIncludesOrigin() = runTest {
+        location.mutablePermission.value = LocationPermissionState.GRANTED_PRECISE
+        val user = GeoPoint(20.2961, 85.8245)
+        location.locationResult = AppResult.Success(sampleUserLocation(user))
+        val place = samplePlace(id = "h", point = GeoPoint(20.2962, 85.8246), distance = 5000.0)
+        search.categoryResult = AppResult.Success(listOf(place))
+        val vm = viewModel()
+        vm.onCameraIdle(GeoPoint(20.3, 85.8), 12.0)
+        vm.events.test {
+            vm.onCategorySelected(PlaceCategory.HOSPITAL)
+            assertEquals(ExploreEvent.FitToResults(listOf(place.point, GeoPoint(20.3, 85.8))), awaitItem())
+        }
+        assertEquals(user.distanceTo(place.point), vm.uiState.value.results.single().distanceMeters!!, 0.001)
+    }
+
+    @Test
+    fun centerOnUserOnceEmitsFlyToUserOnlyOnce() = runTest {
+        location.mutablePermission.value = LocationPermissionState.GRANTED_PRECISE
+        val user = GeoPoint(20.2961, 85.8245)
+        location.locationResult = AppResult.Success(sampleUserLocation(user))
+        val vm = viewModel()
+        vm.events.test {
+            vm.centerOnUserOnce()
+            vm.centerOnUserOnce()
+            assertEquals(ExploreEvent.FlyToUser(user, 13.0), awaitItem())
+            expectNoEvents()
+        }
+    }
+
+    @Test
+    fun centerOnUserOnceDoesNothingWithoutPermission() = runTest {
+        val vm = viewModel()
+        vm.events.test {
+            vm.centerOnUserOnce()
+            expectNoEvents()
+        }
+    }
+
+    @Test
+    fun tappingSelectedCategoryAgainClearsResults() = runTest {
+        val vm = viewModel().apply { onCameraIdle(GeoPoint(28.6139, 77.2090), 12.0) }
         vm.onCategorySelected(PlaceCategory.HOSPITAL)
         vm.onCategorySelected(PlaceCategory.HOSPITAL)
         val state = vm.uiState.value
@@ -99,7 +161,7 @@ class ExploreViewModelTest {
     fun failureFallsBackToCachedResultsWithTimestamp() = runTest {
         cache.put("explore_PHARMACY", listOf(samplePlace(id = "cached", category = PlaceCategory.PHARMACY)))
         search.categoryResult = AppResult.Failure(AppError.NoInternet)
-        val vm = viewModel()
+        val vm = viewModel().apply { onCameraIdle(GeoPoint(28.6139, 77.2090), 12.0) }
 
         vm.onCategorySelected(PlaceCategory.PHARMACY)
 
@@ -112,7 +174,7 @@ class ExploreViewModelTest {
     @Test
     fun failureWithoutCacheSurfacesErrorAndRetryRecovers() = runTest {
         search.categoryResult = AppResult.Failure(AppError.Timeout)
-        val vm = viewModel()
+        val vm = viewModel().apply { onCameraIdle(GeoPoint(28.6139, 77.2090), 12.0) }
         vm.onCategorySelected(PlaceCategory.HOTEL)
         assertEquals(AppError.Timeout, vm.uiState.value.error)
         assertTrue(vm.uiState.value.results.isEmpty())

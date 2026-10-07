@@ -32,6 +32,12 @@ private fun fixture(name: String): String =
 
 private fun client() = HttpClientFactory.create(tokenProvider = { "pk.test" }, enableLogging = false, readTimeoutSeconds = 1)
 
+private val centroidCategoryBody = """
+{"type":"FeatureCollection","features":[
+{"type":"Feature","geometry":{"type":"Point","coordinates":[78.6569,22.9734]},"properties":{"mapbox_id":"fake","name":"Satna Station"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[85.82,20.29]},"properties":{"mapbox_id":"real","name":"KIMS"}}]}
+"""
+
 class SearchBoxRepositoryTest {
 
     private lateinit var server: MockWebServer
@@ -107,6 +113,13 @@ class SearchBoxRepositoryTest {
         val request = server.takeRequest()
         assertTrue(request.requestUrl!!.encodedPath.endsWith("/category/gas_station"))
         assertEquals("10", request.requestUrl!!.queryParameter("limit"))
+    }
+
+    @Test
+    fun categorySearchDropsPlaceholderCentroidFeatures() = runTest {
+        server.enqueue(MockResponse().setBody(centroidCategoryBody))
+        val places = (repository.categorySearch(PlaceCategory.HOSPITAL, GeoPoint(20.2961, 85.8245), 10) as AppResult.Success).value
+        assertEquals(listOf("real"), places.map { it.id })
     }
 
     @Test

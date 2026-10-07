@@ -59,12 +59,21 @@ class RaahiMapState internal constructor(
         )
     }
 
-    fun fitPoints(points: List<GeoPoint>, paddingPx: Double = DEFAULT_FIT_PADDING_PX) {
+    fun fitPoints(
+        points: List<GeoPoint>,
+        paddingPx: Double = DEFAULT_FIT_PADDING_PX,
+        topPx: Double = paddingPx,
+        bottomPx: Double = paddingPx,
+    ) {
         if (points.isEmpty()) return
+        if (points.all { it.distanceTo(points.first()) < MIN_FIT_SPAN_METERS }) {
+            flyTo(points.first(), zoom = MIN_FOCUS_ZOOM + 3)
+            return
+        }
         viewport.transitionToOverviewState(
             OverviewViewportStateOptions.Builder()
                 .geometry(MultiPoint.fromLngLats(points.map { Point.fromLngLat(it.lng, it.lat) }))
-                .padding(EdgeInsets(paddingPx, paddingPx, paddingPx, paddingPx))
+                .padding(EdgeInsets(topPx, paddingPx, bottomPx, paddingPx))
                 .build(),
         )
     }
@@ -86,6 +95,7 @@ class RaahiMapState internal constructor(
         const val DEFAULT_FLY_DURATION_MILLIS = 1_200L
         const val DEFAULT_FIT_PADDING_PX = 120.0
         const val MIN_FOCUS_ZOOM = 13.0
+        private const val MIN_FIT_SPAN_METERS = 100.0
         const val DEFAULT_ZOOM = 4.2
 
         val Saver: Saver<RaahiMapState, Any> = listSaver<RaahiMapState, Double>(

@@ -47,10 +47,12 @@ data class ExploreUiState(
     val locationPermission: LocationPermissionState = LocationPermissionState.DENIED,
     val connectivity: ConnectivityState = ConnectivityState.Online,
     val parkingSpots: List<SavedPlace> = emptyList(),
+    val needsLocation: Boolean = false,
 )
 
 sealed interface ExploreEvent {
-    data class FlyToUser(val point: GeoPoint) : ExploreEvent
+    data class FlyToUser(val point: GeoPoint, val zoom: Double = ExploreViewModel.MY_LOCATION_ZOOM) : ExploreEvent
+    data class FitToResults(val points: List<GeoPoint>) : ExploreEvent
     data class ShowMessage(@StringRes val messageRes: Int) : ExploreEvent
     data object ShowPermissionRationale : ExploreEvent
     data object ShowLocationDisabled : ExploreEvent
@@ -73,6 +75,8 @@ class ExploreViewModel(
     val events = eventChannel.receiveAsFlow()
 
     private var lastCameraCenter: GeoPoint? = null
+    private var lastCameraZoom: Double? = null
+    private var initialCentreDone = false
     private var searchJob: Job? = null
 
     init {
@@ -92,8 +96,24 @@ class ExploreViewModel(
         viewModelScope.launch { refreshLastKnownLocation() }
     }
 
-    fun onCameraIdle(center: GeoPoint) {
+    fun onCameraIdle(center: GeoPoint, zoom: Double) {
         lastCameraCenter = center
+        lastCameraZoom = zoom
+    }
+
+    fun centerOnUserOnce() {
+        if (initialCentreDone || locationRepository.permissionState.value == LocationPermissionState.DENIED) return
+        initialCentreDone = true
+        viewModelScope.launch {
+            val location = (locationRepository.lastKnown() as? AppResult.Success)?.value
+                ?: (locationRepository.currentLocation() as? AppResult.Success)?.value
+            if (location == null) {
+                initialCentreDone = false
+                return@launch
+            }
+            onUserLocationFound(location)
+            eventChannel.send(ExploreEvent.FlyToUser(location.point, INITIAL_ZOOM))
+        }
     }
 
     fun onCategorySelected(category: PlaceCategory) {
@@ -103,7 +123,10 @@ class ExploreViewModel(
         }
         searchJob?.cancel()
         mutableState.update {
-            it.copy(selectedCategory = category, results = emptyList(), isLoading = true, error = null, cachedAtMillis = null)
+            it.copy(
+                selectedCategory = category, results = emptyList(), isLoading = true, error = null,
+                cachedAtMillis = null, needsLocation = false,
+            )
         }
         searchJob = viewModelScope.launch { loadCategory(category) }
     }
@@ -119,7 +142,10 @@ class ExploreViewModel(
     fun clearResults() {
         searchJob?.cancel()
         mutableState.update {
-            it.copy(selectedCategory = null, results = emptyList(), isLoading = false, error = null, cachedAtMillis = null)
+            it.copy(
+                selectedCategory = null, results = emptyList(), isLoading = false, error = null,
+                cachedAtMillis = null, needsLocation = false,
+            )
         }
     }
 
@@ -136,7 +162,7 @@ class ExploreViewModel(
             }
             when (val result = locationRepository.currentLocation()) {
                 is AppResult.Success -> {
-                    mutableState.update { it.copy(userLocation = result.value) }
+                    onUserLocationFound(result.value)
                     eventChannel.send(ExploreEvent.FlyToUser(result.value.point))
                 }
                 is AppResult.Failure -> eventChannel.send(ExploreEvent.ShowMessage(result.error.toMessageRes()))
@@ -181,23 +207,35 @@ class ExploreViewModel(
         if (locationRepository.permissionState.value == LocationPermissionState.DENIED) return
         val result = locationRepository.lastKnown()
         if (result is AppResult.Success) {
-            mutableState.update { it.copy(userLocation = result.value) }
+            onUserLocationFound(result.value)
         }
     }
 
+    private fun onUserLocationFound(location: UserLocation) {
+        mutableState.update { it.copy(userLocation = location) }
+        if (mutableState.value.needsLocation) retry()
+    }
+
     private suspend fun loadCategory(category: PlaceCategory) {
-        val origin = lastCameraCenter ?: mutableState.value.userLocation?.point ?: DEFAULT_ORIGIN
+        val userPoint = mutableState.value.userLocation?.point
+        val origin = selectSearchOrigin(lastCameraCenter, lastCameraZoom, userPoint)
+        if (origin == null) {
+            mutableState.update { it.copy(results = emptyList(), isLoading = false, error = null, needsLocation = true) }
+            return
+        }
+        mutableState.update { it.copy(needsLocation = false) }
         val cacheKey = "explore_${category.name}"
         when (val result = placeSearch.categorySearch(category, origin)) {
             is AppResult.Success -> {
-                val sorted = result.value.sortedBy { it.distanceMeters ?: it.point.distanceTo(origin) }
+                val sorted = result.value.withDistances(userPoint, origin)
                 if (sorted.isNotEmpty()) nearbyCache.put(cacheKey, sorted)
                 mutableState.update { it.copy(results = sorted, isLoading = false, error = null, cachedAtMillis = null) }
+                if (sorted.isNotEmpty()) eventChannel.send(ExploreEvent.FitToResults(sorted.map { it.point } + origin))
             }
             is AppResult.Failure -> {
                 val cached = nearbyCache.get(cacheKey)
                 if (cached != null && cached.places.isNotEmpty()) {
-                    val sorted = cached.places.sortedBy { it.point.distanceTo(origin) }
+                    val sorted = cached.places.withDistances(userPoint, origin)
                     mutableState.update {
                         it.copy(results = sorted, isLoading = false, error = null, cachedAtMillis = cached.cachedAtMillis)
                     }
@@ -209,6 +247,17 @@ class ExploreViewModel(
     }
 
     companion object {
-        val DEFAULT_ORIGIN = GeoPoint(lat = 28.6139, lng = 77.2090)
+        const val MY_LOCATION_ZOOM = 15.0
+        const val INITIAL_ZOOM = 13.0
+        const val MIN_AREA_ZOOM = 10.0
     }
 }
+
+/** Camera centre when exploring an area, else the user, else null (caller must ask for location). */
+internal fun selectSearchOrigin(cameraCenter: GeoPoint?, cameraZoom: Double?, user: GeoPoint?): GeoPoint? =
+    if (cameraCenter != null && cameraZoom != null && cameraZoom >= ExploreViewModel.MIN_AREA_ZOOM) cameraCenter else user
+
+/** Distance from the user when known, else the API distance, else from the search origin; nearest first. */
+private fun List<Place>.withDistances(user: GeoPoint?, origin: GeoPoint): List<Place> =
+    map { it.copy(distanceMeters = user?.distanceTo(it.point) ?: it.distanceMeters ?: origin.distanceTo(it.point)) }
+        .sortedBy { it.distanceMeters }

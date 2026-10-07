@@ -16,4 +16,8 @@
     <string name="explore_cached_results">Showing saved results (%1$s)</string>
     <string name="explore_no_results_title">Nothing found nearby</string>
     <string name="explore_no_results_body">No %1$s found around this part of the map. Move the map or zoom out and try again.</string>
+    <string name="explore_see_all">See all</string>
+    <string name="explore_needs_location_title">Find nearby places</string>
+    <string name="explore_needs_location_body">Zoom in to an area or enable location to find nearby places</string>
+    <string name="explore_enable_location">Enable location</string>
 </resources>

@@ -73,6 +73,7 @@ class MapboxPlaceSearchRepository(
         val lng = geometry?.coordinates?.getOrNull(0) ?: properties.coordinates?.longitude ?: return null
         val lat = geometry?.coordinates?.getOrNull(1) ?: properties.coordinates?.latitude ?: return null
         val point = GeoPoint(lat, lng)
+        if (SearchResultSanitizer.isPlaceholder(point, origin)) return null
         val name = properties.name?.takeIf { it.isNotBlank() } ?: properties.fullAddress ?: properties.placeFormatted ?: return null
         return Place(
             id = properties.mapboxId ?: "${lat},${lng}",
@@ -82,6 +83,7 @@ class MapboxPlaceSearchRepository(
             category = properties.poiCategoryIds?.let { PlaceCategory.fromCanonicalIds(it) } ?: requested,
             distanceMeters = properties.distance ?: origin?.distanceTo(point),
             source = source,
+            phone = properties.metadata?.phone?.takeIf { it.isNotBlank() },
         )
     }
 

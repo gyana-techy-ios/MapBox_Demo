@@ -40,6 +40,7 @@ import com.mapbox.maps.plugin.annotation.ClusterOptions
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions
 import com.mapbox.maps.plugin.gestures.OnMapClickListener
 import com.mapbox.maps.plugin.gestures.OnMapLongClickListener
+import com.mapbox.maps.plugin.gestures.gestures
 import com.mapbox.maps.plugin.locationcomponent.createDefault2DPuck
 import com.mapbox.maps.plugin.locationcomponent.location
 import com.mapbox.maps.toCameraOptions
@@ -57,6 +58,7 @@ private const val PRIMARY_LINE_WIDTH = 8.0
 private const val ALTERNATE_LINE_WIDTH = 6.0
 private const val MARKER_TEXT_SIZE = 12.0
 private const val CLUSTER_RADIUS = 50L
+private val LOGO_WIDTH = 88.dp
 
 @OptIn(MapboxExperimental::class)
 @Composable
@@ -67,6 +69,7 @@ fun RaahiMap(
     markers: List<MapMarker> = emptyList(),
     routes: List<MapRoute> = emptyList(),
     showUserLocation: Boolean = false,
+    interactive: Boolean = true,
     contentPadding: PaddingValues = PaddingValues(),
     onMapClick: (GeoPoint) -> Unit = {},
     onMapLongClick: (GeoPoint) -> Unit = {},
@@ -86,7 +89,7 @@ fun RaahiMap(
         bottom = contentPadding.calculateBottomPadding() + 8.dp,
     )
     val attributionPadding = PaddingValues(
-        end = contentPadding.calculateEndPadding(layoutDirection) + 8.dp,
+        start = contentPadding.calculateStartPadding(layoutDirection) + 8.dp + LOGO_WIDTH + 8.dp,
         bottom = contentPadding.calculateBottomPadding() + 8.dp,
     )
     val compassPadding = PaddingValues(
@@ -105,7 +108,7 @@ fun RaahiMap(
         scaleBar = {},
         compass = { Compass(contentPadding = compassPadding) },
         logo = { Logo(contentPadding = logoPadding) },
-        attribution = { Attribution(contentPadding = attributionPadding, alignment = Alignment.BottomEnd) },
+        attribution = { Attribution(contentPadding = attributionPadding, alignment = Alignment.BottomStart) },
         onMapClickListener = OnMapClickListener { point ->
             latestMapClick(GeoPoint(point.latitude(), point.longitude()))
             true
@@ -146,6 +149,19 @@ fun RaahiMap(
                         ),
                     ),
                 )
+            }
+        }
+
+        MapEffect(interactive) { mapView ->
+            mapView.gestures.updateSettings {
+                scrollEnabled = interactive
+                rotateEnabled = interactive
+                pitchEnabled = interactive
+                pinchToZoomEnabled = interactive
+                doubleTapToZoomInEnabled = interactive
+                doubleTouchToZoomOutEnabled = interactive
+                quickZoomEnabled = interactive
+                pinchScrollEnabled = interactive
             }
         }
 

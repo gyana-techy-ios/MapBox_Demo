@@ -80,4 +80,8 @@ data class FeaturePropertiesDto(
     @SerialName("poi_category_ids") val poiCategoryIds: List<String>? = null,
     val coordinates: CoordinatesDto? = null,
     val distance: Double? = null,
+    val metadata: MetadataDto? = null,
 )
+
+@Serializable
+data class MetadataDto(val phone: String? = null)
