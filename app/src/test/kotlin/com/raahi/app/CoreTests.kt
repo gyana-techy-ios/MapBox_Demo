@@ -108,10 +108,10 @@ class MapboxConfigTest {
 
     @Test
     fun validPublicToken() {
-        val config = MapboxConfig("pk.eyJ1IjoidGVzdCJ9.abc")
+        val config = MapboxConfig("pk.fake-test-token")
         assertEquals(TokenStatus.Valid, config.status)
         assertTrue(config.isMapAvailable)
-        assertEquals("pk.eyJ1IjoidGVzdCJ9.abc", config.accessToken)
+        assertEquals("pk.fake-test-token", config.accessToken)
     }
 
     @Test
