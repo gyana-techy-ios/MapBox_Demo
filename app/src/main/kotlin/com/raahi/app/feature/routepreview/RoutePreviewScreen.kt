@@ -1,5 +1,7 @@
 package com.raahi.app.feature.routepreview
 
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.BoxWithConstraints
 import android.Manifest
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -228,11 +230,30 @@ private fun ReadyState(
     onStart: () -> Unit,
 ) {
     val trip = state.trip
-    Column(modifier = Modifier.fillMaxSize()) {
-        Box(modifier = Modifier.weight(1f)) {
-            PreviewMap(state = state, mapStyle = mapStyle, onSelect = onSelect)
+    BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+        val sheetWidth = maxWidth / 2
+        if (maxWidth > maxHeight) {
+            Row(modifier = Modifier.fillMaxSize()) {
+                Box(modifier = Modifier.weight(1f).fillMaxHeight()) {
+                    PreviewMap(state = state, mapStyle = mapStyle, onSelect = onSelect)
+                }
+                RouteSheet(
+                    state = state,
+                    trip = trip,
+                    onSelect = onSelect,
+                    onStart = onStart,
+                    sideBySide = true,
+                    modifier = Modifier.width(sheetWidth).fillMaxHeight(),
+                )
+            }
+        } else {
+            Column(modifier = Modifier.fillMaxSize()) {
+                Box(modifier = Modifier.weight(1f)) {
+                    PreviewMap(state = state, mapStyle = mapStyle, onSelect = onSelect)
+                }
+                RouteSheet(state = state, trip = trip, onSelect = onSelect, onStart = onStart, modifier = Modifier.fillMaxWidth())
+            }
         }
-        RouteSheet(state = state, trip = trip, onSelect = onSelect, onStart = onStart)
     }
 }
 
@@ -271,17 +292,24 @@ private fun stopMarkers(trip: Trip?, route: Route?): List<MapMarker> {
 }
 
 @Composable
-private fun RouteSheet(state: RoutePreviewUiState, trip: Trip?, onSelect: (Int) -> Unit, onStart: () -> Unit) {
+private fun RouteSheet(
+    state: RoutePreviewUiState,
+    trip: Trip?,
+    onSelect: (Int) -> Unit,
+    onStart: () -> Unit,
+    modifier: Modifier = Modifier,
+    sideBySide: Boolean = false,
+) {
     val spacing = LocalSpacing.current
     Surface(
         shape = RaahiShapes.large.copy(bottomEnd = androidx.compose.foundation.shape.CornerSize(0.dp), bottomStart = androidx.compose.foundation.shape.CornerSize(0.dp)),
         tonalElevation = 3.dp,
         shadowElevation = 6.dp,
-        modifier = Modifier.fillMaxWidth().testTag("routepreview_sheet"),
+        modifier = modifier.testTag("routepreview_sheet"),
     ) {
         Column {
             LazyColumn(
-                modifier = Modifier.heightIn(max = SheetMaxHeight).selectableGroup(),
+                modifier = (if (sideBySide) Modifier.weight(1f) else Modifier.heightIn(max = SheetMaxHeight)).selectableGroup(),
                 contentPadding = PaddingValues(spacing.lg),
                 verticalArrangement = Arrangement.spacedBy(spacing.sm),
             ) {

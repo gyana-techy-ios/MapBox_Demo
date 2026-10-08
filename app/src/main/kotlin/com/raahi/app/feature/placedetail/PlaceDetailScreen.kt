@@ -1,5 +1,8 @@
 package com.raahi.app.feature.placedetail
 
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.material3.Surface
+import com.raahi.app.ui.theme.Elevation
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -177,6 +180,29 @@ private fun PlaceDetailContent(
     Scaffold(
         modifier = modifier.testTag("screen_placedetail"),
         topBar = { RaahiTopBar(title = stringResource(R.string.placedetail_title), onBack = onBack) },
+        bottomBar = {
+            Surface(tonalElevation = Elevation.low, modifier = Modifier.testTag("placedetail_action_bar")) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = spacing.lg, vertical = spacing.sm),
+                    horizontalArrangement = Arrangement.spacedBy(spacing.sm),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    PrimaryButton(
+                        text = stringResource(R.string.placedetail_directions),
+                        onClick = onDirections,
+                        icon = Icons.Outlined.Directions,
+                        enabled = !state.isCreatingTrip,
+                        modifier = Modifier.weight(1f).testTag("placedetail_directions"),
+                    )
+                    SecondaryButton(
+                        text = stringResource(if (state.isFavorite) R.string.placedetail_saved else R.string.placedetail_save),
+                        onClick = onToggleFavorite,
+                        icon = if (state.isFavorite) Icons.Outlined.Bookmark else Icons.Outlined.BookmarkBorder,
+                        modifier = Modifier.testTag("placedetail_save"),
+                    )
+                }
+            }
+        },
         snackbarHost = { SnackbarHost(snackbarHost) },
     ) { padding ->
         Column(
@@ -234,23 +260,10 @@ private fun PlaceDetailContent(
                     )
                 }
 
-                PrimaryButton(
-                    text = stringResource(R.string.placedetail_directions),
-                    onClick = onDirections,
-                    icon = Icons.Outlined.Directions,
-                    enabled = !state.isCreatingTrip,
-                    modifier = Modifier.fillMaxWidth().testTag("placedetail_directions"),
-                )
                 FlowRow(
                     horizontalArrangement = Arrangement.spacedBy(spacing.sm),
                     verticalArrangement = Arrangement.spacedBy(spacing.sm),
                 ) {
-                    SecondaryButton(
-                        text = stringResource(if (state.isFavorite) R.string.placedetail_saved else R.string.placedetail_save),
-                        onClick = onToggleFavorite,
-                        icon = if (state.isFavorite) Icons.Outlined.Bookmark else Icons.Outlined.BookmarkBorder,
-                        modifier = Modifier.testTag("placedetail_save"),
-                    )
                     SecondaryButton(
                         text = stringResource(R.string.placedetail_add_to_trip),
                         onClick = { showTripSheet = true },

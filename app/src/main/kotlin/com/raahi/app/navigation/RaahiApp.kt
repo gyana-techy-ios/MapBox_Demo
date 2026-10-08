@@ -1,5 +1,11 @@
 package com.raahi.app.navigation
 
+import com.raahi.app.ui.util.findActivity
+import android.content.Intent
+import androidx.activity.ComponentActivity
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.util.Consumer
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
@@ -38,6 +44,7 @@ fun RaahiApp(
     container: AppContainer,
     navController: NavHostController = rememberNavController(),
 ) {
+    DeepLinkIntentEffect(navController)
     CompositionLocalProvider(
         LocalAppContainer provides container,
         LocalMapboxConfig provides container.mapboxConfig,
@@ -57,6 +64,16 @@ fun RaahiApp(
                 RaahiScaffold(navController = navController, startDestination = start)
             }
         }
+    }
+}
+
+@Composable
+private fun DeepLinkIntentEffect(navController: NavHostController) {
+    val activity = LocalContext.current.findActivity() as? ComponentActivity ?: return
+    DisposableEffect(activity, navController) {
+        val listener = Consumer<Intent> { intent -> navController.handleDeepLink(intent) }
+        activity.addOnNewIntentListener(listener)
+        onDispose { activity.removeOnNewIntentListener(listener) }
     }
 }
 
@@ -111,9 +128,12 @@ private fun RaahiBottomBar(isSelected: (TopLevelTab) -> Boolean, onSelect: (TopL
 }
 
 fun NavHostController.navigateToTab(tab: TopLevelTab) {
+    if (tab == TopLevelTab.EXPLORE) {
+        popBackStack<Explore>(inclusive = false)
+        return
+    }
     navigate(tab.route) {
-        popUpTo<Explore> { saveState = true }
+        popUpTo<Explore> { saveState = false }
         launchSingleTop = true
-        restoreState = true
     }
 }
