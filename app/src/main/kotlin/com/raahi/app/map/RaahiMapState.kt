@@ -39,6 +39,9 @@ class RaahiMapState internal constructor(
     val zoom: Double
         get() = viewport.cameraState?.zoom ?: initialZoomValue
 
+    private var isReady = false
+    private var pendingAction: (() -> Unit)? = null
+
     private val initialCenterValue = initialCenter
     private val initialZoomValue = initialZoom
 
@@ -64,8 +67,21 @@ class RaahiMapState internal constructor(
         paddingPx: Double = DEFAULT_FIT_PADDING_PX,
         topPx: Double = paddingPx,
         bottomPx: Double = paddingPx,
+        startPx: Double = paddingPx,
+        endPx: Double = paddingPx,
     ) {
         if (points.isEmpty()) return
+        runWhenReady { applyFit(points, paddingPx, topPx, bottomPx, startPx, endPx) }
+    }
+
+    private fun applyFit(
+        points: List<GeoPoint>,
+        paddingPx: Double,
+        topPx: Double,
+        bottomPx: Double,
+        startPx: Double,
+        endPx: Double,
+    ) {
         if (points.all { it.distanceTo(points.first()) < MIN_FIT_SPAN_METERS }) {
             flyTo(points.first(), zoom = MIN_FOCUS_ZOOM + 3)
             return
@@ -73,9 +89,19 @@ class RaahiMapState internal constructor(
         viewport.transitionToOverviewState(
             OverviewViewportStateOptions.Builder()
                 .geometry(MultiPoint.fromLngLats(points.map { Point.fromLngLat(it.lng, it.lat) }))
-                .padding(EdgeInsets(topPx, paddingPx, bottomPx, paddingPx))
+                .padding(EdgeInsets(topPx, startPx, bottomPx, endPx))
                 .build(),
         )
+    }
+
+    internal fun markReady() {
+        isReady = true
+        pendingAction?.invoke()
+        pendingAction = null
+    }
+
+    private fun runWhenReady(action: () -> Unit) {
+        if (isReady) action() else pendingAction = action
     }
 
     fun followUser() {

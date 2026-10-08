@@ -1,5 +1,7 @@
 package com.raahi.app.map
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -102,8 +104,9 @@ fun RaahiMap(
     val latestMapLongClick by rememberUpdatedState(onMapLongClick)
     val latestCameraIdle by rememberUpdatedState(onCameraIdle)
 
+    Box(modifier = modifier.fillMaxSize()) {
     MapboxMap(
-        modifier = modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         mapViewportState = state.viewport,
         scaleBar = {},
         compass = { Compass(contentPadding = compassPadding) },
@@ -134,6 +137,7 @@ fun RaahiMap(
     ) {
         MapEffect(Unit) { mapView ->
             mapView.mapboxMap.subscribeMapIdle {
+                state.markReady()
                 val mapboxMap = mapView.mapboxMap
                 val camera = mapboxMap.cameraState
                 val bounds = mapboxMap.coordinateBoundsForCamera(camera.toCameraOptions())
@@ -176,6 +180,8 @@ fun RaahiMap(
 
         RouteLines(routes = routes, onRouteClick = onRouteClick)
         MarkerLayer(markers = markers, onMarkerClick = onMarkerClick)
+    }
+    if (!interactive) Box(Modifier.matchParentSize().pointerInput(Unit) {})
     }
 }
 

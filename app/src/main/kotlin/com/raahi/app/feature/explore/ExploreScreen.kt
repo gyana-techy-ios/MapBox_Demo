@@ -71,6 +71,7 @@ import com.raahi.app.ui.components.ConnectivityBanner
 import com.raahi.app.ui.components.RaahiSearchBar
 import com.raahi.app.ui.theme.LocalRaahiColors
 import com.raahi.app.ui.theme.LocalSpacing
+import com.raahi.app.ui.theme.Sizes
 import com.raahi.app.ui.util.openAppSettings
 import com.raahi.app.ui.util.openLocationSettings
 
@@ -90,6 +91,8 @@ private val exploreCategories = listOf(
 private val ResultsPeekHeight = 232.dp
 private val MapTopOverlay = 168.dp
 private val FitPadding = 48.dp
+private val FabEdgeInset = 16.dp
+private val FabColumnReserve = Sizes.fab + FabEdgeInset
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -158,6 +161,7 @@ fun ExploreRoute(
                     paddingPx = with(density) { FitPadding.toPx().toDouble() },
                     topPx = with(density) { (statusBarTop + MapTopOverlay).toPx().toDouble() },
                     bottomPx = with(density) { (ResultsPeekHeight + FitPadding).toPx().toDouble() },
+                    endPx = with(density) { (FabColumnReserve + FitPadding).toPx().toDouble() },
                 )
                 is ExploreEvent.ShowMessage -> snackbarHost.showSnackbar(context.getString(event.messageRes))
                 ExploreEvent.ShowPermissionRationale -> {
@@ -270,7 +274,7 @@ fun ExploreRoute(
             Column(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
-                    .padding(end = spacing.lg, bottom = peekHeight + spacing.lg),
+                    .padding(end = FabEdgeInset, bottom = peekHeight + FabEdgeInset),
                 verticalArrangement = Arrangement.spacedBy(spacing.md),
                 horizontalAlignment = Alignment.End,
             ) {
