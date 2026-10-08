@@ -8,10 +8,13 @@ import com.raahi.app.domain.model.Route
 import com.raahi.app.domain.model.RouteOptions
 import com.raahi.app.domain.model.RouteProfile
 import com.raahi.app.domain.repository.DirectionsRepository
+import com.raahi.app.domain.voice.InstructionLanguage
+import java.util.Locale
 
 class MapboxDirectionsRepository(
     private val api: DirectionsApi,
     private val isConfigured: () -> Boolean,
+    private val language: () -> String = { InstructionLanguage.apiTagFor(Locale.getDefault()) },
     private val mapper: DirectionsMapper = DirectionsMapper(),
 ) : DirectionsRepository {
 
@@ -33,7 +36,7 @@ class MapboxDirectionsRepository(
                 alternatives = waypoints.size == MIN_WAYPOINTS,
                 annotations = if (isDriving) "congestion,duration,distance" else "duration,distance",
                 exclude = if (isDriving) excludeValue(options) else null,
-                language = "en",
+                language = language(),
             )
         }
         return when (response) {

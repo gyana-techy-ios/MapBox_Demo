@@ -1,5 +1,7 @@
 package com.raahi.app.core.di
 
+import androidx.appcompat.app.AppCompatDelegate
+import java.util.Locale
 import android.content.Context
 import com.raahi.app.BuildConfig
 import com.raahi.app.core.config.MapboxConfig
@@ -38,6 +40,7 @@ import com.raahi.app.domain.usecase.FindNearestEmergencyUseCase
 import com.raahi.app.domain.usecase.PlanRoutesUseCase
 import com.raahi.app.domain.usecase.TripValidator
 import com.raahi.app.location.FusedLocationRepository
+import com.raahi.app.domain.voice.InstructionLanguage
 import com.raahi.app.domain.voice.VoiceGuide
 import com.raahi.app.offline.DeviceStorageProbe
 import com.raahi.app.offline.DownloadCoordinator
@@ -72,6 +75,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
         MapboxDirectionsRepository(
             api = RetrofitFactory.create(RetrofitFactory.DIRECTIONS_BASE_URL, httpClient, DirectionsApi::class.java),
             isConfigured = { mapboxConfig.isMapAvailable },
+            language = { InstructionLanguage.apiTagFor(AppCompatDelegate.getApplicationLocales().get(0) ?: Locale.getDefault()) },
         )
     }
     override val tripRepository: TripRepository by lazy { RoomTripRepository(database.tripDao(), clock) }

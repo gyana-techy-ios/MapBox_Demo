@@ -3,6 +3,7 @@ package com.raahi.app.voice
 import android.content.Context
 import android.speech.tts.TextToSpeech
 import androidx.appcompat.app.AppCompatDelegate
+import com.raahi.app.domain.voice.InstructionLanguage
 import com.raahi.app.domain.voice.VoiceGuide
 import com.raahi.app.domain.voice.VoiceStatus
 import java.util.Locale
@@ -62,13 +63,6 @@ class TextToSpeechVoiceGuide(context: Context) : VoiceGuide {
         mutableStatus.value = VoiceStatus.Unavailable
     }
 
-    private fun preferredLocale(): Locale {
-        val userLocale = AppCompatDelegate.getApplicationLocales().get(0) ?: Locale.getDefault()
-        return if (userLocale.language == INSTRUCTION_LANGUAGE) userLocale else Locale.forLanguageTag(INDIAN_ENGLISH_TAG)
-    }
-
-    private companion object {
-        const val INSTRUCTION_LANGUAGE = "en"
-        const val INDIAN_ENGLISH_TAG = "en-IN"
-    }
+    private fun preferredLocale(): Locale =
+        InstructionLanguage.speechLocaleFor(AppCompatDelegate.getApplicationLocales().get(0) ?: Locale.getDefault())
 }
