@@ -10,44 +10,47 @@
 
 ### 1.1 Screen Hierarchy and Bottom Bar
 
-The app uses a bottom navigation bar with 5 primary destinations:
+The app uses a bottom navigation bar with 5 top-level destinations: Explore, Trips, Offline, Saved, Profile.
 
 ```
 ┌─────────────────────────────────────────┐
 │         ▲ Map / Screen Content ▲        │
-│                                         │
 ├────────────────────────────────────────┤
 │ Explore │ Trips │ Offline│Saved│Profile│
 └─────────────────────────────────────────┘
 ```
 
-**Bottom bar visibility:**
-- **Visible on:** Explore, Trips, Offline, Saved, Profile, Settings, Language, About.
-- **Hidden on:** Onboarding, Search, PlaceDetail, Nearby, Guidance (Drive Mode), OfflineRegionPicker.
+**Bottom bar visibility (as built):**
+- **Hidden on:** Onboarding, Search, Guidance, OfflineRegionPicker.
+- **Visible on every other screen**, including PlaceDetail, Nearby, Emergency, EmergencyContacts, TripEditor, TripDetail, RoutePreview, Settings, Language and About.
 
-### 1.2 Navigation Graph (Compose Navigation)
+**Tab behaviour:** selecting Explore pops to the Explore root. Selecting another tab pops to Explore and opens that tab's root; nested stacks are not restored. Back from any tab root returns to Explore, and Back on Explore exits.
 
-```
-Onboarding ──→ (no bottom bar)
-    ↓
-    └──→ LocationPermission ──→ NotificationPermission
-            ↓
-          Explore (bottom bar shown) ────→ Search (hidden bottom bar)
-            ↓                                  ↓
-          Trips ────────────────────→ TripEditor
-            ↓                            ↓
-         Offline ─────────────────→ OfflineRegionPicker (hidden bottom)
-            ↓                            ↓
-         Saved ────────────────────→ SavedPlaceEditor
-            ↓
-         Profile ─────────────────→ Settings
-                                     Language
-                                     About
-                                     EmergencyContacts
-         
-         (Deep links: raahi://place?lat=&lng=&name= and raahi://trip/{id})
-         (From any screen → PlaceDetail, Guidance)
-```
+### 1.2 Routes and Callbacks (as built)
+
+| Route | Reached from | Leaves via |
+|-------|--------------|-----------|
+| `Onboarding` | first launch | `onFinished` -> Explore (Onboarding popped) |
+| `Explore` | start destination | search bar -> Search; Emergency FAB -> Emergency; place -> PlaceDetail; See all -> Nearby |
+| `Search` | Explore | Back; result -> PlaceDetail; Find nearby -> Nearby |
+| `PlaceDetail(id,name,lat,lng,address,category)` | Explore, Search, Nearby, Emergency, Saved; deep link `raahi://place` | Back; Directions -> RoutePreview(tripId) |
+| `Nearby(category)` | Explore, Search | Back; place -> PlaceDetail |
+| `Emergency` | Explore | Back; Manage contacts -> EmergencyContacts; hospital -> PlaceDetail; 112 / 108 open the dialer |
+| `EmergencyContacts` | Emergency, Saved, Profile | Back |
+| `Trips` | tab | trip -> TripDetail; New trip -> TripEditor |
+| `TripEditor(tripId)` | Trips, TripDetail, RoutePreview | Back (discard dialog when dirty); `onSaved`: new trip -> TripDetail (editor popped), existing trip -> pop |
+| `TripDetail(tripId)` | Trips, TripEditor; deep link `raahi://trip/{id}` | Back; Edit -> TripEditor; Preview route -> RoutePreview; missing trip -> Back to trips |
+| `RoutePreview(tripId)` | PlaceDetail, TripDetail | Back; Start -> Guidance(tripId, routeIndex); Edit trip -> TripEditor |
+| `Guidance(tripId, routeIndex)` | RoutePreview | Exit (confirm dialog) -> back to RoutePreview |
+| `Offline` | tab, Profile | Download area -> OfflineRegionPicker |
+| `OfflineRegionPicker` | Offline | Back; `onDownloadStarted` -> back to Offline |
+| `Saved` | tab | place -> PlaceDetail; contacts -> EmergencyContacts; empty state -> Explore |
+| `Profile` | tab | Settings, Language, EmergencyContacts, About, Offline |
+| `Settings`, `Language`, `About` | Profile | Back |
+
+Deep links: `raahi://place?lat=&lng=&name=` and `raahi://trip/{id}`. They work on cold start and on a running app (`onNewIntent`). A deep link to a deleted trip shows the "Trip not found" state with Back to trips.
+
+There is no separate Route Comparison screen: alternatives are compared on RoutePreview. There is no SavedPlaceEditor screen: places are saved from PlaceDetail (Save, Home or work sheet) and parking is saved from the Explore overflow menu. `raahi://emergency` is not implemented.
 
 ---
 
@@ -264,7 +267,7 @@ Onboarding ──→ (no bottom bar)
 **Save:**
 - Button: "Save to My Places"
 - Tap → SavePlaceDialog (choose type: Home, Work, Favorite, Parked Car).
-- If Parked Car, ask for optional photo and note.
+- Home and Work are set from the Home or work sheet; Parking is saved from the Explore overflow menu (Save parking here) at the map centre.
 
 ---
 
@@ -346,44 +349,9 @@ Onboarding ──→ (no bottom bar)
 - **Add Stop:** Tap → search dialog appears; select → stop added.
 - **Compare Routes:** Tap → request routes from Directions API and navigate to RouteComparisonScreen.
 
-### 6.3 Route Comparison Screen
+### 6.3 Route comparison
 
-**Purpose:** Compare up to 3 route alternatives.
-
-**Entry:** "Compare Routes" button from TripEditorScreen (after adding origin + destination + optional stops).
-
-**Layout:**
-```
-┌──────────────────────────────────┐
-│ ← [Route Comparison]  [Open Map] │  ← Back, title, open full map
-├──────────────────────────────────┤
-│      🗺️ MAP (small)              │
-│   Shows all 3 routes             │
-├──────────────────────────────────┤
-│ [Route 1] 🟢 Fastest             │
-│ 487 km • 7h 23m • Light traffic  │
-│ [Details] [Select]               │
-│                                  │
-│ [Route 2] 🔵 Shortest            │
-│ 432 km • 8h 12m • Moderate       │
-│ [Details] [Select]               │
-│                                  │
-│ [Route 3] 🟣 Avoid Tolls         │
-│ 521 km • 9h 5m • Few tolls       │
-│ [Details] [Select]               │
-├──────────────────────────────────┤
-│ [Start Driving] [Save Trip]      │
-│                                  │
-└──────────────────────────────────┘
-```
-
-**Interactions:**
-
-- **Select button:** Mark route as selected (visual highlight).
-- **Details button:** Show steps/maneuvers as a list.
-- **Map:** Tap "Open Map" → full-screen RoutePreviewScreen.
-- **Start Driving:** Begin Guidance for selected route.
-- **Save Trip:** Save the trip (with selected route) to Room.
+Folded into RoutePreview (6.4): up to three alternatives are listed as selectable cards under the map, with the fastest tagged.
 
 ### 6.4 Route Preview Screen (Full Map)
 
@@ -622,7 +590,6 @@ Notification appears; download is now listed in Offline screen.
 │                                  │
 │ Parked Car                       │
 │ 🚗 Ground Floor, Parking        │
-│ [Photo] [Note: Block A, 5th fl] │
 │ [Navigate] [Edit] [Delete]       │
 │                                  │
 │ Favorites                        │
@@ -646,10 +613,6 @@ Notification appears; download is now listed in Offline screen.
 ║ [Parked Car]                  ║
 ║                               ║
 ║ Name: _____________           ║
-║                               ║
-║ (If Parked Car:)              ║
-║ [📷 Take Photo] [photo shown]  ║
-║ Note: ________________         ║
 ║                               ║
 ║ [Save] [Cancel]               ║
 ╚═══════════════════════════════╝
@@ -736,8 +699,6 @@ raahi://place?lat=28.6139&lng=77.2090&name=Delhi%20Gate
 raahi://trip/{trip_id}
     → Opens TripDetail for the saved trip
 
-raahi://emergency
-    → Opens Emergency screen (useful for shortcuts, widgets)
 ```
 
 **SavedStateHandle (ViewModel Scoped):**

@@ -63,236 +63,63 @@
 
 ## 2. Package Structure
 
+Single Gradle module (`app`), package `com.raahi.app`, source root `app/src/main/kotlin`.
+
 ```
-app/
-├── src/main/
-│   ├── AndroidManifest.xml
-│   ├── kotlin/com/example/raahi/
-│   │   ├── Application.kt                   # App initialization, DI
-│   │   ├── AppContainer.kt                  # Manual DI (no Hilt)
-│   │   │
-│   │   ├── core/
-│   │   │   ├── config/                      # Build config, constants
-│   │   │   │   └── Config.kt
-│   │   │   ├── di/                          # Service locator / DI
-│   │   │   │   └── AppContainer.kt          # Single DI entry point
-│   │   │   ├── network/                     # HTTP clients
-│   │   │   │   ├── OkHttpFactory.kt
-│   │   │   │   ├── RetrofitFactory.kt
-│   │   │   │   └── SearchBoxClient.kt       # HTTP fallback for Search
-│   │   │   ├── result/                      # Result<T> sealed type
-│   │   │   │   └── Result.kt
-│   │   │   ├── error/                       # AppError, ErrorMapper
-│   │   │   │   ├── AppError.kt
-│   │   │   │   └── ErrorMapper.kt
-│   │   │   ├── location/                    # Location utilities
-│   │   │   │   └── PermissionUtils.kt
-│   │   │   └── util/                        # General utilities
-│   │   │       └── Extensions.kt
-│   │   │
-│   │   ├── domain/                          # Business logic
-│   │   │   ├── model/                       # Domain models (immutable)
-│   │   │   │   ├── Trip.kt
-│   │   │   │   ├── Stop.kt
-│   │   │   │   ├── Place.kt
-│   │   │   │   ├── SavedPlace.kt
-│   │   │   │   ├── Route.kt
-│   │   │   │   ├── EmergencyContact.kt
-│   │   │   │   ├── OfflineRegion.kt
-│   │   │   │   └── GuidanceState.kt
-│   │   │   ├── repository/                  # Interface (contract)
-│   │   │   │   ├── PlaceSearchRepository.kt
-│   │   │   │   ├── DirectionsRepository.kt
-│   │   │   │   ├── TripRepository.kt
-│   │   │   │   ├── SavedPlaceRepository.kt
-│   │   │   │   ├── OfflineRegionRepository.kt
-│   │   │   │   ├── LocationRepository.kt
-│   │   │   │   ├── ConnectivityRepository.kt
-│   │   │   │   └── EmergencyContactRepository.kt
-│   │   │   └── usecase/                     # Use case orchestration
-│   │   │       ├── SearchPlaceUseCase.kt
-│   │   │       ├── PlanTripUseCase.kt
-│   │   │       ├── CompareRoutesUseCase.kt
-│   │   │       ├── StartGuidanceUseCase.kt
-│   │   │       ├── DownloadOfflineRegionUseCase.kt
-│   │   │       ├── SavePlaceUseCase.kt
-│   │   │       ├── CallEmergencyUseCase.kt
-│   │   │       └── ...
-│   │   │
-│   │   ├── data/                            # Data layer
-│   │   │   ├── remote/                      # Network
-│   │   │   │   ├── api/
-│   │   │   │   │   ├── SearchBoxApi.kt      # Retrofit interface
-│   │   │   │   │   ├── DirectionsApi.kt
-│   │   │   │   │   └── StaticImagesApi.kt
-│   │   │   │   └── model/                   # Network DTOs
-│   │   │   │       ├── SearchBoxDto.kt
-│   │   │   │       └── DirectionsDto.kt
-│   │   │   ├── local/                       # Room persistence
-│   │   │   │   ├── database/
-│   │   │   │   │   ├── RaahiDatabase.kt
-│   │   │   │   │   └── migration/
-│   │   │   │   │       └── Migration_1_2.kt
-│   │   │   │   ├── entity/                  # Room @Entity
-│   │   │   │   │   ├── TripEntity.kt
-│   │   │   │   │   ├── StopEntity.kt
-│   │   │   │   │   ├── SavedPlaceEntity.kt
-│   │   │   │   │   ├── EmergencyContactEntity.kt
-│   │   │   │   │   ├── OfflineRegionMetadataEntity.kt
-│   │   │   │   │   └── RecentSearchEntity.kt
-│   │   │   │   ├── dao/                     # Room @Dao
-│   │   │   │   │   ├── TripDao.kt
-│   │   │   │   │   ├── SavedPlaceDao.kt
-│   │   │   │   │   ├── OfflineRegionMetadataDao.kt
-│   │   │   │   │   ├── RecentSearchDao.kt
-│   │   │   │   │   └── EmergencyContactDao.kt
-│   │   │   │   ├── preferences/             # DataStore
-│   │   │   │   │   └── AppPreferences.kt
-│   │   │   │   └── cache/                   # In-memory
-│   │   │   │       └── PlaceCache.kt
-│   │   │   └── repository/                  # Repository implementations
-│   │   │       ├── PlaceSearchRepositoryImpl.kt
-│   │   │       ├── DirectionsRepositoryImpl.kt
-│   │   │       ├── TripRepositoryImpl.kt
-│   │   │       ├── SavedPlaceRepositoryImpl.kt
-│   │   │       ├── ConnectivityRepositoryImpl.kt
-│   │   │       └── ...
-│   │   │
-│   │   ├── location/                        # Location abstraction
-│   │   │   ├── LocationRepository.kt
-│   │   │   ├── LocationRepositoryImpl.kt
-│   │   │   └── PermissionState.kt
-│   │   │
-│   │   ├── offline/                         # Offline maps management
-│   │   │   ├── OfflineRegionRepository.kt
-│   │   │   ├── MapboxOfflineMapRepository.kt
-│   │   │   ├── TileEstimator.kt             # Compute tile size
-│   │   │   ├── OfflineDownloadManager.kt    # WorkManager task
-│   │   │   └── OfflineMapState.kt
-│   │   │
-│   │   ├── map/                             # Mapbox integration
-│   │   │   ├── RaahiMap.kt                  # Main composable
-│   │   │   ├── RaahiMapState.kt             # State holder
-│   │   │   ├── MapboxStyler.kt              # Style config (light/dark)
-│   │   │   ├── ClusteringManager.kt         # Annotation clusters
-│   │   │   ├── RoutePolylineManager.kt      # Draw routes
-│   │   │   └── LocationPuckManager.kt
-│   │   │
-│   │   ├── guidance/                        # Custom guidance engine
-│   │   │   ├── GuidanceEngine.kt            # Step-by-step maneuvers
-│   │   │   ├── GuidanceState.kt             # Maneuver, ETA, distance
-│   │   │   ├── OffRouteDetector.kt          # >10m, >5s logic
-│   │   │   ├── Polyline6Decoder.kt          # Decode Directions polyline6
-│   │   │   ├── TtsVoiceGuidance.kt          # Android TextToSpeech
-│   │   │   └── ManeuverFormatter.kt
-│   │   │
-│   │   ├── connectivity/                    # Network state
-│   │   │   ├── ConnectivityMonitor.kt       # Online/Limited/Offline
-│   │   │   └── ConnectivityRepositoryImpl.kt
-│   │   │
-│   │   ├── ui/                              # UI theme + components
-│   │   │   ├── theme/
-│   │   │   │   ├── Color.kt                 # Design tokens (NO hardcoded colors)
-│   │   │   │   ├── Type.kt                  # Typography
-│   │   │   │   ├── Theme.kt                 # CompositionLocal overrides
-│   │   │   │   └── Shapes.kt
-│   │   │   ├── components/                  # Reusable composables
-│   │   │   │   ├── RaahiSearchBar.kt
-│   │   │   │   ├── CategoryChipRow.kt
-│   │   │   │   ├── PlaceCard.kt
-│   │   │   │   ├── PlaceListItem.kt
-│   │   │   │   ├── RouteComparisonCard.kt
-│   │   │   │   ├── EmptyState.kt
-│   │   │   │   ├── ErrorState.kt
-│   │   │   │   ├── ConnectivityBanner.kt
-│   │   │   │   ├── LoadingSkeletonList.kt
-│   │   │   │   ├── RaahiTopBar.kt
-│   │   │   │   ├── ConfirmDialog.kt
-│   │   │   │   ├── PermissionRationale.kt
-│   │   │   │   ├── MapUnavailablePanel.kt
-│   │   │   │   └── MapButton.kt (locate-me, etc.)
-│   │   │   └── util/
-│   │   │       └── AccessibilityExt.kt
-│   │   │
-│   │   ├── navigation/                      # Navigation routing
-│   │   │   ├── NavGraph.kt                  # Compose navigation
-│   │   │   └── RaahiNavHost.kt
-│   │   │
-│   │   └── feature/                         # Feature screens
-│   │       ├── onboarding/
-│   │       │   ├── OnboardingScreen.kt
-│   │       │   ├── OnboardingViewModel.kt
-│   │       │   └── OnboardingUiState.kt
-│   │       ├── explore/
-│   │       │   ├── ExploreScreen.kt
-│   │       │   ├── ExploreViewModel.kt
-│   │       │   ├── ExploreUiState.kt
-│   │       │   ├── SearchScreen.kt
-│   │       │   ├── PlaceDetailScreen.kt
-│   │       │   └── NearbyScreen.kt
-│   │       ├── trips/
-│   │       │   ├── TripsScreen.kt
-│   │       │   ├── TripEditorScreen.kt
-│   │       │   ├── TripEditorViewModel.kt
-│   │       │   ├── TripDetailScreen.kt
-│   │       │   ├── RoutePreviewScreen.kt
-│   │       │   └── RouteComparisonViewModel.kt
-│   │       ├── guidance/
-│   │       │   ├── GuidanceScreen.kt
-│   │       │   ├── GuidanceViewModel.kt
-│   │       │   └── GuidanceUiState.kt
-│   │       ├── offline/
-│   │       │   ├── OfflineScreen.kt
-│   │       │   ├── OfflineRegionPickerScreen.kt
-│   │       │   ├── OfflineViewModel.kt
-│   │       │   └── OfflineUiState.kt
-│   │       ├── saved/
-│   │       │   ├── SavedPlacesScreen.kt
-│   │       │   ├── SavedPlacesViewModel.kt
-│   │       │   └── ParkedCarScreen.kt
-│   │       ├── emergency/
-│   │       │   ├── EmergencyScreen.kt
-│   │       │   ├── EmergencyViewModel.kt
-│   │       │   ├── EmergencyContactsScreen.kt
-│   │       │   └── EmergencySosActionHandler.kt
-│   │       ├── profile/
-│   │       │   ├── ProfileScreen.kt
-│   │       │   ├── SettingsScreen.kt
-│   │       │   ├── LanguageScreen.kt
-│   │       │   ├── AboutScreen.kt
-│   │       │   └── PreferencesViewModel.kt
-│   │       └── ...
-│   │
-│   └── res/
-│       ├── values/
-│       │   ├── colors.xml              # NOT USED; use theme tokens
-│       │   ├── strings.xml             # en_US
-│       │   ├── strings-hi.xml          # Hindi
-│       │   ├── strings-or.xml          # Odia
-│       │   ├── dimens.xml              # NOT USED; use spacing tokens
-│       │   ├── styles.xml              # Material 3 theme
-│       │   └── locales_config.xml
-│       ├── drawable/
-│       │   ├── ic_fuel.xml             # Vector icons
-│       │   ├── ic_hospital.xml
-│       │   └── ...
-│       ├── mipmap/
-│       │   └── ic_launcher.png
-│       └── raw/
-│           └── (no embedded data files)
+com/raahi/app/
+├── MainActivity.kt                    # Single activity, hosts RaahiApp
+├── RaahiApplication.kt                # Builds DefaultAppContainer, initialises Mapbox token
 │
-├── build.gradle.kts                  # Single module
-├── proguard-rules.pro
-└── local.properties                  # .gitignore: MAPBOX_ACCESS_TOKEN
+├── core/
+│   ├── config/        MapboxConfig, MapboxTokenBootstrap      # token parsing and status
+│   ├── di/            AppContainer, DefaultAppContainer       # manual DI + appViewModel helpers
+│   ├── dispatchers/   DispatcherProvider
+│   ├── network/       ConnectivityMonitor, AndroidConnectivityMonitor
+│   ├── result/        AppResult, AppError, HttpErrorMapper, AppErrorMessages
+│   └── time/          Clock
+│
+├── domain/                            # Pure Kotlin
+│   ├── model/         Geo, Place, Route, Trip, Offline
+│   ├── repository/    Repositories.kt (all repository contracts)
+│   ├── usecase/       ActiveRouteStore, ContactValidator, FindNearestEmergencyUseCase,
+│   │                  GuidanceEngine, PlanRoutesUseCase, TileEstimator, TripValidator
+│   └── voice/         VoiceGuide, InstructionLanguage
+│
+├── data/
+│   ├── remote/        SearchBoxApi, DirectionsApi, RetrofitFactory, HttpClientFactory,
+│   │                  MapboxPlaceSearchRepository, MapboxDirectionsRepository,
+│   │                  DirectionsMapper, Polyline6, SearchResultSanitizer, ApiCall
+│   ├── local/         RaahiDatabase, Entities, Daos, Mappers (Room)
+│   └── repository/    RoomRepositories, DataStorePreferencesRepository
+│
+├── location/          FusedLocationRepository
+├── offline/           MapboxOfflineMapRepository (the only TileStore/OfflineManager user),
+│                      DownloadCoordinator, StorageProbe
+├── voice/             TextToSpeechVoiceGuide
+├── map/               RaahiMap, RaahiMapState, MapModels, MarkerIcons, MapUnavailablePanel
+├── navigation/        RaahiApp (scaffold, bottom bar, deep-link intents), RaahiNavHost,
+│                      Routes, TopLevelTab
+├── ui/
+│   ├── theme/         Color, Theme, Type, Dimensions (tokens only; the single place with colour literals)
+│   ├── components/    Buttons, Dialogs, StateViews, RaahiTopBar, RaahiSearchBar, CategoryChipRow, ...
+│   ├── format/        Formatters, TimeFormatters
+│   └── util/          ContextExt, MapStyleState, PlaceLinks, UiMessage
+└── feature/           one package per screen: onboarding, explore, search, nearby, placedetail,
+                       trips, tripeditor, tripdetail, routepreview, guidance, offline,
+                       offlineregionpicker, saved, emergency, emergencycontacts, profile,
+                       settings, language, about
 ```
+
+Resources: `res/values` (en), `res/values-hi`, `res/values-or`, `res/values-night`, `res/xml/locales_config.xml`.
 
 ### Key Design Decisions
 
-1. **No Hilt:** Manual DI via AppContainer in Application.onCreate(). Reduces build time, makes test containers trivial.
-2. **No separate `lib` modules:** Single `app` module keeps the codebase shallow; refactor to modules only if specific layers need to be swapped (e.g., offline map provider).
-3. **Package-by-layer, not package-by-feature:** top-level organization by architectural layer (domain, data, ui) makes dependency rules clear; screens organized under `feature/`.
-4. **Offline layer isolation:** `MapboxOfflineMapRepository` is the only place that touches TileStore; all other code sees the domain-level `OfflineRegion` model.
-5. **Guidance engine isolation:** `GuidanceEngine` is pure Kotlin (no Android deps except for GPS/time); testable in JVM tests.
+1. **No Hilt:** Manual DI via `DefaultAppContainer`, created in `RaahiApplication`. ViewModels are built with `appViewModel { }` factories.
+2. **Single module:** refactor to modules only if a layer must be swapped.
+3. **Mapbox isolation:** `com.mapbox` imports are allowed only in `map/`, `offline/`, `core/config` and `RaahiApplication`.
+4. **Offline isolation:** `MapboxOfflineMapRepository` is the only code touching TileStore. All Mapbox load calls run on the main dispatcher because Mapbox delivers callbacks on the calling thread's Looper.
+5. **Guidance engine isolation:** `GuidanceEngine` is pure Kotlin and unit-tested on the JVM.
+6. **HTTP only for search and routing:** Search Box API and Directions v5 via Retrofit. No Search SDK, no Navigation SDK.
 
 ---
 
@@ -357,7 +184,6 @@ data class SavedPlace(
     val lat: Double,
     val lng: Double,
     val address: String? = null,
-    val photoUri: String? = null,    // local file URI
     val note: String? = null,        // e.g., "5th floor, Block A"
     val savedAt: Long = System.currentTimeMillis()
 )
@@ -441,7 +267,6 @@ data class SavedPlaceEntity(
     val lat: Double,
     val lng: Double,
     val address: String? = null,
-    val photoUri: String? = null,
     val note: String? = null,
     val savedAt: Long
 )
@@ -560,201 +385,32 @@ class PlaceCache {
 
 ### HTTP APIs via Retrofit
 
+Search and routing use plain HTTPS through Retrofit and OkHttp. The Mapbox Search SDK and Navigation SDK are not used.
+
 ```kotlin
-// SearchBoxApi: Mapbox Search Box API
-interface SearchBoxApi {
-    @GET("search/searchbox/v1/suggest")
-    suspend fun suggest(
-        @Query("q") query: String,
-        @Query("session_token") sessionToken: String,
-        @Query("proximity") proximity: String? = null,  // lng,lat
-        @Query("limit") limit: Int = 5,
-        @Query("access_token") token: String
-    ): SearchBoxSuggestResponse
-
-    @GET("search/searchbox/v1/retrieve/{mapbox_id}")
-    suspend fun retrieve(
-        @Path("mapbox_id") mapboxId: String,
-        @Query("session_token") sessionToken: String,
-        @Query("access_token") token: String
-    ): SearchBoxRetrieveResponse
-
-    @GET("search/searchbox/v1/category/{canonical_id}")
-    suspend fun categorySearch(
-        @Path("canonical_id") categoryId: String,
-        @Query("proximity") proximity: String? = null,
-        @Query("limit") limit: Int = 25,
-        @Query("access_token") token: String
-    ): SearchBoxCategoryResponse
+interface SearchBoxApi {            // search/searchbox/v1/{suggest, retrieve, category, reverse}
+    suspend fun suggest(query, sessionToken, proximity, language): SuggestResponseDto
+    suspend fun retrieve(mapboxId, sessionToken, language): FeatureCollectionDto
+    suspend fun category(canonicalId, proximity, language, limit): FeatureCollectionDto
+    suspend fun reverse(lng, lat, language): FeatureCollectionDto
 }
 
-// DirectionsApi: Mapbox Directions v5
-interface DirectionsApi {
-    @GET("directions/v5/mapbox/{profile}/{coordinates}")
-    suspend fun getDirections(
-        @Path("profile") profile: String,     // driving-traffic, driving, walking, cycling
-        @Path("coordinates") coordinates: String,  // lng,lat;lng,lat;...
-        @Query("alternatives") alternatives: Boolean = true,
-        @Query("overview") overview: String = "full",
-        @Query("geometries") geometries: String = "polyline6",
-        @Query("steps") steps: Boolean = true,
-        @Query("annotations") annotations: String = "duration,distance,congestion_numeric",
-        @Query("exclude") exclude: String? = null,     // toll,motorway,ferry
-        @Query("access_token") token: String
-    ): DirectionsResponse
-
-    @POST("directions/v5/mapbox/{profile}")
-    suspend fun getDirectionsPost(
-        @Path("profile") profile: String,
-        @Body request: DirectionsPostRequest,
-        @Query("access_token") token: String
-    ): DirectionsResponse
-}
-
-// StaticImagesApi: Mapbox Static Images
-interface StaticImagesApi {
-    @GET("styles/v1/{user}/{style_id}/static/{lon},{lat},{zoom}/{width}x{height}")
-    suspend fun getStaticImage(
-        @Path("user") user: String,
-        @Path("style_id") styleId: String,
-        @Path("lon") lon: Double,
-        @Path("lat") lat: Double,
-        @Path("zoom") zoom: Int,
-        @Path("width") width: Int,
-        @Path("height") height: Int,
-        @Query("@2x") retina: String = "@2x",  // for 2x density
-        @Query("access_token") token: String
-    ): ResponseBody   // image bytes
+interface DirectionsApi {           // directions/v5/mapbox/{profile}/{coordinates}
+    suspend fun getRoutes(profile, coordinates, alternatives, annotations, exclude, language): DirectionsResponseDto
 }
 ```
 
-### Repository Implementation (Data Layer)
+`HttpClientFactory` adds the access token as a query parameter through an interceptor and redacts it from debug logging (`TokenRedactor`). Release builds never log HTTP.
 
-```kotlin
-class PlaceSearchRepositoryImpl(
-    private val searchBoxApi: SearchBoxApi,
-    private val searchBoxSdk: PlaceAutocomplete,
-    private val discover: Discover,
-    private val searchEngine: SearchEngine,
-    private val placeCache: PlaceCache,
-    private val appPreferences: AppPreferences,
-    private val token: String
-) : PlaceSearchRepository {
+### Repository Implementation
 
-    override suspend fun searchAutocomplete(query: String): Result<List<Place>> = withContext(Dispatchers.IO) {
-        if (query.isBlank()) return@withContext Result.Success(emptyList())
+| Class | Responsibility |
+|-------|----------------|
+| `MapboxPlaceSearchRepository` | suggest / retrieve / category / reverse; maps DTOs to `Place`; passes results through `SearchResultSanitizer` (drops placeholder POIs); language from `apiLanguageFor(locale)` (hi or en) |
+| `MapboxDirectionsRepository` | validates waypoint count (2 to 25), maps `RouteOptions` to `exclude`, decodes polyline6, maps API error codes; `language` comes from `InstructionLanguage.apiTagFor(appLocale)` |
+| `DirectionsMapper` | DTO to domain `Route` with steps, legs and congestion |
 
-        // Check cache first
-        placeCache.get(query)?.let { return@withContext Result.Success(it.places) }
-
-        return@withContext try {
-            // Use Search SDK (preferred)
-            val response = searchBoxSdk.suggestions(query)
-            when {
-                response.isValue -> {
-                    val places = response.value!!.map { it.toPlace() }
-                    placeCache.put(query, PlaceCache.CachedSearchResult(places))
-                    Result.Success(places)
-                }
-                else -> Result.Error(AppError.SearchFailed(response.error?.message ?: "Unknown error"))
-            }
-        } catch (e: Exception) {
-            // Fallback: HTTP Search Box API
-            try {
-                val httpResult = searchBoxApi.suggest(
-                    query = query,
-                    sessionToken = UUID.randomUUID().toString(),
-                    limit = 5,
-                    token = token
-                )
-                val places = httpResult.suggestions.map { it.toPlace() }
-                placeCache.put(query, PlaceCache.CachedSearchResult(places))
-                Result.Success(places)
-            } catch (e: Exception) {
-                Result.Error(AppError.NetworkError("Search failed: ${e.message}"))
-            }
-        }
-    }
-
-    override suspend fun discoverCategory(category: String, location: LatLng, radius: Double = 50.0): Result<List<Place>> = withContext(Dispatchers.IO) {
-        return@withContext try {
-            val boundingBox = BoundingBox.fromPoint(location, radiusKm = radius)
-            val response = discover.search(
-                DiscoverQuery.Category(category),
-                region = boundingBox
-            )
-            when {
-                response.isValue -> Result.Success(response.value!!.map { it.toPlace() })
-                else -> Result.Error(AppError.SearchFailed("Category search failed"))
-            }
-        } catch (e: Exception) {
-            Result.Error(AppError.NetworkError(e.message ?: "Category search error"))
-        }
-    }
-
-    override suspend fun reverseGeocode(location: LatLng): Result<Place> = withContext(Dispatchers.IO) {
-        return@withContext try {
-            val result = searchEngine.search(
-                ReverseGeoOptions(center = Point.fromLngLat(location.lng, location.lat), limit = 1)
-            ) { response ->
-                // callback; this is callback-based, not suspend
-            }
-            // Note: the Search SDK's reverse geocode is callback-based; wrap in suspendCancellableCoroutine
-            Result.Success(Place.UNKNOWN)  // simplified
-        } catch (e: Exception) {
-            Result.Error(AppError.NetworkError(e.message ?: "Reverse geocode failed"))
-        }
-    }
-}
-
-class DirectionsRepositoryImpl(
-    private val directionsApi: DirectionsApi,
-    private val token: String
-) : DirectionsRepository {
-
-    override suspend fun getDirections(
-        origin: LatLng,
-        destination: LatLng,
-        stops: List<Stop>,
-        profile: RouteProfile,
-        alternatives: Boolean,
-        exclude: Set<String> = emptySet()
-    ): Result<List<Route>> = withContext(Dispatchers.IO) {
-        return@withContext try {
-            // Construct coordinates: origin; stops; destination
-            val coords = listOf(origin) + stops.map { LatLng(it.lat, it.lng) } + destination
-            val coordString = coords.joinToString(";") { "${it.lng},${it.lat}" }
-            val excludeString = if (exclude.isNotEmpty()) exclude.joinToString(",") else null
-
-            val response = directionsApi.getDirections(
-                profile = profile.mapboxProfile,
-                coordinates = coordString,
-                alternatives = alternatives,
-                exclude = excludeString,
-                token = token
-            )
-
-            if (response.code != "Ok") {
-                return@withContext Result.Error(AppError.RoutingFailed(response.code))
-            }
-
-            val routes = response.routes.map { routeDto ->
-                Route(
-                    geometry = Polyline6Decoder.decode(routeDto.geometry),
-                    distance = routeDto.distance,
-                    duration = routeDto.duration,
-                    steps = routeDto.legs.flatMap { it.steps.map { s -> s.toDomain() } },
-                    legs = routeDto.legs.map { it.toDomain() },
-                    congestion = CongestionSummary.from(routeDto.annotations)
-                )
-            }
-            Result.Success(routes)
-        } catch (e: Exception) {
-            Result.Error(AppError.NetworkError("Directions: ${e.message}"))
-        }
-    }
-}
-```
+Directions v5 does not support Hindi or Odia, so those locales fall back to `en`; `TextToSpeechVoiceGuide` resolves its locale through the same `InstructionLanguage` object so voice and text always agree.
 
 ---
 
@@ -779,7 +435,6 @@ data class ExploreUiState(
     val mapStyle: MapStyle = MapStyle.STANDARD
 )
 
-@HiltViewModel
 class ExploreViewModel(
     private val placeSearchUseCase: SearchPlaceUseCase,
     private val discoveryUseCase: DiscoveryCategoryUseCase,
@@ -888,219 +543,24 @@ fun ExploreScreen(viewModel: ExploreViewModel = hiltViewModel()) {
 
 ## 6. Offline Maps Architecture
 
-### Offline Region Download Flow
+### Download flow (as built)
 
-```kotlin
-// OfflineRegionRepository: interface
-interface OfflineRegionRepository {
-    suspend fun estimateRegionSize(geometry: String, minZoom: Int, maxZoom: Int): Result<TileSizeEstimate>
-    suspend fun downloadRegion(id: String, name: String, geometry: String, minZoom: Int, maxZoom: Int): Flow<DownloadProgress>
-    suspend fun listDownloadedRegions(): Result<List<OfflineRegion>>
-    suspend fun deleteRegion(id: String): Result<Unit>
-    suspend fun isRegionAvailable(id: String): Boolean
-    fun getDownloadProgress(id: String): Flow<DownloadProgress>
-}
-
-// MapboxOfflineMapRepository: implementation
-class MapboxOfflineMapRepository(
-    private val offlineManager: OfflineManager,
-    private val tileStore: TileStore,
-    private val tileEstimator: TileEstimator,
-    private val database: RaahiDatabase
-) : OfflineRegionRepository {
-
-    override suspend fun downloadRegion(
-        id: String,
-        name: String,
-        geometry: String,
-        minZoom: Int,
-        maxZoom: Int
-    ): Flow<DownloadProgress> = flow {
-        val polygon = geometryStringToPolygon(geometry)  // WKT string to Polygon
-
-        val descriptor = offlineManager.createTilesetDescriptor(
-            TilesetDescriptorOptions.Builder()
-                .styleURI(com.mapbox.maps.Style.STANDARD)
-                .minZoom(minZoom)
-                .maxZoom(maxZoom)
-                .pixelRatio(Resources.getSystem().displayMetrics.density)
-                .build()
-        )
-
-        val loadOptions = TileRegionLoadOptions.Builder()
-            .geometry(polygon)
-            .descriptors(listOf(descriptor))
-            .metadata(Value.valueOf(mapOf("name" to Value.valueOf(name))))
-            .acceptExpired(false)
-            .build()
-
-        val cancelable = tileStore.loadTileRegion(
-            id, loadOptions,
-            { progress ->
-                // Progress callback on background thread
-                emit(DownloadProgress(
-                    regionId = id,
-                    completedResourceCount = progress.completedResourceCount,
-                    requiredResourceCount = progress.requiredResourceCount,
-                    loadedBytes = progress.loadedBytes
-                ))
-            }
-        ) { expected ->
-            // Completion callback
-            expected.fold(
-                onValue = { region ->
-                    // Success
-                    viewModelScope.launch {
-                        database.offlineRegionMetadataDao().insertMetadata(
-                            OfflineRegionMetadataEntity(
-                                id = id,
-                                name = name,
-                                geometryWkt = geometry,
-                                minZoom = minZoom,
-                                maxZoom = maxZoom,
-                                sizeBytes = region.completedResourceSize.toLong(),
-                                tileCount = region.completedResourceCount,
-                                downloadedAt = System.currentTimeMillis(),
-                                expiryAt = System.currentTimeMillis() + 30 * 24 * 60 * 60 * 1000
-                            )
-                        )
-                        emit(DownloadProgress(regionId = id, isComplete = true))
-                    }
-                },
-                onError = { error ->
-                    // Error handling
-                    emit(DownloadProgress(regionId = id, error = error.type.toString()))
-                }
-            )
-        }
-
-        // Ensure cancellation is tracked (for potential resume logic)
-    }
-
-    override suspend fun estimateRegionSize(geometry: String, minZoom: Int, maxZoom: Int): Result<TileSizeEstimate> = withContext(Dispatchers.Default) {
-        return@withContext try {
-            val polygon = geometryStringToPolygon(geometry)
-            val estimate = tileEstimator.estimate(polygon, minZoom, maxZoom)
-            Result.Success(estimate)
-        } catch (e: Exception) {
-            Result.Error(AppError.EstimationFailed(e.message ?: "Estimation error"))
-        }
-    }
-}
-
-// TileEstimator: pure Kotlin, no Android deps
-class TileEstimator {
-    fun estimate(geometry: Geometry, minZoom: Int, maxZoom: Int): TileSizeEstimate {
-        var tileCount = 0
-        for (zoom in minZoom..maxZoom) {
-            tileCount += tilesInGeometry(geometry, zoom)
-        }
-        val avgBytes = 15_000  // avg tile size ~15 KB
-        return TileSizeEstimate(
-            tileCount = tileCount,
-            estimatedBytes = tileCount * avgBytes
-        )
-    }
-
-    private fun tilesInGeometry(geometry: Geometry, zoom: Int): Int {
-        // Compute number of tiles for a given geometry and zoom level
-        // (implementation depends on geometry type)
-        return 0  // placeholder
-    }
-}
-
-data class TileSizeEstimate(val tileCount: Int, val estimatedBytes: Long)
-data class DownloadProgress(
-    val regionId: String,
-    val completedResourceCount: Int = 0,
-    val requiredResourceCount: Int = 0,
-    val loadedBytes: Long = 0L,
-    val isComplete: Boolean = false,
-    val error: String? = null
-)
+```
+OfflineRegionPickerViewModel --start--> DownloadCoordinator --collects--> OfflineMapRepository.download(region)
+                                                                              |
+                                              (main dispatcher) OfflineManager.loadStylePack(STANDARD)
+                                                                              |
+                                              TileStore.loadTileRegion(id, geometry + tileset descriptor)
+                                                                              |
+                                           Room offline_regions row updated: status, progress, sizeBytes
 ```
 
-### WorkManager Task for Background Download
-
-```kotlin
-class OfflineDownloadWorker(
-    context: Context,
-    params: WorkerParameters
-) : CoroutineWorker(context, params) {
-
-    private val offlineRepository: OfflineRegionRepository by inject()
-
-    override suspend fun doWork(): Result = try {
-        val regionId = inputData.getString("region_id") ?: return Result.failure()
-        val name = inputData.getString("name") ?: "Region"
-        val geometry = inputData.getString("geometry") ?: return Result.failure()
-        val minZoom = inputData.getInt("min_zoom", 11)
-        val maxZoom = inputData.getInt("max_zoom", 15)
-
-        offlineRepository.downloadRegion(
-            id = regionId,
-            name = name,
-            geometry = geometry,
-            minZoom = minZoom,
-            maxZoom = maxZoom
-        ).collect { progress ->
-            // Update foreground notification with progress
-            val notification = createProgressNotification(progress)
-            setForeground(ForegroundInfo(1001, notification))
-
-            // Also update progress to Room (for UI to observe)
-            saveProgress(regionId, progress)
-        }
-
-        Result.success()
-    } catch (e: Exception) {
-        Result.retry()  // WorkManager will retry with exponential backoff
-    }
-
-    private fun createProgressNotification(progress: DownloadProgress): Notification {
-        // Return a Notification with progress bar
-        return NotificationCompat.Builder(applicationContext, "offline_download")
-            .setContentTitle("Downloading ${progress.regionId}")
-            .setProgress(
-                progress.requiredResourceCount,
-                progress.completedResourceCount,
-                false
-            )
-            .setSmallIcon(R.drawable.ic_map)
-            .build()
-    }
-
-    private suspend fun saveProgress(regionId: String, progress: DownloadProgress) {
-        // Save to a DataStore or Room table so UI can observe and update
-    }
-}
-
-// Enqueue from ViewModel:
-fun downloadOfflineRegion(...) {
-    val downloadRequest = OneTimeWorkRequestBuilder<OfflineDownloadWorker>()
-        .setInputData(
-            workDataOf(
-                "region_id" to "delhi-agra",
-                "name" to "Delhi to Agra",
-                "geometry" to "...",
-                "min_zoom" to 11,
-                "max_zoom" to 15
-            )
-        )
-        .setBackoffCriteria(
-            BackoffPolicy.EXPONENTIAL,
-            OneTimeWorkRequest.MIN_BACKOFF_MILLIS,
-            TimeUnit.MILLISECONDS
-        )
-        .build()
-
-    WorkManager.getInstance(context).enqueueUniqueWork(
-        "offline_download_delhi-agra",
-        ExistingWorkPolicy.REPLACE,
-        downloadRequest
-    )
-}
-```
+- `DownloadCoordinator` owns download jobs on an application-scoped `CoroutineScope`, exposes `progress: StateFlow<Map<String, DownloadProgress>>`, and survives screen changes. There is no WorkManager: downloads run while the process is alive and a region interrupted by process death is reconciled to `Partial` on the next Offline screen open, then resumed with the Resume action.
+- `MapboxOfflineMapRepository` is the only user of `TileStore` and `OfflineManager`. Style pack accounts for the first 30 percent of progress, tiles for the remaining 70 percent. `sizeBytes` is updated from `completedResourceSize` during the download and is final on completion.
+- Mapbox invokes load callbacks on the thread's Looper, so every Mapbox call is made on `Dispatchers.Main`.
+- `StorageProbe` (`DeviceStorageProbe`) reports free space; a download is refused when free space is below the estimated size times a safety factor. `TileEstimator` (pure Kotlin) produces the pre-download estimate.
+- `reconcile()` compares Room rows with `TileStore.getAllTileRegions` and downgrades rows whose tiles disappeared.
+- Wi-Fi-only downloads are enforced from preferences; on metered networks the UI asks for confirmation (`MeteredDownloadGuard`).
 
 ---
 
@@ -1391,158 +851,39 @@ class TripPlannerIntegrationTest {
 
 ### AppContainer
 
+`AppContainer` is an interface (so tests can supply fakes); `DefaultAppContainer` builds everything lazily.
+
 ```kotlin
-class AppContainer(private val context: Context) {
-
-    // Network
-    private val okHttpClient by lazy {
-        OkHttpClient.Builder()
-            .addInterceptor { chain ->
-                val request = chain.request()
-                val newRequest = if (!BuildConfig.DEBUG) {
-                    request  // no logging in release
-                } else {
-                    // Add access token to all API requests
-                    val url = request.url.newBuilder()
-                        .addQueryParameter("access_token", BuildConfig.MAPBOX_ACCESS_TOKEN)
-                        .build()
-                    request.newBuilder().url(url).build()
-                }
-                chain.proceed(newRequest)
-            }
-            .build()
-    }
-
-    private val retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl("https://api.mapbox.com/")
-            .client(okHttpClient)
-            .addConverterFactory(KotlinxSerializationConverterFactory())
-            .build()
-    }
-
-    val searchBoxApi: SearchBoxApi by lazy { retrofit.create(SearchBoxApi::class.java) }
-    val directionsApi: DirectionsApi by lazy { retrofit.create(DirectionsApi::class.java) }
-
-    // Database
-    val database: RaahiDatabase by lazy {
-        Room.databaseBuilder(
-            context,
-            RaahiDatabase::class.java,
-            "raahi.db"
-        ).build()
-    }
-
-    // DataStore
-    val appPreferences: AppPreferences by lazy {
-        AppPreferences(
-            PreferenceDataStoreFactory.create { File(context.cacheDir, "app_prefs.pb") }
-        )
-    }
-
-    // Repositories
-    val placeSearchRepository: PlaceSearchRepository by lazy {
-        PlaceSearchRepositoryImpl(
-            searchBoxApi = searchBoxApi,
-            token = BuildConfig.MAPBOX_ACCESS_TOKEN,
-            // ... other deps
-        )
-    }
-
-    val directionsRepository: DirectionsRepository by lazy {
-        DirectionsRepositoryImpl(
-            directionsApi = directionsApi,
-            token = BuildConfig.MAPBOX_ACCESS_TOKEN
-        )
-    }
-
-    val tripRepository: TripRepository by lazy {
-        TripRepositoryImpl(database.tripDao(), database.stopDao())
-    }
-
-    val savedPlaceRepository: SavedPlaceRepository by lazy {
-        SavedPlaceRepositoryImpl(database.savedPlaceDao())
-    }
-
-    val offlineRegionRepository: OfflineRegionRepository by lazy {
-        MapboxOfflineMapRepository(
-            offlineManager = OfflineManager(),
-            tileStore = TileStore.create(),
-            database = database
-        )
-    }
-
-    val locationRepository: LocationRepository by lazy {
-        LocationRepositoryImpl(context)
-    }
-
-    val connectivityRepository: ConnectivityRepository by lazy {
-        ConnectivityRepositoryImpl(context)
-    }
-
-    // Use Cases
-    val searchPlaceUseCase: SearchPlaceUseCase by lazy {
-        SearchPlaceUseCase(placeSearchRepository)
-    }
-
-    val planTripUseCase: PlanTripUseCase by lazy {
-        PlanTripUseCase(tripRepository, directionsRepository)
-    }
-
-    // ... more use cases and services
-}
-
-// In Application:
-class RaahiApplication : Application() {
-    lateinit var appContainer: AppContainer
-
-    override fun onCreate() {
-        super.onCreate()
-
-        // Initialize Mapbox
-        MapboxOptions.accessToken = BuildConfig.MAPBOX_ACCESS_TOKEN
-
-        appContainer = AppContainer(this)
-    }
-}
-
-// In composables:
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val appContainer = (application as RaahiApplication).appContainer
-
-        setContent {
-            RaahiApp(appContainer = appContainer)
-        }
-    }
-}
-
-@Composable
-fun RaahiApp(appContainer: AppContainer) {
-    val tripRepository = remember { appContainer.tripRepository }
-    val placeSearchRepository = remember { appContainer.placeSearchRepository }
-
-    RaahiTheme {
-        NavHost(...) {
-            composable("explore") {
-                val viewModel = remember {
-                    ExploreViewModel(
-                        placeSearchUseCase = appContainer.searchPlaceUseCase,
-                        discoveryUseCase = DiscoveryCategoryUseCase(placeSearchRepository),
-                        locationRepository = appContainer.locationRepository,
-                        connectivityRepository = appContainer.connectivityRepository,
-                        preferences = appContainer.appPreferences
-                    )
-                }
-                ExploreScreen(viewModel = viewModel)
-            }
-            // ... other routes
-        }
-    }
+interface AppContainer {
+    val mapboxConfig: MapboxConfig
+    val dispatchers: DispatcherProvider
+    val clock: Clock
+    val connectivityMonitor: ConnectivityMonitor
+    val placeSearchRepository: PlaceSearchRepository
+    val directionsRepository: DirectionsRepository
+    val tripRepository: TripRepository
+    val savedPlaceRepository: SavedPlaceRepository
+    val emergencyContactRepository: EmergencyContactRepository
+    val recentSearchRepository: RecentSearchRepository
+    val locationRepository: LocationRepository
+    val offlineMapRepository: OfflineMapRepository
+    val preferencesRepository: PreferencesRepository
+    val nearbyCacheRepository: NearbyCacheRepository
+    val tripValidator: TripValidator
+    val planRoutesUseCase: PlanRoutesUseCase
+    val findNearestEmergencyUseCase: FindNearestEmergencyUseCase
+    val activeRouteStore: ActiveRouteStore      // routes handed from RoutePreview to Guidance
+    val voiceGuide: VoiceGuide                  // TextToSpeechVoiceGuide
+    val downloadCoordinator: DownloadCoordinator
+    val storageProbe: StorageProbe              // DeviceStorageProbe
 }
 ```
+
+The container is exposed to Compose through `LocalAppContainer`. ViewModels are created with `appViewModel { ViewModel(it.repository, ...) }` or `appStatefulViewModel { container, savedStateHandle -> ... }`.
+
+### Navigation
+
+`RaahiNavHost` uses type-safe Navigation Compose routes (`Routes.kt`): Onboarding, Explore, Search, PlaceDetail, Nearby, Emergency, EmergencyContacts, Trips, TripEditor, TripDetail, RoutePreview, Guidance, Offline, OfflineRegionPicker, Saved, Profile, Settings, Language, About. Deep links: `raahi://place?lat=&lng=&name=` and `raahi://trip/{id}`; `RaahiApp` forwards `onNewIntent` to `NavController.handleDeepLink` so links work on a running app. Bottom-bar tab selection pops to the Explore root and does not restore stale nested stacks.
 
 ---
 
@@ -1575,16 +916,16 @@ fun RaahiApp(appContainer: AppContainer) {
 
 ---
 
-### ADR-003: HTTP Search Box + Search SDK Hybrid
+### ADR-003: HTTP Search Box API and Directions v5 via Retrofit
 
-**Decision:** Use Mapbox Search SDK for primary path; HTTP Search Box API as fallback.
+**Decision:** Use the Mapbox Search Box HTTP API and Directions v5 through Retrofit and OkHttp. No Mapbox Search SDK, no Navigation SDK.
 
 **Rationale:**
-- Search SDK is typed and handles session state.
-- HTTP fallback avoids SDK version churn and gives control.
-- Both work offline (SDK handles offline batching; HTTP is online-only).
+- Full control over request parameters, language and caching; no SDK version churn.
+- Responses are plain JSON, easy to fake in unit tests with MockWebServer.
+- Keeps `com.mapbox` imports confined to `map/`, `offline/`, `core/config` and the Application class.
 
-**Consequence:** Maintain two implementations; testing requires both paths.
+**Consequence:** Search and routing are online-only; offline mode relies on cached nearby results, saved places and downloaded map tiles. Session tokens for Search Box billing are managed by the app.
 
 ---
 
