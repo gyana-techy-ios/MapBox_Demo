@@ -36,7 +36,10 @@ import com.raahi.app.domain.usecase.TileEstimator
 import java.io.File
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.coroutines.resume
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -53,6 +56,7 @@ class MapboxOfflineMapRepository(
     private val preferences: PreferencesRepository,
     private val clock: Clock,
     private val scope: CoroutineScope,
+    private val mainDispatcher: CoroutineDispatcher = Dispatchers.Main,
 ) : OfflineMapRepository {
 
     private val appContext = context.applicationContext
@@ -101,9 +105,11 @@ class MapboxOfflineMapRepository(
         }
         regionDao.upsert(region.copy(status = OfflineRegionStatus.Downloading, progress = 0f).toEntity())
         trySend(DownloadProgress(region.id, OfflineRegionStatus.Downloading, 0f, 0L))
-        startLoad(region) { progress ->
-            trySend(progress)
-            if (progress.status != OfflineRegionStatus.Downloading) close()
+        scope.launch(mainDispatcher) {
+            startLoad(region) { progress ->
+                trySend(progress)
+                if (progress.status != OfflineRegionStatus.Downloading) close()
+            }
         }
         awaitClose { }
     }
@@ -123,23 +129,27 @@ class MapboxOfflineMapRepository(
             return@callbackFlow
         }
         regionDao.updateProgress(regionId, OfflineRegionStatus.Downloading.name, region.progress, region.sizeBytes, null)
-        startLoad(region) { progress ->
-            trySend(progress)
-            if (progress.status != OfflineRegionStatus.Downloading) close()
+        scope.launch(mainDispatcher) {
+            startLoad(region) { progress ->
+                trySend(progress)
+                if (progress.status != OfflineRegionStatus.Downloading) close()
+            }
         }
         awaitClose { }
     }
 
     override suspend fun cancel(regionId: String) {
-        activeLoads.remove(regionId)?.cancel()
+        withContext(mainDispatcher) { activeLoads.remove(regionId)?.cancel() }
         val entity = regionDao.get(regionId) ?: return
         val status = if (entity.progress > 0f) OfflineRegionStatus.Partial else OfflineRegionStatus.Cancelled
         regionDao.updateProgress(regionId, status.name, entity.progress, entity.sizeBytes, entity.downloadedAt)
     }
 
     override suspend fun delete(regionId: String): AppResult<Unit> {
-        activeLoads.remove(regionId)?.cancel()
-        if (config.isMapAvailable) tileStore.removeTileRegion(regionId)
+        withContext(mainDispatcher) {
+            activeLoads.remove(regionId)?.cancel()
+            if (config.isMapAvailable) tileStore.removeTileRegion(regionId)
+        }
         regionDao.delete(regionId)
         return AppResult.Success(Unit)
     }
@@ -201,7 +211,7 @@ class MapboxOfflineMapRepository(
             { progress ->
                 val required = progress.requiredResourceCount.coerceAtLeast(1L)
                 val fraction = (progress.completedResourceCount.toFloat() / required).coerceIn(0f, 1f)
-                report(region, STYLE_PACK_SHARE + (1f - STYLE_PACK_SHARE) * fraction, progress.loadedResourceSize, emit)
+                report(region, STYLE_PACK_SHARE + (1f - STYLE_PACK_SHARE) * fraction, progress.completedResourceSize, emit)
             },
         ) { result ->
             activeLoads.remove(region.id)
@@ -244,10 +254,12 @@ class MapboxOfflineMapRepository(
         emit(DownloadProgress(region.id, OfflineRegionStatus.Failed, region.progress, region.sizeBytes, error))
     }
 
-    private suspend fun installedRegionIds(): Set<String>? = suspendCancellableCoroutine { continuation ->
-        tileStore.getAllTileRegions { result ->
-            val regions = result.value
-            if (continuation.isActive) continuation.resume(regions?.map { it.id }?.toSet())
+    private suspend fun installedRegionIds(): Set<String>? = withContext(mainDispatcher) {
+        suspendCancellableCoroutine { continuation ->
+            tileStore.getAllTileRegions { result ->
+                val regions = result.value
+                if (continuation.isActive) continuation.resume(regions?.map { it.id }?.toSet())
+            }
         }
     }
 

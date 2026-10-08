@@ -63,7 +63,8 @@ object OfflineRegionMapper {
             }
             add(RegionAction.Delete)
         }
-        return OfflineRegionItem(region, status, progress, error, actions)
+        val liveRegion = if (status == OfflineRegionStatus.Downloading && active != null) region.copy(sizeBytes = active.loadedBytes) else region
+        return OfflineRegionItem(liveRegion, status, progress, error, actions)
     }
 }
 
@@ -89,7 +90,7 @@ class OfflineViewModel(
             OfflineUiState(
                 isLoading = false,
                 items = items,
-                totalBytes = regions.sumOf { it.sizeBytes },
+                totalBytes = items.sumOf { it.region.sizeBytes },
                 isConfigured = config.isMapAvailable,
                 connectivity = network,
             )
